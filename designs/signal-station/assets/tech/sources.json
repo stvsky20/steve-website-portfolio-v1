@@ -1,0 +1,98 @@
+{
+  "java": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/java/java-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "python": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/python/python-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "javascript": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/javascript/javascript-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "typescript": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/typescript/typescript-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "php": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/php/php-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "html5": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/html5/html5-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "css3": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/css3/css3-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "react": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/react/react-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "tailwindcss": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/tailwindcss/tailwindcss-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "mysql": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/mysql/mysql-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "supabase": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/supabase/supabase-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "wordpress": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/wordpress/wordpress-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "vercel": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/vercel/vercel-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "git": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/git/git-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "github": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/github/github-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "gitlab": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/gitlab/gitlab-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "slack": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/slack/slack-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "google": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/google/google-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "godot": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/godot/godot-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "figma": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/figma/figma-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "firebase": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/firebase/firebase-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "clickup": {
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.0.0/icons/clickup.svg",
+    "library": "Simple Icons (CC0-1.0)"
+  },
+  "claude": {
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.0.0/icons/claude.svg",
+    "library": "Simple Icons (CC0-1.0)"
+  },
+  "openai": {
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/openai.svg",
+    "library": "Simple Icons (CC0-1.0)"
+  }
+}

@@ -1,0 +1,172 @@
+/* One visual language for technology marks in workshop and project records. */
+#core-tool-slots,
+.technology-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.technology-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 8px 12px 8px 8px;
+  border: 1px solid #19374326;
+  border-radius: 8px;
+  background: #ffffff50;
+  color: var(--ink);
+  font: 500 12px/1.4 var(--font-sans);
+  overflow-wrap: anywhere;
+}
+.technology-mark {
+  display: grid;
+  place-items: center;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: #19374309;
+}
+.technology-mark img,
+.technology-mark svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+/* Keep original brand colors and interior details; tile size supplies consistency. */
+#project-contributions {
+  padding-left: 20px;
+  margin: 12px 0 24px;
+  color: var(--on-paper-secondary);
+  font: 400 15px/1.7 var(--font-sans);
+}
+#project-contributions li + li {
+  margin-top: 10px;
+}
+#project-technologies {
+  margin-bottom: 28px;
+}
+.contact-address #contact-link {
+  margin-top: 14px;
+  min-height: 44px;
+  text-decoration: none;
+  font-size: 13px;
+}
+.contact-address #contact-link[hidden] {
+  display: none;
+}
+.contact-address code {
+  overflow-wrap: anywhere;
+}
+#contact-phone {
+  display: block;
+  margin-top: 12px;
+  color: inherit;
+  font-size: 13px;
+}
+#contact-phone[hidden] {
+  display: none;
+}
+.contact-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+.contact-mark img {
+  display: block;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+.planet-button > .contact-mark {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #f3eddf25;
+  border-radius: 8px;
+  background: #f3eddf0a;
+}
+.space-planet-labels button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.space-planet-labels .contact-mark img {
+  width: 18px;
+  height: 18px;
+}
+#space-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+#space-title > .contact-mark {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #f3eddf30;
+  border-radius: 12px;
+  background: #f3eddf0d;
+}
+#space-title .contact-mark img {
+  width: 30px;
+  height: 30px;
+}
+.contact-address #contact-link {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+#contact-link .contact-mark img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0);
+  opacity: 0.8;
+}
+#contact-phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#contact-phone .contact-mark img {
+  width: 18px;
+  height: 18px;
+}
+@media (max-width: 650px) {
+  .planet-button > .contact-mark {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+  }
+  .contact-mark img {
+    width: 18px;
+    height: 18px;
+  }
+  #space-title > .contact-mark {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+  }
+  #space-title .contact-mark img {
+    width: 24px;
+    height: 24px;
+  }
+  .technology-chip {
+    font-size: 11px;
+    padding: 6px 9px 6px 6px;
+    gap: 7px;
+  }
+  .technology-mark {
+    flex-basis: 28px;
+    width: 28px;
+    height: 28px;
+  }
+  .technology-mark img,
+  .technology-mark svg {
+    width: 22px;
+    height: 22px;
+  }
+}

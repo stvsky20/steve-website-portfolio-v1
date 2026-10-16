@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Steven — Station operator</title>
+    <link rel="stylesheet" href="src/brand.css" />
+    <script type="importmap">
+      { "imports": { "three": "./vendor/three.module.js" } }
+    </script>
+    <style>
+      body {
+        margin: 0;
+        background: #d8dbcf;
+        color: #193741;
+        overflow: hidden;
+      }
+      canvas {
+        display: block;
+        width: 100%;
+        height: 100svh;
+      }
+      header {
+        position: fixed;
+        inset: 32px 5% auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        pointer-events: none;
+      }
+      header div {
+        font: 12px/1.7 var(--font-mono);
+      }
+      header strong {
+        display: block;
+        font: 400 28px/1.3 var(--font-sans);
+      }
+      a {
+        pointer-events: auto;
+        color: inherit;
+        font: 13px var(--font-sans);
+        padding: 12px 0;
+      }
+      footer {
+        position: fixed;
+        bottom: 24px;
+        width: 100%;
+        text-align: center;
+        font: 11px var(--font-mono);
+        pointer-events: none;
+      }
+      footer button {
+        pointer-events: auto;
+        min-height: 44px;
+        margin: 0 4px 12px;
+        padding: 0 18px;
+        border: 1px solid #19374150;
+        border-radius: 6px;
+        background: #e3e6dc;
+        color: #193741;
+        font: 13px var(--font-sans);
+        cursor: pointer;
+      }
+      footer button[aria-pressed="true"] {
+        background: #193741;
+        color: #f3eddf;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>THE SIGNAL STATION<strong>Steven, on duty.</strong></div>
+      <a href="./">Back to the station ↗</a>
+    </header>
+    <canvas
+      aria-label="A three-dimensional portrait of Steven as the station operator. Drag to turn the character."
+    ></canvas>
+    <footer>
+      <div>
+        <button id="figure-view" aria-pressed="true">Full figure</button
+        ><button id="portrait-view" aria-pressed="false">Portrait</button>
+      </div>
+      Drag to look around
+    </footer>
+    <script type="module">
+      import * as THREE from "./vendor/three.module.js";
+      import { OrbitControls } from "./vendor/OrbitControls.js";
+      import { createOperator } from "./src/operator.js";
+      const canvas = document.querySelector("canvas");
+      const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+      renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.25;
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0xd8dbcf);
+      scene.add(new THREE.HemisphereLight(0xe4edf1, 0x7a7162, 2.3));
+      const key = new THREE.DirectionalLight(0xffe3ba, 3.2);
+      key.position.set(-3, 6, 5);
+      key.castShadow = true;
+      key.shadow.mapSize.set(1024, 1024);
+      key.shadow.camera.left = -4;
+      key.shadow.camera.right = 4;
+      key.shadow.camera.top = 5;
+      key.shadow.camera.bottom = -4;
+      key.shadow.bias = -0.0003;
+      scene.add(key);
+      const rim = new THREE.DirectionalLight(0xc6e5ef, 2.5);
+      rim.position.set(3, 4, -3);
+      scene.add(rim);
+      const floor = new THREE.Mesh(
+        new THREE.PlaneGeometry(200, 200),
+        new THREE.MeshStandardMaterial({ color: 0xc1c9bc, roughness: 1 }),
+      );
+      floor.rotation.x = -Math.PI / 2;
+      floor.receiveShadow = true;
+      scene.add(floor);
+      const operator = createOperator();
+      operator.root.position.set(0, 0, 0);
+      operator.root.rotation.y = 0;
+      scene.add(operator.root);
+      const camera = new THREE.PerspectiveCamera(32, 1, 0.05, 200);
+      camera.position.set(2.3, 2.7, 5.8);
+      const controls = new OrbitControls(camera, canvas);
+      controls.target.set(0, 1.55, 0);
+      controls.enablePan = false;
+      controls.minDistance = 2;
+      controls.maxDistance = 10;
+      controls.maxPolarAngle = Math.PI * 0.49;
+      controls.update();
+      for (const id of ["figure-view", "portrait-view"])
+        document.getElementById(id).addEventListener("click", () => {
+          const portrait = id === "portrait-view";
+          camera.position.set(
+            ...(portrait ? [0.6, 2.65, 2.3] : [2.3, 2.7, 5.8]),
+          );
+          controls.target.set(0, portrait ? 2.45 : 1.55, 0);
+          controls.update();
+          document
+            .getElementById("figure-view")
+            .setAttribute("aria-pressed", String(!portrait));
+          document
+            .getElementById("portrait-view")
+            .setAttribute("aria-pressed", String(portrait));
+        });
+      function resize() {
+        renderer.setSize(innerWidth, innerHeight);
+        camera.aspect = innerWidth / innerHeight;
+        camera.updateProjectionMatrix();
+      }
+      addEventListener("resize", resize);
+      resize();
+      const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+      let previous = 0,
+        time = 0;
+      function frame(now) {
+        const dt = Math.min((now - previous) / 1000, 0.05);
+        previous = now;
+        if (!document.hidden) time += dt;
+        operator.update(time, { reduced: reduced.matches, dt });
+        renderer.render(scene, camera);
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    </script>
+  </body>
+</html>

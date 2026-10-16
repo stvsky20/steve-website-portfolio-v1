@@ -1,0 +1,22 @@
+node_modules/
+.cache/
+.next/
+out/
+*.tsbuildinfo
+.env*
+!.env.example
+preview-*.png
+preview-*.jpg
+
+# Local verification artifacts and temporary exports (keep actual design assets).
+tmp/
+qa/
+**/qa/
+*-preview.jpg
+*-preview.png
+designs/signal-station/operator-idol-*.jpg
+designs/signal-station/operator-refined-*.jpg
+*.log
+*.blend1
+.DS_Store
+Thumbs.db

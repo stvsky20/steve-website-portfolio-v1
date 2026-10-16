@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#101020"/><link rel="icon" href="/favicon.svg"/><title>Steven Joe Valdez — Inside My World</title><meta name="description" content="An illustrated room floating inside a world of code, sketches, and ideas."/></head>
+<body><div id="app"><main id="stage">
+<div class="comic-backdrop" aria-hidden="true"><div class="color-cut yellow"></div><div class="color-cut magenta"></div><div class="color-cut cyan"></div><div class="world-halftone"></div><div class="world-rays"></div><div class="torn-strip"></div></div>
+<canvas id="room" aria-label="Interactive comic bedroom. Open Room Map for keyboard-accessible Projects, About, Contact, and Rooftop."></canvas>
+<svg class="foreground-ink" viewBox="0 0 1600 1000" preserveAspectRatio="none" aria-hidden="true"><path d="M-70 55 280 -25 123 10 -25 117 100 65 -20 175" fill="#101020"/><path d="m1640 725-270 308 185-144-126 139 230-219" fill="#101020"/><path d="m-50 830 219 76-125-15 145 77-240-40" fill="#f32b85"/><path d="m1450-25 95 192-45-136 75 117-12-178" fill="#20d5f5"/></svg>
+<div class="opening-caption"><span>EVERY IDEA STARTS SOMEWHERE.</span><p>THIS IS MY SOMEWHERE.</p></div>
+<div class="world-credit">STEVEN JOE VALDEZ <span>SOFTWARE ENGINEER / WORLD 01</span></div>
+<button id="pc-label" class="object-label" data-open="pc"><span class="label-index">02</span> MY WORK <span>↗</span></button>
+<button id="about-label" class="object-label pink" data-open="about"><span class="label-index">03</span> HOW I THINK <span>↗</span></button>
+<button id="contact-label" class="object-label contact" data-open="contact"><span class="label-index">04</span> CONNECT <span>↗</span></button>
+<button id="window-label" class="object-label window" data-open="rooftop"><span class="label-index">↗</span> OPTIONAL / ROOFTOP <span>↗</span></button>
+<div id="tooltip" role="status"></div><div id="loading" role="status">Drawing your world…</div>
+<details class="room-map"><summary>☷ <span>ROOM MAP</span></summary><div class="map-links"><p>CHOOSE A CORNER.</p><button data-open="pc">Projects ↗</button><button data-open="about">About ↗</button><button data-open="contact">Contact ↗</button><button data-open="rooftop">Rooftop ↗</button></div></details>
+<div class="scene-controls"><button id="motion-toggle" aria-pressed="false">Ⅱ <span>PAUSE AMBIENT</span></button><details class="scene-settings"><summary>OPTIONS</summary><div class="settings-menu"><button id="labels-toggle" aria-label="Show component labels" aria-pressed="true" title="Hide component labels">▣ <span>HIDE LABELS</span></button><button id="desk-study" aria-pressed="false">↗ <span>DESK STUDY</span></button><button id="reset" aria-label="Reset camera to the room overview">↺ <span>RESET VIEW</span></button><button id="ink-toggle" aria-pressed="true">◉ <span>PRINT TEXTURE</span></button></div></details></div>
+<div class="hint"><span class="mouse-icon"></span>EXPLORE THE OBJECTS <span class="hint-divider">/</span> DRAG TO CHANGE PERSPECTIVE</div>
+<span id="performance" class="performance-note">REALTIME / DESKTOP STUDY</span>
+</main>
+<dialog id="panel" aria-labelledby="panel-title"><div class="panel-top"><span id="panel-path">WORLD / DESKTOP</span><button id="close-panel" aria-label="Close panel and return to room">BACK TO ROOM <span>×</span></button></div><div id="panel-body"></div></dialog>
+</div><script type="module" src="/src/main.js"></script></body></html>

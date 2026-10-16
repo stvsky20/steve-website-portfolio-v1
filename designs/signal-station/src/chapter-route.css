@@ -1,0 +1,208 @@
+.chapter-progress.signal-route {
+  --route-gap: 10px;
+  min-width: 174px;
+  padding: 16px 10px 10px;
+  gap: 0;
+  border: 1px solid #e6ca9938;
+  border-radius: 14px;
+  background: #102f3ceb;
+  box-shadow: 0 16px 48px #061c2733;
+  backdrop-filter: blur(12px);
+}
+.signal-route-title {
+  padding: 0 10px 12px;
+  color: #eac582;
+  font: 400 9px/1.4 var(--font-mono);
+  letter-spacing: 0.1em;
+}
+.signal-route-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--route-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.signal-route-stop {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.signal-route-stop:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 21px;
+  top: calc(50% + 15px);
+  width: 1px;
+  height: calc(100% + var(--route-gap) - 30px);
+  background: repeating-linear-gradient(
+    to bottom,
+    #afc3c06b 0 2px,
+    transparent 2px 6px
+  );
+  pointer-events: none;
+}
+.signal-route-stop[data-state="complete"]::after {
+  background: #eac582a6;
+}
+.signal-route-stop[data-state="current"]::after {
+  background: repeating-linear-gradient(
+    to bottom,
+    #eac582 0 2px,
+    transparent 2px 6px
+  );
+}
+.chapter-progress.signal-route a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: #aec2c1;
+  font: 400 11px/1.4 var(--font-mono);
+  text-decoration: none;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+.chapter-progress.signal-route .signal-route-node {
+  display: grid;
+  place-items: center;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #8ca8a86b;
+  border-radius: 50%;
+  color: #afc3c0;
+  font-size: 9px;
+  line-height: 1;
+}
+.chapter-progress.signal-route .signal-route-label {
+  color: inherit;
+  font-size: inherit;
+  white-space: nowrap;
+}
+.chapter-progress.signal-route [data-state="complete"] a {
+  color: #e0e8df;
+}
+.chapter-progress.signal-route [data-state="complete"] .signal-route-node {
+  background: #eac58210;
+  border-color: #eac582a6;
+  color: #eac582;
+}
+.chapter-progress.signal-route a[aria-current="step"] {
+  background: #f3eddf;
+  color: #193741;
+  border-color: #f3eddf;
+}
+.chapter-progress.signal-route a[aria-current="step"] .signal-route-node {
+  background: #193741;
+  border-color: #193741;
+  color: #efc783;
+  box-shadow: 0 0 0 3px #1937410d;
+}
+.chapter-progress.signal-route button {
+  gap: 9px;
+  margin-top: 12px;
+  padding: 8px;
+  background: #061c2733;
+  color: #c4d1ce;
+  font: 400 10px/1.4 var(--font-mono);
+  border: 1px solid #c4d1ce24;
+  border-radius: 8px;
+}
+.chapter-progress.signal-route button .icon {
+  width: 14px;
+  height: 14px;
+}
+.chapter-progress.signal-route button[aria-pressed="true"] {
+  color: #efc783;
+  background: #efc7830f;
+}
+.chapter-progress.signal-route a:focus-visible,
+.chapter-progress.signal-route button:focus-visible {
+  outline: 2px solid #efc783;
+  outline-offset: 3px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .chapter-progress.signal-route a:not([aria-current]):hover {
+    background: #e0e8df0f;
+    color: #f3eddf;
+  }
+  .chapter-progress.signal-route button:hover {
+    border-color: #eac5826b;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chapter-progress.signal-route a {
+    transition: none;
+  }
+}
+@media (max-width: 650px) {
+  .chapter-progress.signal-route {
+    left: 6%;
+    right: 6%;
+    top: auto;
+    bottom: 18px;
+    flex-direction: row;
+    align-items: center;
+    min-width: 0;
+    padding: 7px;
+    gap: 7px;
+  }
+  .signal-route-title {
+    display: none;
+  }
+  .signal-route-list {
+    flex: 1;
+    flex-direction: row;
+    gap: 0;
+    min-width: 0;
+  }
+  .signal-route-stop {
+    flex: 1;
+    min-width: 0;
+  }
+  .chapter-progress.signal-route a {
+    padding: 0;
+    justify-content: center;
+    gap: 0;
+  }
+  .chapter-progress.signal-route .signal-route-label {
+    display: none;
+  }
+  .signal-route-stop:not(:last-child)::after {
+    left: calc(50% + 15px);
+    top: 50%;
+    width: calc(100% - 30px);
+    height: 1px;
+    background: repeating-linear-gradient(
+      to right,
+      #afc3c06b 0 2px,
+      transparent 2px 6px
+    );
+  }
+  .signal-route-stop[data-state="complete"]::after {
+    background: #eac582a6;
+  }
+  .signal-route-stop[data-state="current"]::after {
+    background: repeating-linear-gradient(
+      to right,
+      #eac582 0 2px,
+      transparent 2px 6px
+    );
+  }
+  .chapter-progress.signal-route button {
+    flex: 0 0 44px;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+  }
+  .signal-route-pause-label {
+    display: none;
+  }
+}

@@ -1,0 +1,1055 @@
+Start
+0:01
+laughs [Music]
+0:13
+[Music]
+0:22
+well today is going to be a lot of fun we are going to be recreating
+0:27
+um the look of these fantastic and uh awe-inspiring and very popular animated
+0:34
+films from the spider verse that's what we're gonna do we're going to look at the stylistic elements that make these
+0:40
+movies look so original so different from everything else out there we'll study them and then we'll look at how
+0:46
+you could use custom brushes and tools in Photoshop to very quickly create similar uh stuff and this is just going
+0:53
+to be a blast what else is there to say who doesn't love Spider-Man who doesn't love a great animation and who doesn't love really fun Punchy illustration okay
+1:02
+and who doesn't love Spidey Spidey Spidey I think I already said that um are you ready you gonna have some fun
+1:08
+with me let's do it uh if you're watching over on B hands welcome thanks for being here what's up Katarina hola hola nice to see you Marie how are you
+1:15
+Ivy thanks for joining us we're doing well Steve and cryo and Cody and Oliver what's up everybody Paloma how are you
+1:23
+nice to see you and Clarissa all these fine folks joining us over on be.net
+1:28
+Adobe live or behance.net live or be.net
+1:33
+live all these options for the same place that's behance okay if you're watching on YouTube thanks for joining
+1:38
+us as well hope you are going to have some fun just remember that on YouTube I'm not following the chat so closely so
+1:44
+if you want to join in the chat and get um a nice conversation going with your fellow viewers and with me after all
+1:50
+this is live then go ahead and do so at behance be.net Adobe live let's do it we
+1:57
+are going to draw draw draw okay so we are just starting right here with a still from the most recent uh film
+2:03
+across the spider verse the reason I have chosen this still to start off for a demonstration with is because it
+2:08
+actually combines a lot of the elements that make these movies look the way they look we're going to just break it down
+Analyzing film frames
+2:15
+right here gang okay first things first one of the things I find really interesting about what they've done with
+2:20
+this illustration style or animation Style is this weird combination of linear
+2:27
+elements some more of sort of flat graphic drawing okay line art and flat
+2:33
+shapes with no rendering combined with rendered areas so areas that feel like
+2:40
+they have more light and Shadow and form okay so we're looking at sort of this combination of pure 2D graphic flat
+2:49
+representational art and then the more sort of painterly sculpted rendered look
+2:56
+and this really seamless and sometimes not seamless at all but actually kind of jarring and that's intentional
+3:03
+um blending of the two within a single frame there's also a really cool thing that's going on with patterns and most
+3:10
+of the time these are a combination of halftone patterns but also sort of random um textured I would say surface texture
+3:17
+kind of stuff so if you look over here okay you've got this spatter kind of a look and as you well know we could
+3:23
+easily achieve this with brushes we're going to do that but you've got this sort of spatter and then mixed in okay
+3:28
+you've got this kind of thing where it's almost like a collage kind of element where you just throw in a completely
+3:34
+random colorful punchy Swatch okay in a
+3:39
+um in a really organic kind of torn paper kind of a shape and you'll see that popping up here and there and what
+3:46
+this reminds me of is sort of the Trapper Keeper kind of aesthetic from the 1980s where you just throw a bunch
+3:52
+of shapes on top of one another with varying patterns and colors sometimes they don't really go together but they're really bright
+3:59
+um really saturated and that's really what you're getting right here and then we see that half tone sneaking in here
+4:05
+so we're echoing right we also see a scale change where you're getting a smaller half tone here okay halftone dot
+4:11
+pattern bigger in the backgrounds and here's one that's just pure fat in your face
+4:17
+um absolutely no gradation from bigger dots to smaller dots we just
+4:22
+see it all one flat pattern right there um another cut paper kind of element here it looks like a page torn straight
+4:28
+out of a comic from Spidey um from the Marvel Comics and then look at this what do we have here what a
+4:34
+weird combo okay um if you look at this if we zoom in for a moment I want you to notice
+4:42
+um whoops sorry about that I want you to notice that what you're seeing is
+4:47
+rendering right here see Shadow light okay
+4:52
+um so we're really feeling the form three-dimensional form of the face there uh same with the mouth Etc but then
+4:58
+there's this interesting thing where the eyebrows are literally just kind of like stuck on okay and then I want you to notice this
+5:05
+a line right there helping to delineate where we break that plane that's facing us on
+5:13
+the bridge of the nose and we're going to the side plane so there's a line there and a line here delineating that
+5:18
+same um break on the opposite side of the bridge okay line right here so we're we're actually using line art on top of
+5:25
+more rendered um work and then look at this this is so
+5:30
+interesting the way the hair is done it's like taking mixer brushes and just dragging on through or taking a smudge
+5:35
+tool and dragging on through some areas of dark and light to help add some um some good strands of hair
+5:43
+um inside those locks okay to add a bit more form but then at the same time this
+5:49
+is all part of the same drawing you jump over to this side and you've got this blue line right here on the uh on the
+5:56
+left side of the face or on her right okay where we're just like okay I want to
+6:01
+just completely outline this shape for you okay um and now here's the other thing you're
+6:08
+going to see all throughout uh the stills from the movie which is this taking a shape
+6:14
+and then um pushing it um
+6:20
+off center okay so like this whole um offset idea you know if you've ever looked at at printing where you're using
+6:26
+four color printing two color printing three color printing using a printing press or using some other means where you have to try and get everything lined
+6:32
+up um and sometimes you get a little bit off grid and you'll get a little bit of an offset look where something doesn't
+6:38
+quite line up they use the heck out of that uh this sort of look in um these
+6:43
+Spidey verse flicks okay and you'll see it right here and it's a lot of times you're getting
+6:49
+that um RGB uh offset kind of look where you're gonna
+6:55
+get a glow from the red channel from the blue channel from the green Channel and
+7:00
+that's going to punch it up with these really really bright colors um a lot of glow as well that glow
+7:06
+effect being used with blending modes such as overlay highlight hard light
+7:12
+um color Dodge things like that this is all achievable in an illustration and
+7:17
+it's just a really cool weird blend of all that stuff in one image uh let's pop over here
+7:23
+and look at an extreme version of all this stuff where you just go nuts with
+7:29
+overdoing it uh with these half tones with these really really saturated
+7:34
+colors with these shapes that get repeated multiple times offset
+7:40
+um and this is helping to achieve this feeling of like really intense action and movement but then look at this
+7:46
+you'll get these random sort of pixels here and there and this is sort of calling out a little bit to
+7:53
+um you know OG video game culture uh to the fact that we are dealing with digital
+8:00
+um Tech and we're living in a digital world and this just kind of reflects that aesthetic that all of us have come to appreciate
+8:07
+um which is like early early digital Graphics um before everything became so so highly
+8:12
+rendered and perfect there's something really charming and really fun to look at when you can see visible pixels and
+8:19
+to just throw them in as a design element it's just super cool but it also can communicate this idea of something being
+8:25
+um foreign or otherworldly okay and uh it just it just does a great job of that look at all these um these shapes these
+8:32
+hexagonal shapes we have in the background and Echoes of the hexagonal shapes and then these lines cutting
+8:37
+across breaking up that space okay um again with sort of what I would call
+8:43
+like a halftone pattern but it's really more sort of a screen pattern screen tone the kind of thing you would see on
+8:48
+an old CRT monitor or something like that when you're up close um all that kind of stuff mixed in with
+8:55
+these extreme saturated bright colors you're going to see more of that happening
+9:01
+a lot of it is purely a design Choice it has nothing to do with with storytelling like this is an actual space that you
+9:08
+need to explore and understand or this is an object that you need to explore and understand as part of the environment no it's literally just there
+9:14
+because it looks cool and that's one of the things that's really cool about these films is the freedom that the artists have to say okay I see this
+9:21
+Frame and the action and whatever is happening is clear to the viewer so now I'm just gonna party and I'm gonna take
+9:27
+whatever else is in the frame and if I can add a little bit of an interesting textural element or some color or some
+9:32
+shapes or whatever just to punch it up and have fun and make it more comic book more crazy more graphically
+9:38
+um just like really exciting then I just go for it and password blast it must
+9:43
+have been to work on this film as a result of all that okay I'm gonna pop up here for just a moment I want to show
+9:49
+you atmosphere so this idea of using these really really like um
+9:54
+saturated but also kind of Otherworldly colors is I think one of the coolest
+9:59
+things about it and then also really calling a little bit back to uh the saw
+10:07
+bass Graphics to introduce movie titles uh this is you know you have these these
+10:13
+really simplified oversimplified Silhouettes and shapes okay so for all
+10:18
+of the lights for the large Billboards here these illuminated Billboards in the cityscape here instead of actually
+10:24
+having any detail to show what they are you just have this graphic shapes like this is a rectangle this is a rectangle
+10:30
+varying sizes okay A little bit of offset color and glow and all this other kind of cool stuff like if you look at
+10:36
+any of those um saw bass Graphics you know vertigo etc for Hitchcock um
+10:42
+and then if you look at sort of the uh this sort of uh Spielberg did a really strong kind of um tribute to that uh
+10:50
+homage to that and Catch Me If You Can for example um it's so cool to Overlay that with
+10:56
+what's more sort of a rendered scene um but again then like simplification wherever you need it uh this whole
+11:02
+silhouette thing you see that popping up in the films as well still blending in where they can these these halftones and
+11:08
+another thing I want to call attention to and this happens in in two specific ways which we're going to try with our own illustration today is using the
+11:15
+halftones where you have a transition from light to Shadow okay um you're going to see that a lot
+11:21
+especially on characters where they're they're illuminated from the back you're going to see a transition from the light
+11:26
+behind them into the shadow um and where there's a planar change and they use the halftones for that
+11:32
+specifically second thing you're going to see for where the halftones are employed is for elements that are in the
+11:38
+background they're going to use a halftone pattern for those to kind of push them back a little bit and make
+11:44
+them less clear less defined less specific and actually there is a third use of the halftones that I found really
+11:50
+interesting which is wherever There's an actual light source so if you see light um Coming say from the corner of a room
+11:56
+and it's Illuminating a space and it's it's starting to lose its power as you get further and further away from the
+12:02
+actual source of the light so as it comes across a scene or as it's if it's an interior space as it comes further
+12:09
+away from the actual light source you'll see a half tone dither from a gradation from the really intense
+12:16
+uh tight pattern of dots that are larger to the smaller more spaced apart dots
+12:22
+and that's another cool way of using the halftones as well you're going to see that and then every now and then you're
+12:27
+going to see this kind of element right here okay so I really want you to notice what's going on
+12:33
+um this is a suggestion of very quick movement but instead of actually
+12:39
+animating that Movement by having you use fewer frames for the leg in this
+12:45
+case to go from point A to point B you actually fill one of those frames with a
+12:51
+drawing like this which is showing this element that's out of focus because it's moving too fast for the quote-unquote
+12:57
+camera to capture it and so it's blurred but this is drawn with line okay suggesting the direction of that
+13:04
+movement and you'll see this throughout and it's a really cool really exciting
+13:09
+and fun technique um and it's it's really pronounced in such a way that you can actually see it
+13:15
+if you're watching the movie there are moments where of course this goes by very quickly but your eye will catch that
+13:21
+um and it just adds to that sort of comic book draw and feel right this is really like a truly a um
+13:28
+a love letter to to drawing this this movie I would say in like comic book drawing techniques and and things like
+13:35
+that that visual language that we um after so many uh decades have come to sort of understand if you look at Scott
+13:42
+McLeod's book for example understanding Comics there's all kinds of great stuff in there about what things mean uh when
+13:48
+they're drawn a certain way and how we just accept them and it becomes part of the language we understand of comics and of illustration in general okay one more
+13:57
+thing I want to point out here is occasionally you'll also get actual solid outline see this is pure line
+14:03
+drawing um as if you were drawing this as a frame in a comic look at the foot look
+14:08
+at the knee everything is actually drawn it's Inked as a line art drawing
+14:14
+um with color inside so almost the whole you know comic book aesthetic of ink flat color Sometimes some half tone
+14:21
+gradations and things and then if you look at the cityscape here a lot of selective line art to just suggest that
+14:28
+of it and the general forms okay but then the colors are completely offset they're coming outside the boundaries
+14:35
+um and this this again helps to kind of push it back a little bit but it also just creates this sort of jarring effect
+14:41
+where things are are not quite in register and uh this is this is a really
+14:48
+cool way to add depth and layering um to that to that background note
+14:53
+though note this is very important the simplification of the color scheme here if we were to use a lot of detail and
+14:59
+color in each of these buildings okay it would take away from the focal point which is our hero character here okay so
+15:07
+we're just using this green all the way through we're using this blue gray for these elements that are closer to us in
+15:12
+the foreground and then for the extreme distance background they're using a color that's closer to the color for the
+15:18
+sky the atmosphere there and that just with that atmospheric perspective is just pushing that back into the distance
+15:23
+but that's a very effective way to work paring down that color so we can just focus on the character here note
+15:30
+how simply the hair is rendered okay we have a shape for the hair and just a few lines right literally like five or six
+15:36
+to just describe a little bit the texture of the hair there um you'll see another example of this line art technique right here look at
+15:42
+that this could be a comic book drawing straight from the page of a comic book but again it's really interesting how
+15:48
+there are some areas that are not drawn with line still mixed in okay this here
+15:54
+nope this is all like you know painted so to speak you have shape right there but then look at this rendering okay
+16:00
+look at the line art here we're using actual line to describe form what the heck this is just coming out of
+16:06
+nowhere right um it's such a blend of techniques that you see but you you start to really kind
+16:11
+of break it down and understand how it works um the more you study it like if I were to show you this you go yeah this makes
+16:17
+sense in this movie another line art drawing okay and then we have this big graphic shape behind and then look at
+16:24
+all this great activity we have in the background just making it feel like boom punching straight out of a 1960s uh
+16:32
+comic book with the off register halftone color but then you have this crazy crazy green color this though this
+16:39
+you couldn't even print that color right this is screen only and this is the screen medium we're talking about a movie
+16:45
+um but there's so much really to enjoy in that crazy frame but we still know where to look okay you still know where
+16:51
+to look with that really strong silhouette uh look at this it's crazy you see this it's almost like
+16:57
+somebody just said okay I know I need to darken that leg and push it back this is our leg in the front and I just don't
+17:02
+want that to be you know feeling like it's it's um on the same level or layer or rather
+17:08
+plain if you will as this leg so I'm just gonna knock it back but to do so I'm gonna just do it
+17:14
+super sloppy with a big messy Shady line that's going to actually look at this
+17:20
+that whole area actually pops outside of the line art itself that's containing uh
+17:25
+this shape and containing the color like who does that right pretty nuts all right and just for this
+17:31
+final one I want to do is show this uh same um off register idea and everything we've seen but look at this actual will
+17:37
+Drawn Lines to show the directional movement of the character is this
+17:43
+necessary in an animated movie you know which way they're moving okay but this just kind of makes sends it over the top
+17:48
+again we exaggerate we push it further and uh it's just so fun right absolutely
+17:54
+saying insane so let's pause for a moments you have any questions about what's going on here I know I'm talking a lot but I'm excited about this it's
+18:00
+really really fun are we going to learn some secrets about spider ham no I'm sorry we're not um but maybe you've got some secrets to
+18:06
+share with us Steve um all right so what's going on hey oh
+18:12
+New Zealand yeah that's right Steve's from New Zealand let's forget that um all right no questions or comments
+18:18
+specifically um people are chatting in the chat saying hi to each other um they're enjoying what's going on here
+18:23
+with all this craziness um yeah so pointing all this out yeah it's
+18:29
+a good thing to notice and then you really kind of appreciate it the more you see it um we didn't talk about this Frame but like this is just more of the
+18:35
+same you can totally see what's going on here crazy weird combination of rendering okay and then wait a minute we
+18:43
+also have some line art we have some half tone on top of the face in multiple different ways we've got these uh
+18:49
+diagonal line halftones you've got the dot pattern half tones okay we've got
+18:54
+line art for the ear but everything's off register over on this side which creates this this like activity over
+19:00
+there this vibration okay and that's a good word to use for a lot of what you're describing when you look at a lot
+19:05
+of these frames and then there's that whole idea of things moving away from Center you see this in a manga all the
+19:11
+time look at these lines drawn this direction okay everything's centering from from
+19:18
+this point here we go zing zing zing away from that Center and this creates a zooming in effect and a lot of motion a
+19:25
+lot of action um very very effective once again look at the silhouette
+19:31
+we're echoing that shape with other colors some more in Focus than others
+19:37
+um some color overlay effects it's just all over the place it's crazy so today what we're going to do what we're going
+19:43
+to draw draw we're going to draw a little Spidey scene we're going to use this now I want you to just check this out look at that what is going on there
+19:49
+that looks kind of spidey-ish from spider-verse well how did I do this um yes unicorn those are all screenshots
+19:55
+from the trailer um how does something like this happen well let me show you this just literally took me like three minutes okay and this
+20:02
+is how we break it down all right I want to show you what's going on here all right let's start with this layer right
+20:08
+here you go how do you do that okay let me show you okay let me show you hide all this for a moment and we'll just do
+20:14
+it all over again you ready here we go and get rid of some miscellaneous layers we don't need
+Starting a painting
+20:20
+um now remember custom brushes are your best friend here so let's open up our brush sets and let's see what we've got
+20:27
+to play with okay I'm gonna kick you all back to the winter 2023 brush set right
+20:32
+here okay this is available to all of you and there's a brush in here called barcode all right I'm just going to slam
+20:38
+it in with the barcode there kablam and let's do this let's just go ahead and grab a break color throw it down
+20:45
+and I will push it a little cooler and a little darker and look I just do this
+20:51
+draw across with that barcode brush okay so I'm doing a nice strong diagonal we like our diagonals okay
+20:57
+like that grab another color we're going to push a little Bluer a little lighter just hit it this way
+21:03
+okay easy peasy see that and already we're creating something
+21:09
+interesting and kind of funky and cool right got that strong directional movement
+21:14
+okay and let's just kick it a little brighter and just hit right here towards the
+21:21
+bottom this little section and then as we move up this way okay
+21:27
+we're going to switch it up we're going to come to the square bear brush right here and we're just going to coat
+21:33
+that square bar area right there and just tap tap tap tap tap make a little transition there okay transition
+21:38
+transition transition like so okay then we're going to go super light
+21:44
+up here and we're gonna do that now so far you
+21:50
+go yeah okay that's fine but it doesn't really look like what we're just looking at and I say don't you worry not yet okay we're going to take our screened
+21:56
+ink brush and we're going to just echo through
+22:02
+okay with that same diagonal Christy crossy Chrissy crossy it's drawing across like this
+22:09
+okay
+22:14
+there we go this is all just on one layer I'm just having fun on one layer it doesn't matter it doesn't matter
+22:20
+okay now here's the secret you ready we take this whole layer okay and we're
+22:28
+going to select with a feather okay I've got a feather on my selection 100 pixels I'm just going to select this area right
+22:35
+out here okay and I'm gonna kind of like break it up a little bit
+22:40
+of lamb whatever and I'm just going to duplicate that command J okay now let's go to our filters and
+22:48
+we're going to go to blur motion blur and look at that
+22:54
+I can go nuts with that I can go a little minimal whatever I'm just going to blur this and I'm going to select a
+23:01
+vertical 90 degree blur right there okay you can make that extreme we can do
+23:06
+whatever we want with it say okay now the layer underneath I go back I say filter blur motion blur
+23:14
+and we're gonna kick it at that angle I was drawing okay so we're just going to do that
+23:19
+see this we can get right about where we were I can just keep adjusting that until it feels about
+23:25
+right like so say okay and now we can just continue to
+23:31
+do stuff like this and I can take my selection tool again okay we'll knock out
+23:36
+that pixel uh for down to zero for feathers so no more Feathering going on okay and now I'm gonna do this
+23:44
+I'm just going to come in here and following pretty much that same diagonal
+23:51
+I'm just going to kind of do this almost like I'm drawing buildings
+23:56
+okay in perspective here and I'm telling you the the whole idea
+24:02
+with this you know using diagonals like this automatically if you
+24:07
+know anything about composition is going to create a sense of movement diagonals
+24:13
+create a sense of movement in your composition okay and here we just grab a completely separate brush we have all
+24:19
+kinds of options in here we got the squircle okay we got the party brush maybe we use the squircle and we go a
+24:26
+little darker add a new layer we fill that in
+24:32
+just like that see how interesting that looks looks crazy go a little brighter maybe towards the
+24:38
+top here on this Edge maybe over here hit it with some really really crazy
+24:44
+bright color maybe with the party brush this lamo
+24:52
+okay and now that you've got that shape all right what you do is you just lock your layer transparency okay so I'm going to
+24:59
+hit the backslash which is under the question mark on my keyboard that locks that layer's transparency and then just
+25:05
+on some edges here okay I can create this illusion that
+25:13
+we've got some different planes here in Shadow
+25:18
+okay so I do this kind of Select part of it there
+25:27
+so I'm just being being careful with my selections here I want there to be this feeling that
+25:33
+some of this stuff is in Shadow okay
+25:39
+we're gonna let the rest of it remain in the light
+25:46
+okay
+25:52
+this and we do that the blam and kablam and kablam and
+26:01
+kablam okay now this whole area that I'm selecting
+26:07
+right I'm going to make that darker with a different brush okay and we've still got a whole bunch we
+26:12
+could play with in this set but I feel like I maybe want to revisit uh the uh fall
+26:20
+2022 brushes okay these came out very recently
+26:25
+um lots of cool stuff to play with in here and I like this uh beast mode
+26:31
+and drags is pretty cool but this blade run brush is kind of just perfect for this kind of thing so I'm going to go a little darker
+26:38
+okay and we're just gonna hit it
+26:44
+like this bam bam bam bam bam bam bam bam bam bam bam bam
+26:49
+see that excelente excellente all right so we're
+26:54
+doing okay with all this business now here's what we're gonna do we're gonna hit some halftones in here super fast
+27:01
+super easy okay so what I'll do is again with that that same um
+27:06
+that same lasso tool okay polygonal lasso we're going to knock it up again 150 pixels so we're going super soft
+27:14
+with this all right and I'm just going to come straight across this way bam
+27:22
+Bam Bam all right now I've got a nice soft uh
+27:27
+transition there and I'm going to hit it with this crazy
+27:33
+bright greenish yellow all right separate layer just like that all right we're going to
+27:38
+take that we're going to filter blur it gaussian blur it and we're just going to hit that up big
+27:44
+time like 100 pixels maybe even like 300 pixels which is going to go crazy bam
+27:50
+that's going to make it super soft that's kind of like a light source okay and then what we can do is we can again
+27:56
+lock our layer transparency right there okay so I hit that um
+28:03
+that backslash key for you underneath the question mark all right
+28:08
+and we're going to warm this up a little bit we're gonna go more towards sort of like a reddish pink kind of a color
+28:14
+and using our gradient gradation tool here I'm going to switch to my circular gradient and I'm just going to hit it from this
+28:20
+side and move this way all right like that
+28:27
+just like that beautiful beautiful make it move a little bit into
+28:35
+that yellow okay and we're gonna clip it to the layer
+28:42
+underneath see that so it's only affecting that layer there now if I combine these
+28:47
+two layers together okay so now I've got the gradient and I combined it with that that earlier gradient that we made I can
+28:55
+now apply a half tone so I can go to filters again go to noise uh pardon me go to pixelate
+29:01
+there we go and there's my color halftone now I can make the the um pixels really really big on this so I
+29:07
+could make like say maybe like 16 pixels okay and look at that how cool does that look now we can play
+29:14
+with our color blending modes right look at all this crazy stuff you can do all right that feels pretty slick
+29:21
+overlay soft light all right what do you think what do you guys like out there tell me what you like
+29:27
+all this is completely adjustable right you can do whatever you want with it all right I kind of like that overlay
+29:33
+that's kind of fun I want to stick with that that's pretty
+29:38
+slick right there and now we can hit with a color on top of that we go back to that crazy greenish kind of color
+29:44
+and now I can just if I want oops hold on
+29:52
+make sure I got the right color there we go not sure why it's not switching colors
+29:58
+for me hey you be good what you doing there
+30:04
+there we go
+30:11
+got it
+30:18
+and let's go ahead and take this gradient and let's
+30:25
+adjust it with our human saturation
+30:33
+command U right here
+30:39
+do whatever you want with it or I'm going to push it a little bit more towards that green right there got
+30:44
+different layer blending modes we can use darker colors fun I like that linear
+30:51
+burn it feels kind of slick right there okay and now what do we need we need an
+30:58
+actual City so we've got some layers in here we've got all kinds of fun but what I can do is I can go out to the web and I can search for a little uh City what's
+31:04
+up odari thanks for joining us nice to see you Vitor nice to see you as well yeah a little bit of cyberpunk in there
+31:10
+sure sure you know it um we haven't even begun to go crazy with this thing we're just getting
+31:16
+started gang we've got we've got time we've got time we've got like 26 minutes
+31:21
+and you just can't believe what I'm gonna do in 26 minutes okay so stay tuned all right so we're going to jump out now to the web just for a moment and
+31:28
+I'm going to grab let's say uh I don't know Tokyo maybe New York New York
+Adding buildings
+31:33
+skyline just gonna grab a photo of course all
+31:39
+the photos right now because of the crazy wildfires in Canada hope everybody's safe stay safe everybody really sorry about all that horrible
+31:46
+news um it's a lot of the skyline photos that are available to me right now are from from this
+31:53
+current event naturally but I'm just looking for ah here we go it's kind of cool it's kind of cool right here
+31:59
+this could work this could work all right here we go I'm gonna grab a
+32:04
+photo and
+32:10
+does not have to be high res or anything like that don't you worry about that I'm just going to take this photo
+32:16
+and I'm going to rotate it so that things line up more or less with
+32:22
+those diagonals I drew okay and then I'm just gonna go
+32:28
+bam make it Mega bergenberg okay right there
+32:37
+and we're gonna we can do a couple layers of this you can have like different layers of City you know like extreme foreground background whatever
+32:45
+you can stretch it whatever you want it doesn't matter okay if you want to add depth and distance
+32:51
+you can do that we can like do that whole effect or we blur it out etc etc etc
+32:57
+okay so I could maybe like just throw that in the background there with that whole area can be that City in
+33:03
+the background I can stretch it [Music]
+33:08
+that okay we say go
+33:15
+um and then what you do is I'm just going to select subject we're going to select uh
+33:21
+subject and see how it grabs the buildings right there
+33:28
+and select subject again
+33:33
+better come on let me grab my magic wand
+33:39
+we're already quick selection select all this
+33:46
+hey Paul right here I know he'd show me like an easier way to do this but you know I draw all the time I don't always make selections and fancy stuff
+33:52
+with photos so I'm still doing this quickly only takes a second look at that
+33:58
+we do that we say goodbye Skye we don't need you we don't need this guy okay and we take this image and we're
+34:06
+going to filter we got a whole gallery of things you can
+34:12
+do with the filter Gallery okay so we look at the filter Gallery here and we can see right there
+34:19
+okay you gotta um uh uh look at all these crazy ones we can
+34:26
+do graphic pen okay
+34:31
+it's going to use whatever my foreground color is so for now it's a little distracting but we can always fix that later
+34:37
+you can also go to Artistic you can do an underpainting watercolor watercolores
+34:43
+does some cool stuff so we'll increase the shadow intensity there to see see what that does see that
+34:51
+pretty nifty all right now what I can do with this is I can select
+34:57
+okay color range select all the darks the blacks in this right here and I can punch those in with one of these crazy
+35:04
+bright saturated colors okay so we're going to do that we're just going to do that
+35:09
+see what that does right there and then if I want I can select everything else that isn't that color
+35:15
+all right and I can select something else like that bright pink
+35:22
+like that
+35:27
+um and then we can hit this we can just go do look at that different layer
+35:32
+blending effects we can use okay so much fun
+35:38
+cool cool cool cool cool [Music]
+35:46
+oh man there's just too many choices this is the problem with doing this is I just never know what to do with my
+35:51
+too many decisions to make too many choices I can adjust my curves
+36:08
+and then we can just hit this Edge Bam Bam Bam Bam Bam
+36:20
+so fun I don't have to be perfect with this
+36:25
+remember part of this is like that it isn't quite all sticking to the lines
+36:33
+we erase some of that all right do a little duplicate of it try another blending mode like multiply
+36:41
+here we go maybe darker color knock it back 50
+36:48
+percent and then we take this bottom bit right here
+36:53
+let me just delete it
+36:59
+and we get rid of this guy right there I'm going crazy here I'm doing so much more than I did with that previous layer
+37:05
+that I was showing you guys but this is why it's fun all right next thing I want to do is I want to create okay an area
+37:12
+where we have a light source that's really really obvious and again you can do this with Graphics but look remember
+37:17
+the things that you notice remember from the pictures I showed you is these hexagonal kind of deals right
+37:24
+like that um let me just make sure I have no Feathering right there we just go Bam
+37:29
+Bam Bam Bam Bam Bam okay that's gonna be my cool like light source sort of thing and I'm just going to hit that first
+37:36
+all right with a really bright kind of color we've been using there a lot
+37:42
+all right that's sort of and we're going to take this and we're
+37:47
+just going to break it apart that you come in the inside
+37:54
+let me just do this
+38:01
+and we go to a overlay
+38:07
+like that and this is where I'm going to grab another custom brush
+38:13
+right and I just draw
+38:18
+around the outside see that
+38:24
+we're doing some more of that stuff that we see in the actual art from the film
+38:31
+okay we can duplicate that and we're gonna just move it a hair to
+38:37
+the left and then transform it irregularly I'm gonna I'm gonna uh
+38:42
+pause and just kind of pull it out this way okay and we're gonna hit that with a
+38:49
+different color like so okay I'm using that pink option delete
+38:54
+okay we can look at some of the blending modes for that as well like this Vivid
+39:00
+light really does something cool right there I like it
+39:05
+all right you see how we do this right you see how this all comes together now we haven't yet really established a
+39:11
+clear foreground right we sort of have stuff in the background to Middle Ground kind of area
+39:18
+um you know you can you can start playing with the layers themselves and decide
+39:24
+like what kinds of effects you want stuff like that for example could really really work that's a color burn uh
+39:30
+effect you can knock the opacity back right so it's not so intense um there's really no limit to how far
+39:37
+you can go to continue with these kinds of effects and things like that now one of the things we noticed was there was
+39:43
+this sort of lines of action all right and I'm going to draw Spidey here in another another minute or so but I just
+39:49
+want to quickly point out to you that you can load get more brushes okay so
+39:54
+we're gonna get more brushes anytime you want right from the website the official Adobe brush library but I'm going to
+40:01
+import my manga brushes okay so we're going to go right here to Adobe and this is where they all get made here
+40:08
+again this is all the magic stuff all the magic um and I'm going to import mine mine are in a TPL and so I go to my brush sets
+40:16
+and I go to my manga set from way back in the day one of my faves and I'm going to load
+40:22
+the the TPL file here so I got to go to import um oops here we go
+40:31
+presets when you all do this you won't have to do this because you'll be able to go to um
+40:38
+the brush set um the main download page and you just grab what you need
+40:45
+and it'll just automatically load it in okay so we're gonna import these as
+40:50
+brushes they show up right here in my brush sets okay and check this out gang you ready
+40:57
+what effects action lines holy Christmas I didn't know those were
+41:02
+there well guess what they are and these are fun let's take a look at these
+41:08
+okay now what happens when I draw with these watch this we'll make a new layer and we're going to use just white for a
+41:15
+minute so you can really uh see what these do whoa see that so I just draw around
+41:22
+wherever my Center is okay so let's have Spidey for example he's going to be like right there okay
+41:27
+we just go the other way like that all right okay now of course I can I can lock my
+41:34
+layer transparency make those colors be whatever I want um they can be different in different
+41:39
+places you know if we do uh color Dodge right we're going to get white everywhere
+41:45
+um but if we go to like overlay you'll see that it's going to have a different effect and we can of course assign a color to it we'll lock our layer
+41:52
+transparency again and we can just do this kind of thing where I'm using a really bright kind of
+41:58
+greenish blue teal kind of a color right we can hit that and we can take that whole layer
+42:05
+and we can just expand it a little bit and rotate it whoops
+42:10
+uh let me do that again expand and rotate just a hair
+42:18
+okay hit it with a different color
+42:23
+all right and then use a different blending mode
+42:30
+like so we'll not we'll push it behind the light source so it doesn't interfere with our light source
+42:37
+um and I'm going to use a another
+42:43
+gradient here because I can and I don't care right
+42:49
+oops I'm not sure why my my gradient colors always stay the same as what they
+42:55
+were before I do have an update here in Photoshop that I haven't messed with so it's probably that I'm just gonna say
+43:02
+it's that okay and I have to like come in here now I love that these are now
+43:08
+um uh what's the word um that these are
+43:18
+like Dynamic gradients that's like pretty fantastic don't get me wrong I love it
+43:24
+but it's going to take some getting used to for me to have to like go through these multiple steps to flatten them out and stuff like that so
+43:31
+just so you know you're not alone if you're out there like trying to figure out new stuff in Photoshop I gotta do it too
+43:37
+okay all right so let's see where is our photo layer that's pretty dark there I
+43:44
+just want to mess with that for a minute where are you there it is
+43:51
+all right so this guy right here
+43:58
+I'm gonna take that
+44:07
+and I'm going to
+44:14
+take that and I'm going to change its color because that darkness of all that is for me it's just not quite right
+44:23
+so I'm going to desaturate it and make it a little lighter
+44:28
+okay
+44:44
+and then just pull it up like this that feels better all right I'm picky
+44:49
+about stuff you know you got to be picky gang are you ready for some Spidey let's do it so remember all the stuff we
+44:56
+observed looking at those frames from the from the film okay from the trailer of the film rather
+45:03
+um and I'm just going to draw myself a spidey I'm going to use line art for this okay but I might maybe even have
+45:08
+some time for a little bit of rendering um got all kinds of options here in the manga brush set don't forget you also
+45:14
+have a bunch of cool you know um halftones you know which we can throw in
+45:21
+basically anywhere there aren't that many strong solid rules um for how you're going to do this
+45:28
+so I don't feel like oh I really have to do it you know this way or that way um no it's fine you're you're going to
+45:34
+be in good shape oh I like that I think that's a little better liked having that that color be a little
+45:40
+stronger there so we can knock this back a little bit right there
+45:45
+that feels kind of much better right there um playing with layer blending modes and all that stuff is just one of the best
+45:51
+things you can do but with with these kinds of you know fills uh you could just throw these in
+45:57
+wherever you want it doesn't matter and you can also do those things we saw that were so fun where you just have a shape
+46:03
+you know you can draw use a regular lasso tool um
+46:09
+you know kind of just remember how we saw these sort of Trapper Keeper
+46:14
+kind of elements and they even had sort of an outline to them um go ahead and grab some some basic
+46:20
+brushes if you want from uh the earlier brush stats you know if you go to like a summer 2022 for example
+46:27
+grab that chipped paintbrush and throw some color down
+46:35
+and then lock that layer transparency
+46:41
+and make selections inside
+46:47
+like this and get yourself a little kind of patchwork stuff going on
+46:54
+like we saw right it's kind of like a pattern kind of element right there
+47:03
+and then use something that's got more of a sort of a pattern to it like the Aztec
+47:09
+right there maybe you want to use a grid
+47:15
+that kind of thing and that just sits there whatever um you can take that same shape
+47:21
+and you can unlock that layer transparency and grab like the uh
+47:29
+concept Carver or something like that doesn't matter
+47:35
+grab a darker color and just kind of like hit the edge like that
+47:46
+you can do this remember this is if you go back to where we were looking earlier I'm at that very first
+47:53
+first frame we were looking at together right here right where they just throw in these
+47:58
+these elements zoom out and you can see see that right there right there just it's just sitting
+48:05
+there that's just sitting there whatever no rules gang you know you can put that
+Adding Spiderman
+48:11
+in there if you need to colorize it you can go to your Hue saturation and you can slide that around until you
+48:16
+feel like it's kind of like doing more of whatever is happening in your illustration like that so it's a
+48:22
+little less distracting doesn't matter okay and then go ahead and where we were just now a moment ago in the manga brush
+48:30
+set right you just grab one of these right here
+48:36
+um and add a layer and we just throw in some
+48:46
+some of those uh diagonal lines right there and we clip it to what's underneath
+48:51
+okay and then change its blending mode right you could do any kind of blending mode on that it's really subtle
+48:58
+there you go like overlay for example okay doesn't matter do what you want
+49:06
+you can blend those together darken everything up lighten everything
+49:13
+up use a blending mode for that even
+49:19
+linear burn multiply darken overlay
+49:24
+Vivid light I like Vivid light and then just knock it back to like 60 something like that
+49:31
+this you could spend so much time on the backgrounds just playing with this stuff all right let's draw some Spidey here
+49:36
+I've got a few minutes left you know I'm quick I can do this we got it all right so here we go
+49:42
+let's go into our um
+49:51
+spring 2019 and we'll uh maybe the Sean brush this might be good for this
+49:57
+I don't have that much control with it but I have enough okay and here I'm just gonna
+50:04
+draw my my Spidey
+50:12
+okay foreign
+50:26
+I forgot to point out was like how much extreme force shortening there there was
+50:31
+so I think I'll take advantage of that that whole thing we'll do that like this
+51:26
+and we'll have a foreign
+51:33
+leg out this way
+51:50
+and then the other one right here
+51:58
+bending behind okay
+52:07
+you gotta get that shape right there we go leave enough space
+52:15
+for that Palm Kabam okay
+52:21
+and then you can take this outline here and you can darken
+52:30
+parts of it just to have it pop forward like this
+52:39
+you know what I mean and then remember that trick that they had for the silhouette okay where we
+52:46
+just go behind it and there are parts that I can go
+52:52
+outside of and I can get like really specific in some areas but then more sort of like General
+52:58
+and others like that you know can go completely offset there
+53:11
+and you know this can be refined later but the idea is really simple
+53:17
+that you just want to like really pop whatever the action is make it pop forward
+53:23
+okay it has to be like the thing that you want to draw
+53:28
+attention to and um and you give it some transparency and
+53:34
+then I come in front of this and that's where I'm going to add my my color
+53:39
+which again also I could easily offset right and you know how to do this it's like
+53:45
+totally lighter blending modes are your friend okay filters are
+53:54
+your friend foreign
+54:00
+so here we go now um for my for my color what I do is
+54:05
+I first block in an area okay I get that that area blocked in and
+54:12
+I can lock that layer transparency or use clipping masks to draw on top of it or maybe I'll do
+54:18
+some actual rendering some more painterly kind of stuff you know using like The Impressions uh
+54:24
+brush for example I want to push this back but remember the stuff we saw them doing like just crazy stuff where they
+54:30
+would just be like I'm just gonna get sloppy with it you know and here just be like oh well I
+54:36
+gotta push that back so I'll just do that you know just push that back
+54:42
+that kind of thing you can totally do that if you want and just like make that darker this is all like totally fair
+54:49
+game right um
+55:06
+totally fair game
+55:13
+you can color Outside the Lines right doesn't matter
+55:19
+we could take this whole color layer duplicate it okay transform it so it's a
+55:25
+little wonky little wonky a little crazy okay change that color
+55:31
+go ahead change that color and now use a blending mode like um
+55:38
+let's see how do I do this maybe like Vivid or hard light pop it
+55:44
+behind the other see what it does there see that effect it creates
+55:50
+right and then you can inside this shape add a clipping mask okay
+55:56
+and now you just do like some basic shading so remember how I have like light is behind
+56:02
+Spidey here so we just do this like behind this shape here
+56:11
+like we suggest that the light is behind them so we just cut out this whole area
+56:17
+I'm gonna run out of time now sorry gang I know I'm gonna get cut off The Time band Hammer is going to hit me hard
+56:23
+but for those of you on YouTube stick it out because you're going to see what I'm talking about right here I can multiply
+56:29
+that use some bright color and there's more to be done but you get
+56:36
+the idea I hope this was educational hope you learned a lot um thanks for sticking it out and uh
+56:42
+folks there's so much you can do with this there's so much you can do I wish I had a bit more time but take care of
+56:48
+yourselves take care of each other remember to be kind and I'll say ciao for now
+57:07
+[Music] thank you
+57:14
+[Music]

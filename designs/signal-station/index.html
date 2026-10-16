@@ -1,0 +1,885 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#152c36" />
+    <title>Steven Valdez — Software Engineer &amp; Project Manager</title>
+    <meta
+      name="description"
+      content="Meet Steven Valdez, software engineer, project manager, 4th-year BSIT student, and Philippine Startup Challenge X regional finalist. Explore his work at the Signal Station."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23182f38'/%3E%3Cpath d='M15 20Q18 51 49 49L15 20M32 35l12-15' fill='none' stroke='%23ecc98d' stroke-width='4'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="src/journeys.css" />
+    <link rel="stylesheet" href="src/brand.css" />
+    <link rel="stylesheet" href="src/story.css" />
+    <link rel="stylesheet" href="src/chapter-route.css" />
+    <link rel="stylesheet" href="assets/ui/hero-role.css" />
+    <link rel="stylesheet" href="src/resume-content.css" />
+    <link rel="stylesheet" href="src/scroll-invitation.css" />
+    <link
+      rel="preload"
+      href="assets/brand/ibm-plex-sans-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/brand/ibm-plex-mono-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script type="importmap">
+      { "imports": { "three": "./vendor/three.module.js" } }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#work">Skip to selected work</a>
+    <main>
+      <div class="station-story" id="station-story">
+        <section
+          class="station"
+          id="station"
+          aria-label="Interactive Signal Station"
+        >
+          <div
+            id="world"
+            role="img"
+            aria-label="A three-dimensional coastal communications station with Steven standing beside the control deck, an adjustable satellite dish, moving machinery, and ocean."
+          ></div>
+          <div class="scene-shade" aria-hidden="true"></div>
+          <header class="header">
+            <a
+              class="wordmark"
+              href="#station"
+              aria-label="Steven Valdez — home"
+              ><span
+                class="brand-mark"
+                aria-hidden="true"
+                data-icon="broadcast"
+              ></span
+              ><span class="brand-lockup"
+                ><strong>Steven Valdez</strong
+                ><span class="brand-role">The Signal Station</span></span
+              ></a
+            >
+            <nav aria-label="Main navigation">
+              <a href="#work">Work <span>01</span></a
+              ><a href="#stack">Stack</a><a href="#education">Education</a
+              ><a href="#beyond">Contact</a
+              ><button
+                id="night-toggle"
+                type="button"
+                aria-label="Switch to night mode"
+                aria-pressed="false"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  class="night-mode-icon"
+                >
+                  <path
+                    class="mode-moon"
+                    d="M20.2 15.5A8.5 8.5 0 0 1 8.5 3.8 8.5 8.5 0 1 0 20.2 15.5Z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linejoin="round"
+                  />
+                  <g
+                    class="mode-sun"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  >
+                    <circle cx="12" cy="12" r="4" />
+                    <path
+                      d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"
+                    />
+                  </g></svg
+                ><span id="night-mode-label">Night</span></button
+              ><button
+                id="sound-settings"
+                type="button"
+                popovertarget="sound-panel"
+                aria-label="Sound settings, muted"
+                aria-expanded="false"
+                data-playing="false"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="sound-icon">
+                  <path
+                    d="M11 5 6 9H3v6h3l5 4Z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    class="sound-waves"
+                    d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    class="sound-slash"
+                    d="m15 9 6 6m0-6-6 6"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  /></svg
+                ><span id="sound-button-label">Sound off</span>
+              </button>
+            </nav>
+          </header>
+          <div class="introduction">
+            <div class="eyebrow"><span aria-hidden="true"></span> Hey! I’m</div>
+            <h1>
+              Steven<br class="name-break" />
+              Valdez<span>.</span>
+            </h1>
+            <div class="intro-role" id="hero-role">Software Engineer</div>
+            <a
+              class="scroll-invitation"
+              href="#work"
+              aria-label="Scroll to explore — start with my projects"
+            >
+              <span class="scroll-invitation-beacon" aria-hidden="true">
+                <span class="scroll-invitation-halo"></span>
+                <span class="scroll-invitation-orbit"></span>
+                <span
+                  class="scroll-invitation-arrow"
+                  data-icon="arrow-down"
+                ></span>
+              </span>
+              <span class="scroll-invitation-copy">
+                <span class="scroll-invitation-kicker">Begin the journey</span>
+                <span class="scroll-invitation-title">Scroll to explore</span>
+                <span class="scroll-invitation-caption"
+                  >My work. My tools. My story.</span
+                >
+              </span>
+              <span class="scroll-invitation-track" aria-hidden="true"
+                ><span></span
+              ></span>
+            </a>
+          </div>
+          <div class="loading" id="loading" role="status">
+            <span class="loading-cross" aria-hidden="true">+</span
+            ><span id="loading-text">Bringing the station online</span>
+          </div>
+          <div
+            id="hotspots"
+            class="hotspots"
+            aria-label="Station objects"
+            hidden
+          >
+            <button id="dish-hotspot" class="hotspot" data-object="dish">
+              <span
+                class="hotspot-ring"
+                aria-hidden="true"
+                data-icon="crosshair"
+              ></span
+              ><span
+                ><small>01 / Antenna array</small>Aim the dish <i>↗</i></span
+              >
+            </button>
+            <button id="console-hotspot" class="hotspot" data-object="console">
+              <span
+                class="hotspot-ring"
+                aria-hidden="true"
+                data-icon="crosshair"
+              ></span
+              ><span
+                ><small>02 / Control deck</small>Explore projects <i>↗</i></span
+              >
+            </button>
+          </div>
+          <div class="explore-message" id="explore-message" hidden>
+            <span class="live-dot"></span
+            ><span>Drag to orbit · Scroll to zoom · Drag the dish to aim</span
+            ><button id="return-view">Return to overview ↙</button>
+          </div>
+          <details
+            class="controls"
+            id="controls"
+            hidden
+            inert
+            aria-hidden="true"
+          >
+            <summary>
+              <span
+                class="control-icon"
+                aria-hidden="true"
+                data-icon="sliders-horizontal"
+              ></span>
+              Station controls <span aria-hidden="true">+</span>
+            </summary>
+            <div class="control-content">
+              <div class="control-heading">
+                ANTENNA POSITION <span id="tracking-state">AUTO SCAN</span>
+              </div>
+              <label for="bearing"
+                >Bearing <output id="bearing-value">-10°</output></label
+              ><input
+                id="bearing"
+                type="range"
+                min="-75"
+                max="75"
+                value="-10"
+                step="1"
+              /><label for="elevation"
+                >Elevation <output id="elevation-value">38°</output></label
+              ><input
+                id="elevation"
+                type="range"
+                min="12"
+                max="65"
+                value="38"
+                step="1"
+              />
+              <div class="control-row">
+                <label class="check-label"
+                  ><input id="scan" type="checkbox" checked /> Automatic
+                  scan</label
+                ><button class="small-button" id="reset-dish">Reset</button>
+              </div>
+              <div class="control-row lighting-row">
+                <label class="check-label"
+                  ><input id="lights" type="checkbox" checked /> Deck
+                  lights</label
+                ><button class="small-button" id="reset-camera">
+                  Reset view
+                </button>
+              </div>
+              <div class="view-buttons" role="group" aria-label="Camera view">
+                <button
+                  class="small-button"
+                  data-view="left"
+                  aria-label="Orbit left"
+                >
+                  ↶</button
+                ><button
+                  class="small-button"
+                  data-view="right"
+                  aria-label="Orbit right"
+                >
+                  ↷</button
+                ><button
+                  class="small-button"
+                  data-view="closer"
+                  aria-label="Zoom in"
+                >
+                  +</button
+                ><button
+                  class="small-button"
+                  data-view="farther"
+                  aria-label="Zoom out"
+                >
+                  −
+                </button>
+              </div>
+              <p class="control-note">
+                Drag the antenna directly, or use these controls. The station is
+                built from live 3D geometry.
+              </p>
+            </div>
+          </details>
+          <div class="scene-footer">
+            <div class="scene-actions">
+              <button id="pause" aria-pressed="false">
+                <span id="pause-icon" aria-hidden="true">Ⅱ</span
+                ><span id="pause-text">Pause motion</span>
+              </button>
+            </div>
+          </div>
+          <a class="scroll-note" href="#work"
+            ><span>SELECTED WORK BELOW</span
+            ><span aria-hidden="true">↓</span></a
+          >
+          <div class="journey-nav" id="journey-nav" hidden>
+            <button id="journey-back">← Return to station</button
+            ><span id="journey-status" role="status"
+              >Approaching the station</span
+            ><button id="journey-skip">Skip approach ↗</button
+            ><span
+              class="journey-progress"
+              id="journey-progress"
+              aria-hidden="true"
+            ></span>
+          </div>
+          <aside
+            class="component-panel"
+            id="component-panel"
+            aria-labelledby="component-title"
+            hidden
+          >
+            <div class="section-kicker" id="component-kicker">
+              02 / Control deck
+            </div>
+            <h2 id="component-title" tabindex="-1">
+              A connection to your community.
+            </h2>
+            <div id="console-content">
+              <div class="transmission-tag">
+                TRANSMISSION 001 / SELECTED WORK
+              </div>
+              <h3>Ayos!</h3>
+              <p>
+                A reporting system connecting people and local government units.
+              </p>
+              <p class="component-recognition">
+                Regional finalist<br />Philippine Startup Challenge
+              </p>
+              <button class="primary" id="component-project">
+                Read project overview <span aria-hidden="true">↗</span></button
+              ><a class="component-secondary" href="#work"
+                >View the work section ↓</a
+              >
+            </div>
+            <div id="dish-content" hidden>
+              <p>
+                Continue to Contact, then follow the signal into space to find
+                my profiles and email.
+              </p>
+              <p class="component-footnote">
+                Discover four contact planets: GitHub, LinkedIn, Email, and
+                Instagram.
+              </p>
+              <a class="component-secondary" href="#beyond"
+                >Go to Contact <span aria-hidden="true">↓</span></a
+              >
+            </div>
+          </aside>
+          <aside
+            class="space-panel"
+            id="space-panel"
+            aria-labelledby="space-title"
+            hidden
+          >
+            <div class="section-kicker">CONTACT / CHOOSE A PLANET</div>
+            <h2 id="space-title" tabindex="-1">Contact info.</h2>
+            <h3 id="space-subtitle">Four ways to connect.</h3>
+            <p id="space-description"></p>
+            <div id="space-tags" class="space-tags"></div>
+            <div id="contact-address" class="contact-address" hidden>
+              <span>Connect with Steven</span
+              ><code id="contact-placeholder"></code><small></small>
+              <a
+                id="contact-link"
+                class="primary"
+                rel="noopener noreferrer"
+                hidden
+              ></a>
+              <a id="contact-phone" hidden></a>
+            </div>
+            <div
+              class="planet-buttons"
+              id="planet-buttons"
+              aria-label="Choose a contact planet"
+            ></div>
+            <button class="component-secondary" id="all-worlds" hidden>
+              ← All contacts</button
+            ><small class="imagined-note"
+              >Based in Baguio City, Philippines.<br />Instagram profile coming
+              soon.</small
+            >
+          </aside>
+          <div class="space-planet-labels" id="space-planet-labels" hidden>
+            <button id="world-github">GitHub ↗</button
+            ><button id="world-linkedin">LinkedIn ↗</button
+            ><button id="world-email">Email ↗</button
+            ><button id="world-instagram">Instagram ↗</button>
+          </div>
+          <div id="announcement" class="sr-only" aria-live="polite"></div>
+          <div id="project-screens" hidden>
+            <div class="screen-intro">
+              <div class="section-kicker">02 / The control deck</div>
+              <h2>Projects, on display.</h2>
+              <p>Select a screen to open a project.</p>
+            </div>
+            <div
+              class="screen-targets"
+              role="group"
+              aria-label="Project display panels"
+            >
+              <button
+                class="screen-target"
+                data-project="0"
+                aria-label="Open project 001: Ayos!"
+              >
+                <span class="sr-only">Ayos! — Community reporting</span>
+              </button>
+              <button
+                class="screen-target"
+                data-project="1"
+                aria-label="Open project 002: ESQUAKE"
+              >
+                <span class="sr-only"
+                  >ESQUAKE — Earthquake preparedness game</span
+                >
+              </button>
+              <button
+                class="screen-target"
+                data-project="2"
+                aria-label="Open experience 003: Leadership"
+              >
+                <span class="sr-only"
+                  >Leadership — Student organizations &amp; delivery</span
+                >
+              </button>
+            </div>
+            <p class="screen-help">
+              Ideas, built. Teams, connected.<br /><span
+                >Two projects and a record of leadership.</span
+              >
+            </p>
+          </div>
+          <div id="core-interface" hidden>
+            <div class="core-heading">
+              <div class="section-kicker">03 / The workshop</div>
+              <h2>The tools behind <br />the work.</h2>
+              <p id="core-instruction">Scroll to open the signal core.</p>
+            </div>
+            <div
+              id="core-targets"
+              role="group"
+              aria-label="Signal core skill modules"
+            ></div>
+            <dialog id="core-detail" aria-labelledby="core-tool-title" hidden>
+              <button id="core-clear" aria-label="Close skill details">
+                <span data-icon="x" aria-hidden="true"></span>
+              </button>
+              <div class="section-kicker" id="core-part"></div>
+              <div class="core-inspect-count" id="core-inspect-count">
+                Module 01 / 06
+              </div>
+              <h3 id="core-tool-title"></h3>
+              <p id="core-tool-copy"></p>
+              <div id="core-tool-slots"></div>
+              <p class="core-placeholder">
+                Tools from my project work and technical experience.
+              </p>
+              <div class="core-inspect-nav">
+                <button id="core-previous" aria-label="Previous skill module">
+                  <span data-icon="arrow-left" aria-hidden="true"></span>
+                  Previous</button
+                ><button id="core-next" aria-label="Next skill module">
+                  Next <span data-icon="arrow-right" aria-hidden="true"></span>
+                </button>
+              </div>
+              <p class="core-inspect-exit">
+                Close or press Esc to return to the assembly.
+              </p>
+            </dialog>
+            <p class="core-footnote">
+              One system. Many skills.<br /><span
+                >Scroll backward to reassemble.</span
+              >
+            </p>
+          </div>
+          <div id="education-interface" hidden>
+            <div class="education-heading">
+              <div class="section-kicker">04 / The study desk</div>
+              <h2>Learning, <br />in progress.</h2>
+              <p>
+                The foundation behind my work.<br />Select a record to read
+                more.
+              </p>
+            </div>
+            <div
+              class="education-targets"
+              role="group"
+              aria-label="Education and recognition records"
+            ></div>
+            <p class="education-light-note">
+              <span aria-hidden="true"></span> A little light on the journey so
+              far.
+            </p>
+          </div>
+          <nav class="chapter-progress" aria-label="Story chapters">
+            <a href="#station" aria-label="Introduction" aria-current="step"
+              ><span>01</span> Introduction</a
+            >
+            <a href="#work" aria-label="Projects"><span>02</span> Projects</a>
+            <a href="#stack" aria-label="Tech stack"
+              ><span>03</span> Tech stack</a
+            >
+            <a href="#education" aria-label="Education"
+              ><span>04</span> Education</a
+            >
+            <a href="#beyond" aria-label="Contact"><span>05</span> Contact</a>
+            <button
+              id="story-pause"
+              aria-label="Pause ambient motion"
+              aria-pressed="false"
+            >
+              <span data-icon="pause" aria-hidden="true"></span>
+            </button>
+          </nav>
+        </section>
+        <div class="story-opening" aria-hidden="true"></div>
+        <section
+          class="work content-section story-chapter"
+          id="work"
+          tabindex="-1"
+          data-chapter="projects"
+        >
+          <div class="chapter-card">
+            <div class="section-kicker">02 / The control deck</div>
+            <div class="section-heading">
+              <h2>Selected projects.</h2>
+              <p>Ideas, built into something you can use.</p>
+            </div>
+            <article class="project">
+              <div class="project-visual" aria-hidden="true">
+                <div class="diagram-node node-one">People</div>
+                <div class="diagram-link"></div>
+                <div class="diagram-node node-two">LGUs</div>
+                <span class="diagram-orbit orbit-one"></span
+                ><span class="diagram-orbit orbit-two"></span
+                ><strong>Ayos!</strong
+                ><small>CONCEPT DIAGRAM / COMMUNITY REPORTING</small>
+              </div>
+              <div class="project-body">
+                <div class="project-index">
+                  TRANSMISSION 001 <span>Community / Reporting</span>
+                </div>
+                <h3>Ayos!</h3>
+                <p>
+                  A reporting system connecting people and local government
+                  units.
+                </p>
+                <div class="project-recognition">
+                  <span aria-hidden="true">↗</span> Regional finalist<br />Philippine
+                  Startup Challenge
+                </div>
+                <button class="project-link" id="open-project">
+                  Project overview <span aria-hidden="true">↗</span>
+                </button>
+                <p class="project-note">Full case study coming soon.</p>
+              </div>
+            </article>
+            <div class="project-placeholder">
+              <span>PROJECT 002</span>
+              <h3>ESQUAKE</h3>
+              <p>
+                A story-based serious game for earthquake preparedness among
+                elementary students. Project Manager &amp; Game Developer
+                leading a 16-member capstone team. August 2026–Present.
+              </p>
+              <button class="project-link" data-open-record="1">
+                Project overview ↗
+              </button>
+            </div>
+            <div class="project-placeholder">
+              <span>EXPERIENCE 003</span>
+              <h3>Student leadership</h3>
+              <p>
+                Deputy Secretary General, SLU SAMCIS KASAMA/SSC Assembly;
+                Officer-in-Charge &amp; First Year IT Representative, SLU
+                Integrated Confederacy. January–July 2024.
+              </p>
+              <button class="project-link" data-open-record="2">
+                Experience overview ↗
+              </button>
+            </div>
+          </div>
+        </section>
+        <section
+          class="story-chapter"
+          id="stack"
+          tabindex="-1"
+          data-chapter="stack"
+        >
+          <div class="chapter-card">
+            <div class="section-kicker">03 / The workshop</div>
+            <h2>The tools behind<br />the work.</h2>
+            <p class="chapter-lead">
+              The technologies and practices I use to build and deliver.
+            </p>
+            <div class="stack-groups">
+              <div>
+                <h3>Languages</h3>
+                <p>Java, Python, JavaScript, TypeScript, SQL, PHP, HTML, CSS</p>
+              </div>
+              <div>
+                <h3>Frontend</h3>
+                <p>React, Tailwind CSS, WordPress, Figma</p>
+              </div>
+              <div>
+                <h3>Backend &amp; databases</h3>
+                <p>WAMP, Google APIs, OpenAI, MySQL, Supabase, Firestore</p>
+              </div>
+              <div>
+                <h3>Workflow &amp; delivery</h3>
+                <p>
+                  Git, GitHub, GitLab, Vercel, Godot, Claude AI, Codex, ClickUp,
+                  Slack, Google Workspace, Agile project management,
+                  Water-Scrum-Fall
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="story-chapter"
+          id="education"
+          tabindex="-1"
+          data-chapter="education"
+        >
+          <div class="chapter-card">
+            <div class="section-kicker">04 / The study desk</div>
+            <h2>Always learning.<br />Always building.</h2>
+            <p class="chapter-lead">The foundation behind my work.</p>
+            <div class="education-record">
+              <span class="record-status">2023–2027 · Dean’s Lister</span>
+              <h3>BS Information Technology</h3>
+              <p>Saint Louis University · Baguio City, Benguet</p>
+              <p>Expected graduation · 2027</p>
+              <p>
+                Thesis · ESQUAKE, a story-based earthquake preparedness game for
+                elementary students.
+              </p>
+            </div>
+            <div class="achievement-record">
+              <span>Recognition</span>
+              <h3>Philippine Startup Challenge X</h3>
+              <p>Regional finalist</p>
+            </div>
+            <div class="education-record">
+              <span class="record-status">2022–2023</span>
+              <h3>University of Santo Tomas – Senior High School</h3>
+              <p>STEM strand · Sampaloc, Manila</p>
+            </div>
+          </div>
+        </section>
+        <section
+          class="story-chapter"
+          id="beyond"
+          tabindex="-1"
+          data-chapter="beyond"
+        >
+          <div class="beyond-launch">
+            <div class="beyond-copy">
+              <div class="section-kicker">05 / Contact info</div>
+              <h2>Let’s connect.</h2>
+              <p>
+                Have a project in mind? Let’s talk.<br />Follow the signal to my
+                profiles and email.
+              </p>
+            </div>
+            <div class="launch-action">
+              <div class="scroll-launch-cue">
+                <span data-icon="arrow-down" aria-hidden="true"></span
+                ><strong>Scroll to connect</strong>
+              </div>
+              <p class="scroll-launch-instruction">
+                Find GitHub, LinkedIn, email, and Instagram among the stars.
+              </p>
+              <div class="launch-readiness">
+                <span class="launch-ready"
+                  ><i aria-hidden="true"></i> Uplink ready</span
+                ><span>Station → Orbit → Connect</span>
+              </div>
+              <a href="#about" class="launch-about"
+                >More about Steven <span aria-hidden="true">↓</span></a
+              >
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="about content-section" id="about">
+        <div class="section-kicker">02 / Behind the signal</div>
+        <div class="about-layout">
+          <h2>Hi, I’m Steven.<br />I like making<br />things connect.</h2>
+          <div>
+            <p class="about-lead">
+              I’m Steven Joe A. Valdez, a software engineer and project manager
+              based in Baguio City, Philippines. I study BS Information
+              Technology at Saint Louis University and build across web and game
+              development.
+            </p>
+            <p>
+              I lead a 16-member capstone team on ESQUAKE and previously led
+              development of AYOS!, a Philippine Startup Challenge X regional
+              finalist. My student leadership work has taught me to turn
+              discussions into clear decisions, organized records, and
+              coordinated delivery.
+            </p>
+            <p>
+              Outside the work: pickleball, matcha, competitive gaming, film,
+              and futures trading. I speak Filipino (native), English
+              (professional proficiency), and beginner Japanese.
+            </p>
+            <a class="project-link" href="#station"
+              >Back to the station <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+      </section>
+      <footer class="site-footer">
+        <a href="#station">STEVEN / THE SIGNAL STATION</a
+        ><span>Built to explore. Made to connect.</span
+        ><span>Portfolio concept · 2026</span>
+      </footer>
+    </main>
+    <dialog id="project-dialog" aria-labelledby="project-title">
+      <button class="dialog-close" aria-label="Close project overview">
+        ×
+      </button>
+      <div class="section-kicker">TRANSMISSION 001</div>
+      <h2 id="project-title">Ayos!</h2>
+      <p class="dialog-subtitle">A connection to your community.</p>
+      <div class="dialog-rule"></div>
+      <h3>The idea</h3>
+      <p id="project-description">
+        A reporting system connecting users and local government units (LGUs).
+      </p>
+      <h3>Recognition</h3>
+      <p id="project-recognition-text">
+        Regional finalist in the Philippine Startup Challenge.
+      </p>
+      <p class="project-note" id="project-detail-note">
+        The full case study is coming soon. Personal contribution,
+        implementation details, and project outcomes are still to be documented.
+      </p>
+      <h3>My contribution</h3>
+      <ul id="project-contributions"></ul>
+      <div
+        id="project-technologies"
+        class="technology-list"
+        aria-label="Tools used"
+      ></div>
+      <button class="primary dialog-done">
+        Back to exploring <span aria-hidden="true">↗</span>
+      </button>
+    </dialog>
+    <dialog id="education-dialog" aria-labelledby="education-dialog-title">
+      <button class="education-close" aria-label="Close education record">
+        <span data-icon="x" aria-hidden="true"></span>
+      </button>
+      <div class="section-kicker" id="education-dialog-kind"></div>
+      <h2 id="education-dialog-title"></h2>
+      <p id="education-dialog-summary"></p>
+      <div id="education-dialog-details"></div>
+      <p id="education-dialog-note"></p>
+      <button class="primary education-done">
+        Back to the study <span aria-hidden="true">↗</span>
+      </button>
+    </dialog>
+    <noscript
+      ><style>
+        .loading {
+          display: none;
+        }
+      </style>
+      <p class="noscript-message">
+        JavaScript is needed for the 3D station. Selected work and About are
+        available below.
+      </p></noscript
+    >
+    <section
+      id="sound-panel"
+      popover="auto"
+      aria-labelledby="sound-panel-title"
+    >
+      <div class="sound-panel-top">
+        <span class="section-kicker">STATION RADIO</span
+        ><button
+          type="button"
+          popovertarget="sound-panel"
+          popovertargetaction="hide"
+          aria-label="Close sound settings"
+        >
+          ×
+        </button>
+      </div>
+      <h2 id="sound-panel-title">Set the atmosphere.</h2>
+      <p class="sound-panel-copy">
+        Harbor Keys at the station. Deep Space among the stars. The music
+        follows your journey.
+      </p>
+      <div
+        id="sound-choices"
+        role="group"
+        aria-label="Journey soundtrack"
+      ></div>
+      <div class="sound-volume-row">
+        <label for="sound-volume">Volume</label
+        ><output id="sound-volume-value" for="sound-volume">40%</output>
+      </div>
+      <input
+        id="sound-volume"
+        type="range"
+        min="0"
+        max="100"
+        value="40"
+        step="1"
+      />
+      <label class="sound-effects-label"
+        ><input id="sound-effects" type="checkbox" checked /><span
+          >Interaction sound effects</span
+        ></label
+      >
+      <button id="sound-enable" type="button" aria-pressed="false">
+        Enable sound
+      </button>
+      <p id="sound-status" role="status">
+        Sound is off. Enable sound to hear the journey.
+      </p>
+    </section>
+    <dialog
+      id="audio-welcome"
+      aria-labelledby="audio-welcome-title"
+      aria-describedby="audio-welcome-description"
+    >
+      <div class="audio-welcome-content">
+        <p class="audio-welcome-kicker">STEVEN VALDEZ / THE SIGNAL STATION</p>
+        <div class="audio-welcome-icon" aria-hidden="true">
+          <svg
+            viewBox="0 0 48 48"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M8 27v-5a16 16 0 0 1 32 0v5" />
+            <rect x="6" y="24" width="9" height="16" rx="4" />
+            <rect x="33" y="24" width="9" height="16" rx="4" />
+          </svg>
+        </div>
+        <p class="audio-welcome-eyebrow">A LITTLE SPACE TO TUNE IN</p>
+        <h2 id="audio-welcome-title">Better with audio.</h2>
+        <p id="audio-welcome-description">
+          Ocean air, quiet keys, and signals from beyond.<br />Put on your
+          headphones and settle into the station.
+        </p>
+        <button id="audio-welcome-enable" type="button" autofocus>
+          Enter with sound <span aria-hidden="true">↗</span>
+        </button>
+        <button id="audio-welcome-muted" type="button">
+          Continue without sound
+        </button>
+        <p class="audio-welcome-footnote" id="audio-welcome-note" role="status">
+          You can adjust the sound anytime.
+        </p>
+      </div>
+    </dialog>
+    <script type="module" src="src/main.js"></script>
+    <script type="module" src="assets/ui/hero-role.js"></script>
+  </body>
+</html>

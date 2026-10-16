@@ -1,0 +1,421 @@
+.journey-nav {
+  position: absolute;
+  z-index: 8;
+  top: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  max-width: 90%;
+  padding: 10px 16px;
+  background: #102731ed;
+  border: 1px solid #d0bc9240;
+  backdrop-filter: blur(10px);
+  border-radius: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.journey-nav > button {
+  border: 0;
+  background: none;
+  font-size: 10px;
+  padding: 6px 0;
+  color: #efd5a6;
+  min-height: 32px;
+}
+.journey-nav > span:not(.journey-progress) {
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  color: #c5cfcf;
+}
+.journey-nav > button:last-of-type {
+  padding-left: 20px;
+  border-left: 1px solid #cbb89038;
+}
+.journey-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  transform-origin: left;
+  background: #e6bb76;
+}
+.component-panel,
+.space-panel {
+  position: absolute;
+  left: 6%;
+  top: 27%;
+  width: min(350px, 29%);
+  z-index: 4;
+}
+.component-panel h2 {
+  font-size: 43px;
+  line-height: 1.09;
+  margin: 20px 0 28px;
+  letter-spacing: -0.04em;
+}
+.component-panel p {
+  font-size: 13px;
+  color: #c5d0cc;
+  line-height: 1.8;
+}
+.component-panel h3 {
+  font-size: 48px;
+  font-weight: 350;
+  line-height: 1.1;
+  margin: 12px 0 18px;
+  letter-spacing: -0.04em;
+}
+.transmission-tag {
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  color: #c1b594;
+}
+.component-panel .component-recognition {
+  font-size: 11px;
+  color: #dfc79f;
+  border-left: 1px solid #b6a07b80;
+  padding-left: 13px;
+  margin: 24px 0;
+}
+.component-panel .primary {
+  margin-top: 12px;
+}
+.component-secondary {
+  display: block;
+  background: none;
+  border: 0;
+  padding: 13px 0;
+  font-size: 11px;
+  color: #d4c6aa;
+  text-underline-offset: 4px;
+}
+.component-footnote {
+  font-size: 11px !important;
+  color: #a4b7bb !important;
+  max-width: 300px;
+}
+.component-panel a.component-secondary {
+  display: block;
+}
+[data-view="console"] .scene-shade,
+[data-view="dish"] .scene-shade {
+  background:
+    linear-gradient(90deg, #0a202cf2, #0c2630b3 30%, transparent 65%),
+    linear-gradient(0deg, #0c2432aa, transparent 30%);
+}
+[data-view="console"] .scroll-note,
+[data-view="dish"] .scroll-note,
+[data-view="flight"] .scroll-note,
+[data-view="space"] .scroll-note,
+[data-view="return"] .scroll-note {
+  display: none;
+}
+[data-view="dish"] .controls {
+  left: auto;
+  right: 4.5%;
+}
+.station:has(#controls[open])[data-view="dish"] .component-panel {
+  visibility: hidden;
+}
+[data-view="space"] .scene-shade {
+  background:
+    linear-gradient(90deg, #030b18c9, transparent 65%),
+    linear-gradient(0deg, #030b1899, transparent 25%);
+}
+.space-panel {
+  top: 25%;
+  width: min(350px, 28%);
+}
+.space-panel h2 {
+  font-size: clamp(36px, 4.2vw, 60px);
+  margin: 18px 0;
+  line-height: 1.05;
+}
+.space-panel h3 {
+  font-weight: 400;
+  font-size: 15px;
+  color: #e0d3ba;
+  margin: 0 0 15px;
+}
+.space-panel p {
+  font-size: 12px;
+  line-height: 1.85;
+  color: #b5c1c8;
+}
+.space-tags {
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: #c6a26e;
+  margin: 18px 0;
+}
+.planet-buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 22px;
+  max-width: 270px;
+  border-top: 1px solid #bfaf8c30;
+}
+.planet-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #bfaf8c30;
+  padding: 12px 3px;
+  text-align: left;
+  font-size: 12px;
+  color: #d3dbda;
+  min-height: 44px;
+}
+.planet-button > span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  box-shadow: 0 0 14px #d6bb7b22;
+}
+.planet-button > i {
+  margin-left: auto;
+  font-style: normal;
+  color: #d4bc94;
+}
+.planet-button[aria-pressed="true"] {
+  color: #f8d699;
+}
+.imagined-note {
+  display: block;
+  font-size: 8px;
+  line-height: 1.7;
+  letter-spacing: 0.035em;
+  color: #879ba9;
+  margin-top: 24px;
+}
+.space-planet-labels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+.space-planet-labels button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 1px solid #cec09f44;
+  border-radius: 2px;
+  background: #081321b8;
+  padding: 7px 12px;
+  color: #e7d6b4;
+  font-size: 9px;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+.station[data-view="flight"] .scene-shade,
+.station[data-view="return"] .scene-shade {
+  background: linear-gradient(0deg, #04132680, transparent 25%);
+}
+@media (hover: hover) and (pointer: fine) {
+  .planet-button:hover,
+  .component-secondary:hover,
+  .journey-nav button:hover {
+    color: #f2c887;
+  }
+  .space-planet-labels button:hover {
+    border-color: #e8bc75;
+  }
+}
+@media (max-width: 1000px) and (min-width: 651px) {
+  .component-panel {
+    width: 31%;
+    left: 5%;
+  }
+  .component-panel h2 {
+    font-size: 33px;
+  }
+  .component-panel h3 {
+    font-size: 39px;
+  }
+  .component-panel p {
+    font-size: 12px;
+  }
+  .space-panel {
+    left: 5%;
+    width: 31%;
+  }
+  .space-panel h2 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 650px) {
+  .journey-nav {
+    top: 78px;
+    left: 6%;
+    right: 6%;
+    max-width: none;
+    transform: none;
+    gap: 12px;
+    padding: 7px 12px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .journey-nav > button {
+    font-size: 9px;
+    min-height: 30px;
+  }
+  .journey-nav > span:not(.journey-progress) {
+    font-size: 8px;
+    order: 3;
+    white-space: normal;
+    width: 100%;
+    padding-bottom: 2px;
+  }
+  .journey-nav > button:last-of-type {
+    padding-left: 12px;
+  }
+  .component-panel,
+  .space-panel {
+    top: auto;
+    left: 6%;
+    right: 6%;
+    width: auto;
+    bottom: 94px;
+    background: #102731ed;
+    padding: 20px 23px;
+    border: 1px solid #b4a38130;
+    border-radius: 3px;
+    backdrop-filter: blur(12px);
+    max-height: 47%;
+    overflow: auto;
+  }
+  .component-panel h2 {
+    font-size: 28px;
+    margin: 12px 0 19px;
+    max-width: 270px;
+  }
+  .component-panel h3 {
+    font-size: 35px;
+    margin: 10px 0 12px;
+  }
+  .component-panel p {
+    font-size: 11px;
+    margin: 10px 0;
+  }
+  .component-panel .component-recognition {
+    font-size: 9px;
+    margin: 15px 0;
+  }
+  .component-panel .primary {
+    margin-top: 8px;
+    min-height: 42px;
+    font-size: 10px;
+  }
+  .component-secondary {
+    font-size: 10px;
+    padding: 10px 0;
+  }
+  .component-footnote {
+    font-size: 9px !important;
+  }
+  .transmission-tag {
+    font-size: 7px;
+  }
+  .space-panel {
+    bottom: 86px;
+    padding: 20px;
+    max-height: 45%;
+  }
+  .space-panel h2 {
+    font-size: 32px;
+    margin: 12px 0;
+  }
+  .space-panel h3 {
+    font-size: 11px;
+    margin: 0 0 10px;
+  }
+  .space-panel p {
+    font-size: 10px;
+    line-height: 1.7;
+    margin: 0;
+  }
+  .space-panel .section-kicker {
+    font-size: 7px;
+  }
+  .space-tags {
+    font-size: 7px;
+    margin: 12px 0;
+  }
+  .planet-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: none;
+    gap: 4px;
+    margin-top: 14px;
+    border: 0;
+  }
+  .planet-button {
+    font-size: 9px;
+    padding: 7px 5px;
+    gap: 7px;
+    min-height: 36px;
+    border: 1px solid #bfaf8c30;
+    flex-grow: 1;
+  }
+  .planet-button i {
+    font-size: 8px;
+    margin-left: 3px;
+  }
+  .planet-button > span {
+    width: 6px;
+    height: 6px;
+  }
+  .imagined-note {
+    font-size: 7px;
+    margin-top: 12px;
+  }
+  .space-planet-labels {
+    display: none;
+  }
+  [data-view="dish"] .controls {
+    left: 6%;
+    right: auto;
+  }
+  [data-view="console"] .scene-shade,
+  [data-view="dish"] .scene-shade {
+    background: linear-gradient(0deg, #0c2432bb, transparent 65%);
+  }
+  [data-view="space"] .scene-shade {
+    background: linear-gradient(0deg, #030b18aa, transparent 70%);
+  }
+}
+
+.contact-address {
+  margin: 16px 0;
+  padding: 14px 0;
+  border-top: 1px solid #d6bd8540;
+  border-bottom: 1px solid #d6bd8540;
+  display: grid;
+  gap: 8px;
+}
+.contact-address[hidden] {
+  display: none;
+}
+.contact-address > span {
+  color: #f0bd70;
+  font:
+    10px "IBM Plex Mono",
+    monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.contact-address code {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  color: #f5efdf;
+}
+.contact-address small {
+  font-size: 11px;
+  opacity: 0.7;
+}

@@ -1,0 +1,31 @@
+import {chromium} from '@playwright/test';
+const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+const page=await browser.newPage({viewport:{width:1536,height:960}}),errors=[];
+page.on('pageerror',e=>errors.push(e.message));
+try{
+  await page.goto('http://127.0.0.1:5174/',{waitUntil:'networkidle'});
+  await page.locator('#contact-label').click();
+  await page.waitForFunction(()=>__roomDebug.couchPortal.effects.release.visible);
+  await page.screenshot({path:'qa/portal-fwip.png'});
+  if(!await page.evaluate(()=>__roomDebug.couchPortal.effects.energy.visible&&__roomDebug.couchPortal.effects.release.material.depthTest))throw Error('Spatial release and energy missing');
+  await page.waitForFunction(()=>__roomDebug.couchPortal.effects.strength>.6,{},{timeout:12000});
+  await page.screenshot({path:'qa/portal-multiview-fracture.png'});
+  const peak=await page.evaluate(()=>({passes:__roomDebug.couchPortal.effects.passes,size:__roomDebug.couchPortal.effects.targetSize}));
+  if(peak.passes<2||peak.size[0]>768)throw Error('Alternate camera rendering missing or oversized');
+  await page.waitForFunction(()=>__roomDebug.couchPortal.phase==='train',{},{timeout:12000});
+  const stopped=await page.evaluate(()=>__roomDebug.couchPortal.effects.passes);
+  await page.waitForTimeout(200);
+  if(await page.evaluate(()=>__roomDebug.couchPortal.effects.strength!==0||__roomDebug.couchPortal.effects.rush.visible||__roomDebug.couchPortal.effects.passes)!==stopped)throw Error('Effect did not settle before train');
+  await page.locator('.portal-skip').click();await page.keyboard.press('Escape');await page.waitForTimeout(1100);
+  await page.locator('#contact-label').click();await page.waitForFunction(()=>__roomDebug.couchPortal.effects.energy.visible);
+  await page.locator('.portal-motion').click();
+  if(await page.evaluate(()=>__roomDebug.couchPortal.effects.energy.visible||__roomDebug.couchPortal.effects.release.visible))throw Error('Pause left effects');
+  await page.locator('.portal-skip').click();await page.keyboard.press('Escape');await page.waitForTimeout(1100);
+  await page.locator('#motion-toggle').click();await page.locator('#contact-label').click();await page.waitForFunction(()=>__roomDebug.couchPortal.effects.release.visible);
+  await page.keyboard.press('Escape');
+  if(await page.evaluate(()=>__roomDebug.couchPortal.effects.strength||__roomDebug.couchPortal.effects.release.visible))throw Error('Cancel left effects');
+  await page.waitForTimeout(1100);await page.emulateMedia({reducedMotion:'reduce'});await page.locator('#contact-label').click();
+  if(await page.evaluate(()=>__roomDebug.couchPortal.effects.strength||__roomDebug.couchPortal.effects.energy.visible))throw Error('Reduced motion FX present');
+  if(errors.length)throw Error(errors.join('\n'));
+  console.log('PASS spatial effects, two-view fracture, bounded targets, cleanup, pause, cancellation and reduced motion',peak);
+}finally{await browser.close();}

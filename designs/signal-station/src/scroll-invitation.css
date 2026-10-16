@@ -1,0 +1,194 @@
+/* Scroll is the primary hero action. Motion demonstrates the direction of travel. */
+.scroll-invitation {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 26px;
+  padding: 21px 30px 23px 22px;
+  max-width: 100%;
+  border: 1px solid #efc78385;
+  border-radius: 16px;
+  background: linear-gradient(125deg, #173c48f5, #0b2634ed);
+  box-shadow:
+    0 14px 40px #071e3433,
+    inset 0 1px #fff1;
+  color: #f4efdf;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform 200ms cubic-bezier(0.23, 1, 0.32, 1),
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+.scroll-invitation-beacon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 62px;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #efc783;
+  color: #123440;
+  box-shadow: 0 0 28px #efc78325;
+}
+.scroll-invitation-halo,
+.scroll-invitation-orbit {
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.scroll-invitation-halo {
+  border: 1px solid #efc78380;
+  animation: invitation-pulse 2.8s ease-out infinite;
+}
+.scroll-invitation-orbit {
+  border: 1px dashed #efc78360;
+}
+.scroll-invitation-arrow {
+  display: flex;
+  animation: invitation-descend 2.8s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+.scroll-invitation-arrow .icon {
+  width: 30px;
+  height: 30px;
+}
+.scroll-invitation-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.scroll-invitation-kicker {
+  color: #efc783;
+  font: 500 9px/1.4 var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.scroll-invitation-title {
+  font: 500 23px/1.2 var(--font-sans);
+  letter-spacing: -0.025em;
+}
+.scroll-invitation-caption {
+  color: #c2d1cf;
+  font: 400 11px/1.5 var(--font-sans);
+}
+.scroll-invitation-track {
+  position: absolute;
+  bottom: 0;
+  left: 24px;
+  right: 24px;
+  height: 2px;
+  overflow: hidden;
+}
+.scroll-invitation-track > span {
+  display: block;
+  width: 32%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #efc783, transparent);
+  animation: invitation-transmit 2.8s linear infinite;
+}
+.scroll-invitation:focus-visible {
+  outline: 2px solid #f4efdf;
+  outline-offset: 6px;
+}
+.scroll-invitation:active {
+  transform: translateY(2px);
+}
+@media (hover: hover) and (pointer: fine) {
+  .scroll-invitation:hover {
+    transform: translateY(-3px);
+    border-color: #efc783;
+    box-shadow:
+      0 18px 42px #071e344d,
+      0 0 26px #efc78315;
+  }
+}
+@keyframes invitation-pulse {
+  0%,
+  15% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  75%,
+  100% {
+    transform: scale(1.24);
+    opacity: 0;
+  }
+}
+@keyframes invitation-descend {
+  0%,
+  15%,
+  100% {
+    transform: translateY(-3px);
+  }
+  55%,
+  70% {
+    transform: translateY(5px);
+  }
+}
+@keyframes invitation-transmit {
+  from {
+    transform: translateX(-110%);
+    opacity: 0;
+  }
+  15%,
+  80% {
+    opacity: 1;
+  }
+  to {
+    transform: translateX(325%);
+    opacity: 0;
+  }
+}
+body:has(#pause[aria-pressed="true"]) .scroll-invitation *,
+body:has(#audio-welcome[open]) .scroll-invitation *,
+.station:not([data-chapter="introduction"]) .scroll-invitation * {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-invitation {
+    transition: none;
+  }
+  .scroll-invitation * {
+    animation: none;
+  }
+  .scroll-invitation-halo {
+    display: none;
+  }
+  .scroll-invitation-track > span {
+    width: 100%;
+    opacity: 0.65;
+  }
+}
+@media (max-width: 650px) {
+  .scroll-invitation {
+    margin-top: 18px;
+    padding: 16px 20px 18px 18px;
+    gap: 18px;
+    border-radius: 12px;
+  }
+  .scroll-invitation-beacon {
+    flex-basis: 48px;
+    width: 48px;
+    height: 48px;
+  }
+  .scroll-invitation-arrow .icon {
+    width: 25px;
+    height: 25px;
+  }
+  .scroll-invitation-title {
+    font-size: 20px;
+  }
+  .scroll-invitation-copy {
+    gap: 5px;
+  }
+  .scroll-invitation-kicker {
+    font-size: 8px;
+  }
+  .scroll-invitation-caption {
+    font-size: 10px;
+  }
+}

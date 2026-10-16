@@ -1,0 +1,34 @@
+import {chromium} from '@playwright/test';
+import fs from 'node:fs/promises';
+const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+const page=await browser.newPage({viewport:{width:1536,height:960},deviceScaleFactor:1});
+const errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
+await page.goto('http://127.0.0.1:5174/character.html',{waitUntil:'networkidle'});
+await page.waitForTimeout(1600);
+await page.screenshot({path:'qa/character-standing.png'});
+console.log(JSON.stringify(await page.evaluate(()=>({fps:__characterDebug.fps,joints:Object.keys(__characterDebug.hero.joints).length,tracks:__characterDebug.hero.clip.tracks.length,meshes:__characterDebug.hero.meshParts.length}))));
+await page.locator('#portrait').click();await page.waitForTimeout(250);await page.screenshot({path:'qa/character-face.png'});
+await page.locator('#leap').click();await page.waitForTimeout(250);await page.screenshot({path:'qa/character-leap.png'});
+await page.locator('#story-mode').click();
+const snapshot=async p=>{
+ await page.evaluate(p=>scrollTo(0,p*(document.documentElement.scrollHeight-innerHeight)),p);await page.waitForTimeout(150);
+ return page.evaluate(()=>__characterDebug.hero.root.rotation.z);
+};
+const a=await snapshot(.18),b=await snapshot(.34),c=await snapshot(.86);
+if(!(Math.abs(b-a)>Math.abs(c-b)*4))throw Error('Fast-to-slow scroll pacing failed');
+await snapshot(0);
+if(Math.abs(await page.evaluate(()=>__characterDebug.hero.root.rotation.z))>.001)throw Error('Scroll reversal failed');
+await page.emulateMedia({reducedMotion:'reduce'});await snapshot(.7);
+if(Math.abs(await page.evaluate(()=>__characterDebug.hero.root.rotation.z))>.001)throw Error('Reduced motion failed');
+await page.emulateMedia({reducedMotion:'no-preference'});
+await page.locator('#standing').click();
+const downloadPromise=page.waitForEvent('download');await page.locator('#download').click();const download=await downloadPromise;
+await download.saveAs('public/models/steven-joe-valdez-character-v2.glb');
+const glb=await fs.readFile('public/models/steven-joe-valdez-character-v2.glb');
+if(glb.toString('utf8',0,4)!=='glTF')throw Error('Invalid GLB header');
+const jsonLength=glb.readUInt32LE(12);const manifest=JSON.parse(glb.toString('utf8',20,20+jsonLength).trim());
+console.log(JSON.stringify({glbBytes:glb.length,exportedMeshes:manifest.meshes.length,nodes:manifest.nodes.length,animations:manifest.animations.length,animationChannels:manifest.animations[0].channels.length}));
+if(!manifest.animations?.length)throw Error('Animation missing from model');
+console.log('Standing, portrait, leap, scroll acceleration/hold/reversal, reduced motion, and GLB export passed.');
+console.log('Browser errors: '+JSON.stringify(errors));await browser.close();if(errors.length)process.exitCode=1;
+

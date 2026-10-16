@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <!-- Original station arrow: solid wedge, squared shaft, and clipped tail. -->
+  <defs>
+    <path id="station-arrow" d="M32 108H136V56L216 128L136 200V148H32L48 128Z"/>
+  </defs>
+  <symbol id="arrow-right" viewBox="0 0 256 256" fill="currentColor"><use href="#station-arrow"/></symbol>
+  <symbol id="arrow-left" viewBox="0 0 256 256" fill="currentColor"><use href="#station-arrow" transform="rotate(180 128 128)"/></symbol>
+  <symbol id="arrow-up" viewBox="0 0 256 256" fill="currentColor"><use href="#station-arrow" transform="rotate(-90 128 128)"/></symbol>
+  <symbol id="arrow-down" viewBox="0 0 256 256" fill="currentColor"><use href="#station-arrow" transform="rotate(90 128 128)"/></symbol>
+  <symbol id="arrow-up-right" viewBox="0 0 256 256" fill="currentColor"><use href="#station-arrow" transform="rotate(-45 128 128)"/></symbol>
+  <symbol id="arrow-down-left" viewBox="0 0 256 256" fill="currentColor"><use href="#station-arrow" transform="rotate(135 128 128)"/></symbol>
+</svg>

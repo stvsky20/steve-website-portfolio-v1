@@ -1,0 +1,13 @@
+{
+  "library": "@phosphor-icons/react",
+  "version": "2.1.10",
+  "weight": "fill",
+  "source": "https://github.com/phosphor-icons/react",
+  "icons": [
+    "github",
+    "linkedin",
+    "instagram",
+    "email",
+    "phone"
+  ]
+}
