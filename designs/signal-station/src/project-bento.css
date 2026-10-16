@@ -1,0 +1,376 @@
+/* Magic UI Bento Grid composition adapted to native station dialogs.
+   Five-column desktop grid, calm materials, short visible image captions. */
+#project-dialog.has-bento {
+  width: calc(100% - 48px);
+  max-width: 1360px;
+  max-height: 90svh;
+  padding: 40px;
+  border-radius: 24px;
+  background: #f5f4ef;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+#project-dialog.has-bento > .dialog-rule,
+#project-dialog.has-bento > h3,
+#project-dialog.has-bento > #project-description,
+#project-dialog.has-bento > #project-recognition-text,
+#project-dialog.has-bento > #project-detail-note,
+#project-dialog.has-bento > #project-contributions,
+#project-dialog.has-bento > #project-technologies {
+  display: none;
+}
+#project-dialog.has-bento > h2 {
+  font-family: "Station DM Sans", var(--font-sans);
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1;
+  margin-top: 18px;
+}
+#project-dialog.has-bento > .dialog-subtitle {
+  margin-bottom: 30px;
+}
+#project-dialog.has-bento > .dialog-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  margin: -16px -16px 0 16px;
+  z-index: 5;
+  background: #faf9f5f2;
+  border: 1px solid #1937431a;
+  border-radius: 50%;
+  box-shadow: 0 4px 18px #142c3710;
+}
+.project-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.project-bento-grid > .bento-card {
+  order: 10;
+}
+.project-bento-grid > .bento-overview {
+  order: 0;
+  grid-column: span 2;
+}
+.project-bento-grid > .bento-shot-1 {
+  order: 1;
+}
+.project-bento-grid > .bento-stack {
+  order: 2;
+}
+.project-bento-grid > .bento-shot-2 {
+  order: 3;
+  grid-column: span 3;
+}
+.project-bento-grid > .bento-shot-3 {
+  order: 4;
+}
+.project-bento-grid > .bento-shot-4 {
+  order: 5;
+}
+.project-bento-grid > .bento-shot-5 {
+  order: 6;
+}
+.project-bento-grid > .bento-shot-6 {
+  order: 7;
+}
+.bento-card {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #fffefb;
+  border: 1px solid #1635400c;
+  box-shadow:
+    0 2px 4px #102d3504,
+    0 12px 30px #102d3507;
+}
+.bento-overview,
+.bento-approach {
+  grid-column: span 3;
+  padding: 30px;
+}
+.bento-stack,
+.bento-scope {
+  grid-column: span 2;
+  padding: 30px;
+}
+#project-dialog .bento-card h3 {
+  color: #183741;
+  font:
+    500 30px/1.12 "Station DM Sans",
+    var(--font-sans);
+  letter-spacing: -0.035em;
+  text-transform: none;
+  margin: 16px 0;
+}
+#project-dialog .bento-card p {
+  color: #52676c;
+  font: 400 14px/1.7 var(--font-sans);
+  margin: 0;
+  max-width: 60ch;
+}
+.bento-eyebrow {
+  font: 500 9px/1.5 var(--font-mono);
+  letter-spacing: 0.1em;
+  color: #836044;
+}
+.bento-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+.bento-tags span {
+  border-radius: 30px;
+  padding: 7px 11px;
+  color: #42606a;
+  background: #eaf0ee;
+  font: 500 11px/1.3 var(--font-sans);
+}
+.bento-stack .technology-list {
+  gap: 6px;
+}
+.bento-stack .technology-chip {
+  font-size: 10px;
+  padding: 5px 8px 5px 5px;
+  min-height: 36px;
+  gap: 6px;
+}
+.bento-stack .technology-mark {
+  width: 24px;
+  height: 24px;
+  flex-basis: 24px;
+  background: transparent;
+}
+.bento-stack .technology-mark img {
+  width: 20px;
+  height: 20px;
+}
+#project-dialog .bento-stack p.bento-stack-extra {
+  margin-top: 14px;
+  font-size: 11px;
+}
+.bento-shot {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: clamp(260px, 28vw, 390px);
+  padding: 0;
+  cursor: zoom-in;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+}
+.bento-shot-1,
+.bento-shot-4,
+.bento-shot-5 {
+  grid-column: span 3;
+}
+.bento-shot-2,
+.bento-shot-3,
+.bento-shot-6 {
+  grid-column: span 2;
+}
+.tone-blue {
+  background: #1473ee;
+}
+.tone-cream {
+  background: #e4f2fb;
+}
+.tone-mint {
+  background: #bcefe1;
+}
+.tone-peach {
+  background: #ffe0bc;
+}
+.tone-lavender {
+  background: #d7dcff;
+}
+.tone-yellow {
+  background: #ffe36d;
+}
+.bento-shot > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 250ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.bento-shot-caption {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid #ffffff28;
+  border-radius: 12px;
+  background: #102f43eb;
+  color: #fffef8;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px #06294318;
+}
+.bento-shot-caption strong {
+  display: block;
+  font:
+    500 15px/1.3 "Station DM Sans",
+    var(--font-sans);
+  letter-spacing: -0.015em;
+}
+.bento-shot-caption > span > span {
+  display: block;
+  margin-top: 3px;
+  color: #d6e1e6;
+  font: 400 10px/1.4 var(--font-sans);
+}
+.bento-expand {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #ffffff12;
+}
+.bento-expand .icon {
+  width: 17px;
+  height: 17px;
+}
+.bento-approach small {
+  display: block;
+  margin-top: 18px;
+  font: 400 10px/1.7 var(--font-mono);
+  color: #6a7b7b;
+}
+.bento-scope {
+  background: #e9efeb;
+}
+.project-image-dialog {
+  width: calc(100% - 40px);
+  max-width: 1440px;
+  max-height: 94svh;
+  padding: 20px;
+  border-radius: 20px;
+  background: #f8f7f2;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.project-image-dialog::backdrop {
+  background: #04111de6;
+  backdrop-filter: blur(14px);
+}
+.project-image-dialog > img {
+  display: block;
+  width: 100%;
+  max-height: 72svh;
+  object-fit: contain;
+  border-radius: 12px;
+}
+.project-image-dialog > h2 {
+  font:
+    500 26px/1.2 "Station DM Sans",
+    var(--font-sans);
+  letter-spacing: -0.03em;
+  margin: 20px 0 8px;
+}
+.project-image-dialog > p {
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 95ch;
+}
+.image-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  margin: 0 0 -44px;
+  border-radius: 50%;
+  border: 1px solid #19374330;
+  background: #f8f7f2f5;
+  color: var(--ink);
+  cursor: pointer;
+  font: 400 26px/1 var(--font-sans);
+}
+@media (hover: hover) and (pointer: fine) {
+  .bento-shot:hover > img {
+    transform: scale(1.025);
+  }
+}
+@media (max-width: 1000px) {
+  .project-bento-grid > .bento-card {
+    grid-column: span 2;
+  }
+  .project-bento-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .bento-overview,
+  .bento-stack,
+  .bento-shot,
+  .bento-approach,
+  .bento-scope {
+    grid-column: span 2;
+  }
+  .bento-shot {
+    height: 270px;
+  }
+  .bento-overview,
+  .bento-stack,
+  .bento-approach,
+  .bento-scope {
+    padding: 24px;
+  }
+}
+@media (max-width: 650px) {
+  .project-bento-grid > .bento-card {
+    grid-column: 1;
+  }
+  #project-dialog.has-bento {
+    width: calc(100% - 16px);
+    max-height: 94svh;
+    padding: 24px 14px;
+    border-radius: 18px;
+  }
+  #project-dialog.has-bento > .dialog-close {
+    margin: -12px -4px 0 10px;
+  }
+  #project-dialog.has-bento > .section-kicker {
+    font-size: 10px;
+  }
+  #project-dialog.has-bento > .dialog-subtitle {
+    font-size: 16px !important;
+    margin-bottom: 22px;
+  }
+  .project-bento-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+  .bento-card {
+    grid-column: 1;
+    border-radius: 16px;
+  }
+  .bento-shot {
+    height: 260px;
+  }
+  #project-dialog .bento-card h3 {
+    font-size: 27px;
+  }
+  .project-image-dialog {
+    width: calc(100% - 16px);
+    padding: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bento-shot > img {
+    transition: none;
+  }
+  .bento-shot:hover > img {
+    transform: none;
+  }
+}

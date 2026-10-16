@@ -8,7 +8,7 @@ root = Path(__file__).resolve().parents[1] / 'designs/signal-station/assets/tech
 root.mkdir(parents=True, exist_ok=True)
 devicons = ['java', 'python', 'javascript', 'typescript', 'php', 'html5', 'css3',
             'react', 'tailwindcss', 'mysql', 'supabase', 'wordpress', 'vercel',
-            'git', 'github', 'gitlab', 'slack', 'google', 'godot', 'figma', 'firebase']
+            'git', 'github', 'gitlab', 'slack', 'google', 'godot', 'figma', 'firebase', 'vitejs', 'materialui', 'reactrouter']
 sources = {name: f'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/{name}/{name}-original.svg'
            for name in devicons}
 sources.update({name: f'https://cdn.jsdelivr.net/npm/simple-icons@16.0.0/icons/{name}.svg'

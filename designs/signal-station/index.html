@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="assets/ui/hero-role.css" />
     <link rel="stylesheet" href="src/resume-content.css" />
     <link rel="stylesheet" href="src/scroll-invitation.css" />
+    <link rel="stylesheet" href="src/command-center.css" />
+    <link rel="stylesheet" href="src/project-bento.css" />
     <link
       rel="preload"
       href="assets/brand/ibm-plex-sans-latin-400-normal.woff2"
@@ -434,16 +436,37 @@
               <button
                 class="screen-target"
                 data-project="2"
-                aria-label="Open experience 003: Leadership"
+                aria-label="Open project 003: Project 003"
+              >
+                <span class="sr-only">Project 003 — Details coming soon</span>
+              </button>
+              <button
+                class="screen-target"
+                data-project="3"
+                aria-label="Open project 004: Project 004"
               >
                 <span class="sr-only"
-                  >Leadership — Student organizations &amp; delivery</span
-                >
+                  >Project 004 — Details coming soon</span
+                ></button
+              ><button
+                class="screen-target"
+                data-project="4"
+                aria-label="Open project 005: Project 005"
+              >
+                <span class="sr-only"
+                  >Project 005 — Details coming soon</span
+                ></button
+              ><button
+                class="screen-target"
+                data-project="5"
+                aria-label="Open project 006: Project 006"
+              >
+                <span class="sr-only">Project 006 — Details coming soon</span>
               </button>
             </div>
             <p class="screen-help">
-              Ideas, built. Teams, connected.<br /><span
-                >Two projects and a record of leadership.</span
+              Six screens. Six projects.<br /><span
+                >Select any display to explore the work.</span
               >
             </p>
           </div>
@@ -508,6 +531,7 @@
               <span aria-hidden="true"></span> A little light on the journey so
               far.
             </p>
+            <div id="education-experience"></div>
           </div>
           <nav class="chapter-progress" aria-label="Story chapters">
             <a href="#station" aria-label="Introduction" aria-current="step"
@@ -572,30 +596,7 @@
                 <p class="project-note">Full case study coming soon.</p>
               </div>
             </article>
-            <div class="project-placeholder">
-              <span>PROJECT 002</span>
-              <h3>ESQUAKE</h3>
-              <p>
-                A story-based serious game for earthquake preparedness among
-                elementary students. Project Manager &amp; Game Developer
-                leading a 16-member capstone team. August 2026–Present.
-              </p>
-              <button class="project-link" data-open-record="1">
-                Project overview ↗
-              </button>
-            </div>
-            <div class="project-placeholder">
-              <span>EXPERIENCE 003</span>
-              <h3>Student leadership</h3>
-              <p>
-                Deputy Secretary General, SLU SAMCIS KASAMA/SSC Assembly;
-                Officer-in-Charge &amp; First Year IT Representative, SLU
-                Integrated Confederacy. January–July 2024.
-              </p>
-              <button class="project-link" data-open-record="2">
-                Experience overview ↗
-              </button>
-            </div>
+            <div id="project-reading-list"></div>
           </div>
         </section>
         <section
@@ -663,6 +664,20 @@
               <span class="record-status">2022–2023</span>
               <h3>University of Santo Tomas – Senior High School</h3>
               <p>STEM strand · Sampaloc, Manila</p>
+            </div>
+            <div class="education-record">
+              <span class="record-status">January–July 2024</span>
+              <h3>Leadership &amp; campus experience</h3>
+              <p>
+                Deputy Secretary General, SLU SAMCIS KASAMA/SSC Assembly;
+                Officer-in-Charge &amp; First Year IT Representative, SLU
+                Integrated Confederacy.
+              </p>
+              <p>
+                Same-day minutes for 40+ meetings, council records and
+                stakeholder coordination, student events, and intramural team
+                logistics.
+              </p>
             </div>
           </div>
         </section>
@@ -763,6 +778,11 @@
         class="technology-list"
         aria-label="Tools used"
       ></div>
+      <section
+        id="project-bento"
+        aria-label="Project overview and feature gallery"
+        hidden
+      ></section>
       <button class="primary dialog-done">
         Back to exploring <span aria-hidden="true">↗</span>
       </button>

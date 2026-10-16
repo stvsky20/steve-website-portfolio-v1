@@ -62,8 +62,8 @@ export function createStory({
             [3.1, 11.2, 0],
           ],
           [
-            [1.8, 4, 10.5],
-            [1.8, 1.3, 2.8],
+            [1.8, 4.1, 10.5],
+            [1.8, 2.4, 2.8],
           ],
           [
             [-6.9, 5.5, 13.5],
@@ -88,8 +88,8 @@ export function createStory({
             [-4.7, 6.7, 0],
           ],
           [
-            [1.8, 3.05, 5.6],
-            [1.8, 2.15, 2.8],
+            [1.8, 3.4, 6.5],
+            [1.8, 2.55, 2.8],
           ],
           [
             [-6.9, 4.6, 9.8],
@@ -240,8 +240,7 @@ export function createStory({
           top: origin + stack.at + station.clientHeight * 1.24,
           behavior: "instant",
         });
-        if (location.hash !== "#stack")
-          history.pushState(null, "", "#stack");
+        if (location.hash !== "#stack") history.pushState(null, "", "#stack");
         update();
         requestFrame();
       }

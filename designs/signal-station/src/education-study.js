@@ -39,6 +39,19 @@ export const educationRecords = [
     ],
     note: "The academic foundation before my BS Information Technology degree.",
   },
+  {
+    title: "Leadership & campus experience",
+    kind: "Leadership experience",
+    summary: "Saint Louis University · January–July 2024",
+    details: [
+      "SLU SAMCIS KASAMA/SSC Assembly · Deputy Secretary General",
+      "Produced same-day minutes for 40+ meetings across 5 committees and approximately 60 officers; tracked decisions, action items, deadlines, and attendance.",
+      "Organized the central Google Drive repository and assumed Secretary General duties when required, coordinating records, correspondence, permits, and stakeholders.",
+      "SLU Integrated Confederacy · Officer-in-Charge & First Year IT Representative",
+      "Coordinated a Valentine’s Day booth that generated approximately ₱6,000 in sales, organized a Tekken tournament, and coordinated basketball and volleyball teams during university intramurals.",
+    ],
+    note: "Coordinating people, decisions, and delivery beyond software projects.",
+  },
 ];
 
 function paperTexture(type) {

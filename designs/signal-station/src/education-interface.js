@@ -19,13 +19,16 @@ export function createEducationInterface({
     overflow = "";
   const buttons = educationRecords.map((record, index) => {
     const button = document.createElement("button");
-    button.className = "education-target";
+    button.className =
+      index < 3 ? "education-target" : "education-experience-button";
     button.setAttribute("aria-label", `Read ${record.kind.toLowerCase()}`);
     const label = document.createElement("span");
-    label.textContent = record.kind;
+    label.textContent = index < 3 ? record.kind : `${record.title} ↗`;
     button.append(label);
     button.addEventListener("click", () => select(index));
-    root.querySelector(".education-targets").append(button);
+    root
+      .querySelector(index < 3 ? ".education-targets" : "#education-experience")
+      .append(button);
     return button;
   });
   function select(index) {

@@ -28,6 +28,12 @@ Open http://127.0.0.1:4175/. The assets are local; no API keys are required. See
 node --test designs/signal-station/tests/*.test.js
 ```
 
+## Deploy to Vercel
+
+Import this GitHub repository, keep Root Directory at the repository root, and deploy `main`. The root `vercel.json` explicitly selects the Other framework preset, skips dependency installation, and builds only Signal Station with `node designs/signal-station/scripts/build-static.mjs`.
+
+Only `designs/signal-station/dist` is published. It contains the station homepage, runtime modules, styles, assets, and licenses. The other portfolio concepts, root Next.js pages, tests, documentation, and authoring previews are not in that output. The compiled React title assets are checked in; rebuild them with `npm run build:station-role` before deployment if their source changes.
+
 The instructions below describe the original root Next.js concept, not the active Signal Station.
 
 ## Original Next.js portfolio

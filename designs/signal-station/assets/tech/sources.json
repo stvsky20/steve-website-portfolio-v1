@@ -83,6 +83,18 @@
     "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/firebase/firebase-original.svg",
     "library": "Devicon (MIT)"
   },
+  "vitejs": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/vitejs/vitejs-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "materialui": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/materialui/materialui-original.svg",
+    "library": "Devicon (MIT)"
+  },
+  "reactrouter": {
+    "source": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/reactrouter/reactrouter-original.svg",
+    "library": "Devicon (MIT)"
+  },
   "clickup": {
     "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.0.0/icons/clickup.svg",
     "library": "Simple Icons (CC0-1.0)"

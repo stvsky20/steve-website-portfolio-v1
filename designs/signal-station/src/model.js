@@ -354,8 +354,10 @@ export function createStation() {
   const lid = new THREE.Group();
   lid.position.set(0, 0.83, -0.48);
   consoleGroup.add(lid);
-  box(0, 0.4, 0, 2.8, 0.8, 0.16, materials.rust, lid);
-  for (const [index, x] of [-0.83, 0, 0.83].entries()) {
+  box(0, 0.75, 0, 2.8, 1.5, 0.16, materials.rust, lid);
+  for (let index = 0; index < 6; index++) {
+    const x = ((index % 3) - 1) * 0.83;
+    const y = 1.1 - Math.floor(index / 3) * 0.65;
     const displayTexture = projectTexture(index);
     const displayMat = new THREE.MeshStandardMaterial({
       map: displayTexture,
@@ -364,8 +366,8 @@ export function createStation() {
       emissiveIntensity: 0.6,
       roughness: 0.65,
     });
-    box(x, 0.44, 0.1, 0.72, 0.53, 0.025, materials.dark, lid);
-    const screen = box(x, 0.44, 0.12, 0.62, 0.43, 0.02, displayMat, lid);
+    box(x, y, 0.1, 0.74, 0.57, 0.025, materials.dark, lid);
+    const screen = box(x, y, 0.12, 0.64, 0.46, 0.02, displayMat, lid);
     screenMeshes.push(screen);
   }
   for (let i = 0; i < 9; i++) {

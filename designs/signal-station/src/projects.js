@@ -39,22 +39,102 @@ export const projects = [
     placeholder: false,
   },
   {
-    title: "Leadership",
-    label: "Student organizations & delivery",
-    kind: "Experience",
+    title: "Laundrify",
+    label: "Laundry operations, simplified",
     description:
-      "Deputy Secretary General, SLU SAMCIS KASAMA/SSC Assembly; Officer-in-Charge & First Year IT Representative, SLU Integrated Confederacy. Coordinated records, stakeholders, teams, and student events.",
+      "A responsive laundry-management frontend bringing the counter, orders, customers, machines, and reporting into one workspace. Built on the Berry React Admin Template, with Gabriel’s as a fictional demo branch.",
     recognition:
-      "40+ meetings across 5 committees and approximately 60 officers; approximately ₱6,000 in sales from a Valentine’s Day booth.",
-    note: "January–July 2024 · Saint Louis University, Baguio City",
+      "Functional frontend prototype · Local persistence · Fictional data",
+    note: "Authentication, payments, messaging, and physical-machine integrations are not connected. Revenue charts use sample data; machine cycles are simulated.",
     contributions: [
-      "Produced same-day meeting minutes and tracked decisions, action items, deadlines, and attendance.",
-      "Organized the council’s central Google Drive repository and assumed Secretary General duties when required.",
-      "Organized a Tekken tournament and coordinated basketball and volleyball teams during university intramurals.",
+      "Built reusable React interfaces with shared Context state and localStorage persistence.",
+      "Separated pricing logic, derived metrics, immutable updates, and CSV export from presentation.",
     ],
-    technologies: ["Google Workspace"],
+    technologies: [
+      "JavaScript",
+      "React 19",
+      "Vite 7",
+      "Material UI 7",
+      "React Router 7",
+      "Emotion",
+      "ApexCharts",
+    ],
     placeholder: false,
+    bento: {
+      headline: "Less busywork. More flow.",
+      approach:
+        "Reusable components. Shared client state. Pricing logic kept separate from the interface. Responsive layouts, derived metrics, and immutable updates throughout.",
+      foundation:
+        "Berry React Admin Template · ESLint · Prettier · Template source verification",
+      features: [
+        {
+          image: "01-dashboard.webp",
+          title: "Operations at a glance",
+          caption: "Branch metrics, in sync.",
+          detail:
+            "Shared state powers branch-specific revenue, orders, pickups, and unique-customer totals. Revenue comparisons use sample time-series data.",
+          tone: "blue",
+          alt: "Laundrify operations dashboard in the Gabriel’s demo workspace, showing revenue, orders, customers, and charts.",
+        },
+        {
+          image: "02-counter-pos.webp",
+          title: "A smarter counter",
+          caption: "Clear quotes. Every order.",
+          detail:
+            "A tablet-oriented POS with validated quantities, itemized pricing, service inclusions, and staff/shop allocation. Each order saves its pricing snapshot.",
+          tone: "cream",
+          alt: "Laundrify counter and point-of-sale interface with service choices and an itemized order quote.",
+        },
+        {
+          image: "03-order-tracking.webp",
+          title: "Every load, tracked",
+          caption: "Search. Sort. Export.",
+          detail:
+            "Filter orders by branch, status, and search; sort and paginate results, update statuses, and export escaped CSV files.",
+          tone: "mint",
+          alt: "Laundrify order workspace with searchable order records, statuses, and collection details.",
+        },
+        {
+          image: "04-customer-history.webp",
+          title: "Know every customer",
+          caption: "History, connected.",
+          detail:
+            "Customer cards derive spending, order counts, and pickup readiness from shared orders, with direct navigation into the customer’s history.",
+          tone: "peach",
+          alt: "Laundrify customer directory with customer cards, order totals, spending, and pickup information.",
+        },
+        {
+          image: "05-machine-status.webp",
+          title: "Machines, in motion",
+          caption: "A simulated cycle view.",
+          detail:
+            "Rule-based controls switch machines between available, running, and maintenance states. SVG motion respects reduced motion; no equipment or live countdown is connected.",
+          tone: "lavender",
+          alt: "Laundrify machine-status simulation with illustrated washing machines and running, available, and maintenance states.",
+        },
+        {
+          image: "06-business-reports.webp",
+          title: "See the bigger picture",
+          caption: "Insights you can export.",
+          detail:
+            "Sample revenue charts sit alongside service distributions derived from current orders, period comparisons, and downloadable CSV reports.",
+          tone: "yellow",
+          alt: "Laundrify reporting dashboard with revenue charts, service breakdowns, and CSV export.",
+        },
+      ],
+    },
   },
+  ...[4, 5, 6].map((number) => ({
+    title: `Project ${String(number).padStart(3, "0")}`,
+    label: "Details coming soon",
+    description:
+      "A reserved slot for another project. The title, summary, screenshots, and contribution will be added when the project details are supplied.",
+    recognition: "Project details to be added.",
+    note: "Preview slot · This is not a completed case study.",
+    contributions: [],
+    technologies: [],
+    placeholder: true,
+  })),
 ];
 
 export function projectTexture(index) {

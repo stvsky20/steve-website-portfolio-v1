@@ -20,3 +20,5 @@ designs/signal-station/operator-refined-*.jpg
 *.blend1
 .DS_Store
 Thumbs.db
+dist/
+.vercel/

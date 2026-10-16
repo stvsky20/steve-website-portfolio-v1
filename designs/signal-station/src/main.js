@@ -19,6 +19,7 @@ import { createCoreInterface } from "./core-interface.js";
 import { createEducationInterface } from "./education-interface.js";
 import { createStory } from "./story.js";
 import { projects } from "./projects.js";
+import { renderProjectBento } from "./project-bento.js";
 import { technologyChip } from "./tech-logos.js";
 import { coreTools } from "./signal-core.js";
 
@@ -39,12 +40,32 @@ stackGroups.replaceChildren(
   }),
 );
 document.querySelectorAll(".screen-target").forEach((button, index) => {
+  button.dataset.projectIndex = String(index);
   button.setAttribute(
     "aria-label",
-    `Open ${projects[index].kind || "project"} ${String(index + 1).padStart(3, "0")}: ${projects[index].title}`,
+    `Open project ${String(index + 1).padStart(3, "0")}: ${projects[index].title}`,
   );
   button.querySelector("span").textContent =
     `${projects[index].title} — ${projects[index].label}`;
+});
+const projectReadingList = document.querySelector("#project-reading-list");
+projects.slice(1).forEach((project, offset) => {
+  const article = document.createElement("article");
+  article.className = "project-placeholder";
+  const number = document.createElement("span");
+  number.textContent = `PROJECT / ${String(offset + 2).padStart(3, "0")}`;
+  const title = document.createElement("h3");
+  title.textContent = project.title;
+  const copy = document.createElement("p");
+  copy.textContent = project.description;
+  const button = document.createElement("button");
+  button.className = "project-link";
+  button.dataset.openRecord = String(offset + 1);
+  button.textContent = project.placeholder
+    ? "View pending project slot ↗"
+    : "Project overview ↗";
+  article.append(number, title, copy, button);
+  projectReadingList.append(article);
 });
 
 const $ = (selector) => document.querySelector(selector);
@@ -101,8 +122,12 @@ function openProject(opener = document.activeElement, index = 0) {
   $("#project-description").textContent = project.description;
   $("#project-recognition-text").textContent = project.recognition;
   $("#project-detail-note").textContent = project.note;
-  dialog.querySelectorAll("h3")[1].textContent =
-    index === 0 ? "Recognition" : index === 1 ? "Academic context" : "Impact";
+  dialog.querySelectorAll("h3")[1].textContent = project.placeholder
+    ? "Status"
+    : index === 0
+      ? "Recognition"
+      : "Academic context";
+  dialog.querySelectorAll("h3")[2].hidden = !project.contributions.length;
   const contributions = $("#project-contributions");
   contributions.replaceChildren(
     ...project.contributions.map((text) => {
@@ -114,6 +139,11 @@ function openProject(opener = document.activeElement, index = 0) {
   $("#project-technologies").replaceChildren(
     ...project.technologies.map(technologyChip),
   );
+  dialog.classList.toggle(
+    "has-bento",
+    renderProjectBento(project, $("#project-bento")),
+  );
+  dialog.scrollTop = 0;
   dialogOpener = opener;
   dialogScroll = window.scrollY;
   previousOverflow = document.body.style.overflow;
@@ -133,7 +163,7 @@ document.querySelectorAll("[data-open-record]").forEach((button) => {
 });
 for (const button of document.querySelectorAll(".screen-target"))
   button.addEventListener("click", () =>
-    openProject(button, Number(button.dataset.project)),
+    openProject(button, Number(button.dataset.projectIndex)),
   );
 $(".dialog-close").addEventListener("click", () => dialog.close());
 $(".dialog-done").addEventListener("click", () => dialog.close());
