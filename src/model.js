@@ -1,6 +1,6 @@
 import * as THREE from "../vendor/three.module.js";
 import { beveledBox, addStationDetails } from "./cinematic.js";
-import { projectTexture } from "./projects.js";
+import { projects, projectTexture } from "./projects.js";
 import {
   dishGeometry,
   cliffGeometry,
@@ -355,19 +355,20 @@ export function createStation() {
   lid.position.set(0, 0.83, -0.48);
   consoleGroup.add(lid);
   box(0, 0.75, 0, 2.8, 1.5, 0.16, materials.rust, lid);
-  for (let index = 0; index < 6; index++) {
-    const x = ((index % 3) - 1) * 0.83;
+  for (let index = 0; index < projects.length; index++) {
+    const row = Math.floor(index / 3);
+    const columns = Math.min(3, projects.length - row * 3);
+    const x = ((index % 3) - (columns - 1) / 2) * 0.83;
     const y = 1.1 - Math.floor(index / 3) * 0.65;
     const displayTexture = projectTexture(index);
-    const displayMat = new THREE.MeshStandardMaterial({
+    // Screens emit their own colors, independent of sunlight and night lighting.
+    const displayMat = new THREE.MeshBasicMaterial({
       map: displayTexture,
-      emissiveMap: displayTexture,
-      emissive: 0xffffff,
-      emissiveIntensity: 0.6,
-      roughness: 0.65,
+      toneMapped: false,
+      fog: false,
     });
-    box(x, y, 0.1, 0.74, 0.57, 0.025, materials.dark, lid);
-    const screen = box(x, y, 0.12, 0.64, 0.46, 0.02, displayMat, lid);
+    box(x, y, 0.1, 0.79, 0.59, 0.025, materials.dark, lid);
+    const screen = box(x, y, 0.12, 0.73, 0.52, 0.02, displayMat, lid);
     screenMeshes.push(screen);
   }
   for (let i = 0; i < 9; i++) {

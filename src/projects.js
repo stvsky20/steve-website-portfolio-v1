@@ -453,20 +453,6 @@ export const projects = [
       scopeTitle: "From execution to review.",
     },
   },
-  ...[6].map((number) => ({
-    title: `Project ${String(number).padStart(3, "0")}`,
-    headerFacts: [
-      { label: "Project status", value: "Details coming soon", icon: "status" },
-    ],
-    label: "Details coming soon",
-    description:
-      "A reserved slot for another project. The title, summary, screenshots, and contribution will be added when the project details are supplied.",
-    recognition: "Project details to be added.",
-    note: "Preview slot · This is not a completed case study.",
-    contributions: [],
-    technologies: [],
-    placeholder: true,
-  })),
 ];
 
 export function projectTexture(index) {
@@ -477,33 +463,46 @@ export function projectTexture(index) {
   const ctx = canvas.getContext("2d");
   ctx.fillStyle = "#102e35";
   ctx.fillRect(0, 0, 768, 512);
-  ctx.strokeStyle = "#52706b";
+  ctx.strokeStyle = "#547b7b";
   ctx.lineWidth = 3;
   ctx.strokeRect(20, 20, 728, 472);
   ctx.fillStyle = "#f0c68b";
-  ctx.font = "500 30px monospace";
+  ctx.font = "600 34px monospace";
   ctx.fillText(`${project.kind || "PROJECT"} / 00${index + 1}`, 48, 78);
   ctx.fillStyle = "#f4efdf";
-  let titleSize = index === 0 ? 120 : 104;
-  ctx.font = `500 ${titleSize}px sans-serif`;
-  while (ctx.measureText(project.title).width > 668) {
-    ctx.font = `500 ${--titleSize}px sans-serif`;
+  // Wrap long names instead of shrinking the most important text on the panel.
+  ctx.font = "600 94px sans-serif";
+  const lines = [""];
+  for (const word of project.title.split(" ")) {
+    const last = lines.length - 1;
+    const next = lines[last] ? `${lines[last]} ${word}` : word;
+    if (ctx.measureText(next).width > 676 && lines[last]) lines.push(word);
+    else lines[last] = next;
   }
-  ctx.fillText(project.title, 44, 245);
-  ctx.font = "32px sans-serif";
-  ctx.fillStyle = "#baccc0";
-  ctx.fillText(project.label, 48, 310);
+  if (lines.length === 1) ctx.font = "600 112px sans-serif";
+  lines.forEach((line, row) =>
+    ctx.fillText(line, 44, lines.length === 1 ? 237 : 185 + row * 105),
+  );
+  ctx.font = "500 38px sans-serif";
+  ctx.fillStyle = "#d3e3dd";
+  const screenLabels = [
+    "Citizen reporting",
+    "Earthquake preparedness",
+    "Laundry operations",
+    "Lightweight Android POS",
+    "Trading journal & analytics",
+    "Details coming soon",
+  ];
+  ctx.fillText(screenLabels[index] || project.label, 48, 350);
   ctx.strokeStyle = "#52706b";
   ctx.beginPath();
-  ctx.moveTo(48, 366);
-  ctx.lineTo(720, 366);
+  ctx.moveTo(48, 384);
+  ctx.lineTo(720, 384);
   ctx.stroke();
-  ctx.font = "28px monospace";
+  ctx.font = "600 34px monospace";
   ctx.fillStyle = "#f0c68b";
   ctx.fillText(
-    project.placeholder
-      ? "PREVIEW / DETAILS TO FOLLOW"
-      : `OPEN ${(project.kind || "PROJECT").toUpperCase()} OVERVIEW`,
+    project.placeholder ? "DETAILS SOON" : "OPEN PROJECT  →",
     48,
     442,
   );

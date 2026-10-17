@@ -5,6 +5,8 @@ import { scrubPosition } from "./scroll-scrub.js";
 import { educationReveal } from "./education-motion.js";
 import { scrollTransmission, transmissionPhases } from "./transmission.js";
 import { createChapterRoute } from "./chapter-route.js";
+import { createContactLaunch } from "./contact-launch.js";
+import { UPLINK_SCROLL_HEIGHTS } from "./uplink-timing.js";
 
 export function createStory({
   camera,
@@ -37,6 +39,19 @@ export function createStory({
     storyHeight = 0;
   let origin = 0,
     chapterStarts = [];
+  const contactLaunch = createContactLaunch({
+    button: document.querySelector("#contact-auto-launch"),
+    reduce,
+    requestFrame,
+    bounds: () => {
+      const beyond = chapterStarts.find((chapter) => chapter.id === "beyond");
+      const h = station.clientHeight;
+      const start = origin + beyond.at + h * 0.67;
+      // Scroll offsets are rounded by browsers; finish just beyond the exact
+      // boundary so every viewport reliably reaches the arrival phase.
+      return { start, end: Math.ceil(start + h * UPLINK_SCROLL_HEIGHTS) + 1 };
+    },
+  });
   function measure() {
     const h = station.clientHeight,
       mobile = station.clientWidth < 650;
@@ -62,7 +77,7 @@ export function createStory({
             [3.1, 11.2, 0],
           ],
           [
-            [1.8, 4.1, 10.5],
+            [1.8, 4.0, 10.1],
             [1.8, 2.4, 2.8],
           ],
           [
@@ -88,8 +103,8 @@ export function createStory({
             [-4.7, 6.7, 0],
           ],
           [
-            [1.8, 3.4, 6.5],
-            [1.8, 2.55, 2.8],
+            [1.8, 3.25, 6.2],
+            [1.8, 2.6, 2.8],
           ],
           [
             [-6.9, 4.6, 9.8],
@@ -138,6 +153,7 @@ export function createStory({
     requestFrame();
   }
   function update(dt = 0) {
+    contactLaunch.update();
     const target = Math.max(0, window.scrollY - origin);
     const sample = scrubPosition(
       visualScroll,
@@ -217,6 +233,7 @@ export function createStory({
     applyScriptedView(camera, controls, camera.position, controls.target);
   }
   document.addEventListener("station:rewind-flight", () => {
+    contactLaunch.cancel();
     const beyond = chapterStarts.find((chapter) => chapter.id === "beyond");
     window.scrollTo({
       top: origin + beyond.at + station.clientHeight * 0.42,
@@ -228,6 +245,7 @@ export function createStory({
   });
   for (const link of document.querySelectorAll('a[href^="#"]')) {
     link.addEventListener("click", (event) => {
+      contactLaunch.cancel();
       // Navigation is an explicit destination jump, rather than a wheel gesture.
       snapScroll = true;
       if (journeys.active) journeys.returnStation(true);
@@ -282,7 +300,7 @@ export function createStory({
   return {
     update,
     get moving() {
-      return scrubMoving;
+      return scrubMoving || contactLaunch.moving;
     },
     get chapter() {
       return current;

@@ -610,8 +610,6 @@ function tick(now) {
   for (const light of model.lamps) light.visible = state.lights;
   model.materials.lamp.color.set(state.lights ? 0xffcb79 : 0x4a4435);
   model.materials.screen.emissiveIntensity = state.lights ? 1.3 : 0;
-  for (const screen of model.screenMeshes)
-    screen.material.emissiveIntensity = state.lights ? 0.65 : 0;
   environment.seaUniforms.time.value = t;
   environment.skyUniforms.time.value = t;
   environment.seaUniforms.eye.value.copy(camera.position);

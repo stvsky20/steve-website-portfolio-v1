@@ -1,0 +1,82 @@
+.orbit-return {
+  position: fixed;
+  right: 7%;
+  bottom: 90px;
+  z-index: 40;
+  min-width: 300px;
+  display: none;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 16px 20px;
+  color: #132f39;
+  background: linear-gradient(120deg, #ffe4af, #efbd73);
+  border: 1px solid #ffe8bb;
+  border-radius: 20px;
+  box-shadow:
+    0 6px 0 #805c36,
+    0 12px 32px #edbd7026;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+.station[data-view="space"] .orbit-return {
+  display: flex;
+}
+@media (max-width: 650px) {
+  .orbit-return {
+    right: 16px;
+    bottom: 22px;
+    min-width: 0;
+    width: calc(100% - 32px);
+    box-sizing: border-box;
+  }
+}
+.orbit-return-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border: 1px solid #29434b55;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px #fff5;
+}
+.orbit-return-icon .icon {
+  width: 24px;
+  height: 24px;
+}
+.orbit-return strong {
+  display: block;
+  font: 650 1.125rem/1.3 var(--font-sans);
+}
+.orbit-return small {
+  display: block;
+  margin-top: 4px;
+  font: 400 0.875rem/1.4 var(--font-sans);
+  color: #344c50;
+}
+.orbit-return-star {
+  margin-left: auto;
+  font-size: 1.5rem;
+}
+.orbit-return:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 9px 0 #805c36,
+    0 16px 40px #edbd7040;
+}
+.orbit-return:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #805c36;
+}
+.orbit-return:focus-visible {
+  outline: 3px solid #fff4cf;
+  outline-offset: 6px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .orbit-return {
+    transition: none;
+  }
+}

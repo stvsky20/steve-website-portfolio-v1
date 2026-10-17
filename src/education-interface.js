@@ -1,3 +1,4 @@
+import { renderEducationDetails } from "./education-details.js";
 import { emitSound } from "./audio.js";
 import * as THREE from "../vendor/three.module.js";
 import { educationRecords } from "./education-study.js";
@@ -54,13 +55,7 @@ export function createEducationInterface({
     document.querySelector("#education-dialog-summary").textContent =
       record.summary;
     document.querySelector("#education-dialog-note").textContent = record.note;
-    const list = document.querySelector("#education-dialog-details");
-    list.replaceChildren();
-    for (const text of record.details) {
-      const item = document.createElement("p");
-      item.textContent = text;
-      list.append(item);
-    }
+    renderEducationDetails(dialog, index);
     document.body.style.overflow = "hidden";
     dialog.showModal();
     requestFrame();

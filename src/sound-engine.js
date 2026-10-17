@@ -132,34 +132,69 @@ export function createSoundEngine(Context) {
     param.setValueAtTime(param.value, now);
     param.linearRampToValueAtTime(value, now + duration);
   }
-  // Sustained midrange harmonics remain audible on small speakers. Their pitch
-  // and energy follow the charging pose instead of decaying after one second.
+  // Fixed, inharmonic machinery tones: build energy through pulse speed and
+  // bandwidth rather than a voice-like rising fundamental.
   const chargeBus = context.createGain();
   chargeBus.gain.value = 0;
-  chargeBus.connect(effects);
-  const chargeVoices = [
-    { ratio: 1, gain: 0.6, type: "triangle" },
-    { ratio: 2, gain: 0.22, type: "sine" },
-    { ratio: 3, gain: 0.07, type: "sine" },
-  ].map(({ ratio, gain, type }) => {
+  const chargeFilter = context.createBiquadFilter();
+  chargeFilter.type = "lowpass";
+  chargeFilter.Q.value = 0.45;
+  chargeFilter.frequency.value = 900;
+  const pulseGate = context.createGain(),
+    chargePulse = context.createOscillator(),
+    pulseDepth = context.createGain();
+  pulseGate.gain.value = 0.75;
+  chargePulse.type = "square";
+  chargePulse.frequency.value = 8;
+  pulseDepth.gain.value = 0.22;
+  chargePulse.connect(pulseDepth);
+  pulseDepth.connect(pulseGate.gain);
+  chargeBus.connect(chargeFilter);
+  chargeFilter.connect(pulseGate);
+  pulseGate.connect(effects);
+  chargePulse.start();
+  for (const { frequency, gain, type } of [
+    { frequency: 74, gain: 0.32, type: "triangle" },
+    { frequency: 421, gain: 0.16, type: "sawtooth" },
+    { frequency: 1511, gain: 0.045, type: "square" },
+  ]) {
     const oscillator = context.createOscillator(),
       level = context.createGain();
     oscillator.type = type;
-    oscillator.frequency.value = 156 * ratio;
+    oscillator.frequency.value = frequency;
     level.gain.value = gain;
     oscillator.connect(level);
     level.connect(chargeBus);
     oscillator.start();
-    return { oscillator, ratio };
-  });
+  }
+  const electricalNoise = context.createBuffer(
+    1,
+    context.sampleRate,
+    context.sampleRate,
+  );
+  const electricalData = electricalNoise.getChannelData(0);
+  for (let i = 0; i < electricalData.length; i++)
+    electricalData[i] = random() * 2 - 1;
+  const chargeStatic = context.createBufferSource(),
+    staticFilter = context.createBiquadFilter(),
+    staticGain = context.createGain();
+  chargeStatic.buffer = electricalNoise;
+  chargeStatic.loop = true;
+  staticFilter.type = "highpass";
+  staticFilter.frequency.value = 1100;
+  staticGain.gain.value = 0.16;
+  chargeStatic.connect(staticFilter);
+  staticFilter.connect(staticGain);
+  staticGain.connect(chargeBus);
+  chargeStatic.start();
   let flightProgress = 0;
   function syncCharge() {
     const amount = chargeAmount(flightProgress);
     const active = enabled && fx && amount > 0;
-    ramp(chargeBus.gain, active ? 0.3 + amount * 0.7 : 0, active ? 0.18 : 0.08);
+    ramp(chargeBus.gain, active ? 0.4 + amount * 0.6 : 0, active ? 0.08 : 0.04);
     ramp(ambient.gain, active ? 0.55 : 1, 0.35);
-    for (const { oscillator, ratio } of chargeVoices)
-      ramp(oscillator.frequency, (156 + amount * 324) * ratio, 0.18);
+    ramp(chargePulse.frequency, 8 + amount * 26, 0.08);
+    ramp(chargeFilter.frequency, 900 + amount * 3900, 0.08);
   }
   function note(
     frequency,
@@ -297,23 +332,28 @@ export function createSoundEngine(Context) {
         note(990, now + 0.09, 0.55, 0.045, effects);
       }
       if (type === "fire") {
-        note(220, now, 1.2, 0.85, effects, "triangle", 55);
-        note(960, now, 1.6, 0.3, effects, "sine", 180);
+        // A short electrical snap, laser chirp, and low recoil. No long vowel-
+        // like sine glide; this is an original synthesized sci-fi discharge.
+        note(2800, now, 0.14, 0.24, effects, "sawtooth", 170);
+        note(1350, now + 0.018, 0.22, 0.18, effects, "square", 85);
+        note(84, now, 0.36, 0.7, effects, "triangle", 34);
+        note(1877, now + 0.04, 0.12, 0.055, effects, "triangle", 1423);
         const burst = context.createBufferSource(),
           filter = context.createBiquadFilter(),
           gain = context.createGain();
-        burst.buffer = noise;
+        burst.buffer = electricalNoise;
         filter.type = "lowpass";
-        filter.frequency.setValueAtTime(2400, now);
-        filter.frequency.exponentialRampToValueAtTime(100, now + 1.2);
+        filter.Q.value = 0.5;
+        filter.frequency.setValueAtTime(6400, now);
+        filter.frequency.exponentialRampToValueAtTime(500, now + 0.42);
         gain.gain.setValueAtTime(0, now);
-        gain.gain.linearRampToValueAtTime(2, now + 0.02);
-        gain.gain.exponentialRampToValueAtTime(0.0001, now + 1.6);
+        gain.gain.linearRampToValueAtTime(0.85, now + 0.006);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.65);
         burst.connect(filter);
         filter.connect(gain);
         gain.connect(effects);
         burst.start(now);
-        burst.stop(now + 1.65);
+        burst.stop(now + 0.7);
         burst.onended = () => {
           burst.disconnect();
           filter.disconnect();

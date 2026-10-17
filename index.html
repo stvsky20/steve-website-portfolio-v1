@@ -31,6 +31,9 @@
     <link rel="stylesheet" href="src/institution-brands.css" />
     <link rel="stylesheet" href="src/section-marker.css" />
     <link rel="stylesheet" href="src/harbor-header.css" />
+    <link rel="stylesheet" href="src/contact-choices.css" />
+    <link rel="stylesheet" href="src/education-details.css" />
+    <link rel="stylesheet" href="src/orbit-return.css" />
     <link
       rel="preload"
       href="assets/brand/ibm-plex-sans-latin-400-normal.woff2"
@@ -408,6 +411,18 @@
               soon.</small
             >
           </aside>
+          <a class="orbit-return" href="#station">
+            <span
+              class="orbit-return-icon"
+              aria-hidden="true"
+              data-icon="arrow-up"
+            ></span>
+            <span
+              ><strong>Return to top</strong
+              ><small>Back to the signal station</small></span
+            >
+            <span class="orbit-return-star" aria-hidden="true">✦</span>
+          </a>
           <div class="space-planet-labels" id="space-planet-labels" hidden>
             <button id="world-github">GitHub ↗</button
             ><button id="world-linkedin">LinkedIn ↗</button
@@ -462,19 +477,11 @@
                 data-project="4"
                 aria-label="Open project 005: Project 005"
               >
-                <span class="sr-only"
-                  >Project 005 — Details coming soon</span
-                ></button
-              ><button
-                class="screen-target"
-                data-project="5"
-                aria-label="Open project 006: Project 006"
-              >
-                <span class="sr-only">Project 006 — Details coming soon</span>
+                <span class="sr-only">Project 005 — Details coming soon</span>
               </button>
             </div>
             <p class="screen-help">
-              Six screens. Six projects.<br /><span
+              Five screens. Five projects.<br /><span
                 >Select any display to explore the work.</span
               >
             </p>
@@ -704,69 +711,32 @@
             <div class="beyond-copy">
               <div class="section-kicker">05 / Contact info</div>
               <h2>Let’s connect.</h2>
-              <p>
-                Have a project in mind? Let’s talk.<br />Follow the signal to my
-                profiles and email.
-              </p>
             </div>
-            <div class="launch-action">
-              <div class="scroll-launch-cue">
-                <span data-icon="arrow-down" aria-hidden="true"></span
-                ><strong>Scroll to connect</strong>
+            <div class="contact-choices" aria-label="Choose how to connect">
+              <div class="contact-choice contact-choice-scroll">
+                <span
+                  class="contact-choice-icon"
+                  data-icon="arrow-down"
+                  aria-hidden="true"
+                ></span>
+                <strong>Scroll to connect</strong>
               </div>
-              <p class="scroll-launch-instruction">
-                Find GitHub, LinkedIn, email, and Instagram among the stars.
-              </p>
-              <div class="launch-readiness">
-                <span class="launch-ready"
-                  ><i aria-hidden="true"></i> Uplink ready</span
-                ><span>Station → Orbit → Connect</span>
-              </div>
-              <a href="#about" class="launch-about"
-                >More about Steven <span aria-hidden="true">↓</span></a
+              <button
+                class="contact-choice contact-choice-click"
+                id="contact-auto-launch"
+                type="button"
               >
+                <span
+                  class="contact-choice-icon"
+                  data-icon="rocket-launch"
+                  aria-hidden="true"
+                ></span>
+                <strong>Click to connect</strong>
+              </button>
             </div>
           </div>
         </section>
       </div>
-      <section class="about content-section" id="about">
-        <div class="section-kicker">02 / Behind the signal</div>
-        <div class="about-layout">
-          <h2>Hi, I’m Steven.<br />I like making<br />things connect.</h2>
-          <div>
-            <p class="about-lead">
-              I’m Steven Joe A. Valdez, a software engineer and project manager
-              based in Baguio City, Philippines. I study BS Information
-              Technology at Saint Louis University and build across web and game
-              development.
-            </p>
-            <p>
-              I lead a 16-member capstone team on ESQUAKE and previously led
-              development of AYOS!, a Philippine Startup Challenge X regional
-              finalist. My student leadership work has taught me to turn
-              discussions into clear decisions, organized records, and
-              coordinated delivery.
-            </p>
-            <div
-              data-institution-brands="slu psc"
-              aria-label="Education and recognition"
-            ></div>
-            <p>
-              Outside the work: pickleball, matcha, competitive gaming, film,
-              and futures trading. I speak Filipino (native), English
-              (professional proficiency), and beginner Japanese.
-            </p>
-            <a class="project-link" href="#station"
-              >Back to the station <span aria-hidden="true">↗</span></a
-            >
-          </div>
-        </div>
-      </section>
-      <footer class="site-footer">
-        <a href="#station">STEVEN / THE SIGNAL STATION</a
-        ><span>Built to explore. Made to connect.</span
-        ><span>Portfolio concept · 2026</span>
-      </footer>
     </main>
     <dialog id="project-dialog" aria-labelledby="project-title">
       <button class="dialog-close" aria-label="Close project overview">

@@ -1,0 +1,90 @@
+/* Two equally prominent paths into the same contact journey. */
+.contact-choices {
+  position: absolute;
+  top: 47%;
+  left: 6%;
+  width: min(490px, 43%);
+  display: grid;
+  gap: 14px;
+  pointer-events: auto;
+}
+.contact-choice {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 88px;
+  padding: 18px 22px;
+  border: 1px solid #efbe7a80;
+  border-radius: 18px;
+  background: #12313de8;
+  color: #f4efdf;
+  text-align: left;
+}
+.contact-choice strong {
+  font: 500 clamp(18px, 1.7vw, 24px)/1.3 var(--font-sans);
+  letter-spacing: -0.02em;
+}
+.contact-choice-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 46px;
+  color: #efbe7a;
+  border: 1px solid #efbe7a50;
+  border-radius: 50%;
+}
+.contact-choice-icon .icon {
+  width: 24px;
+  height: 24px;
+}
+.contact-choice-click {
+  background: #efbe7a;
+  color: #102e3b;
+  border-color: #f8d498;
+  cursor: pointer;
+  box-shadow:
+    0 4px 0 #956634,
+    0 10px 26px #061e2830;
+  transition:
+    transform 160ms ease-out,
+    box-shadow 160ms ease-out;
+}
+.contact-choice-click .contact-choice-icon {
+  color: #102e3b;
+  background: #102e3b09;
+  border-color: #102e3b30;
+}
+.contact-choice-click:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 0 #956634,
+    0 14px 30px #061e2830;
+}
+.contact-choice-click:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #956634;
+}
+.contact-choice-click:focus-visible {
+  outline: 3px solid #f4efdf;
+  outline-offset: 5px;
+}
+@media (max-width: 650px) {
+  .contact-choices {
+    top: 43%;
+    left: 6%;
+    right: 6%;
+    width: auto;
+    gap: 12px;
+  }
+  .contact-choice {
+    min-height: 80px;
+    padding: 16px 18px;
+    gap: 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-choice-click {
+    transition: none;
+  }
+}
