@@ -1,7 +1,0 @@
-{
-  "name": "sunflower-story-poc",
-  "private": true,
-  "type": "module",
-  "scripts": { "dev": "node server.mjs", "check": "node --check story.js && node --check studio-scene.js && node --check wall-climb.js && node --check server.mjs" }
-}
-

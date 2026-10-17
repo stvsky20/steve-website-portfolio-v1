@@ -6,7 +6,7 @@ import postcss from "postcss";
 import tailwind from "@tailwindcss/postcss";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
-const station = path.join(root, "designs/signal-station");
+const station = root;
 const output = path.join(station, "assets/ui");
 await mkdir(output, { recursive: true });
 await build({

@@ -2,6 +2,6 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "installCommand": "",
-  "buildCommand": "node designs/signal-station/scripts/build-static.mjs",
-  "outputDirectory": "designs/signal-station/dist"
+  "buildCommand": "node scripts/build-static.mjs",
+  "outputDirectory": "dist"
 }

@@ -8,7 +8,7 @@ import { EnvelopeSimpleIcon } from "@phosphor-icons/react/dist/csr/EnvelopeSimpl
 import { PhoneIcon } from "@phosphor-icons/react/dist/csr/Phone";
 
 const folder = new URL(
-  "../designs/signal-station/assets/contact/",
+  "../assets/contact/",
   import.meta.url,
 );
 await mkdir(folder, { recursive: true });

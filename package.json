@@ -1,24 +1,19 @@
 {
-  "name": "portfolio-website-v2",
+  "name": "steven-valdez-signal-station",
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev": "node scripts/serve-static.mjs",
+    "build": "node scripts/build-static.mjs",
+    "start": "node scripts/serve-static.mjs --production",
     "build:station-role": "node scripts/build-station-role.mjs",
-    "dev": "next dev --hostname 127.0.0.1",
-    "build": "next build",
-    "start": "next start --hostname 127.0.0.1",
-    "typecheck": "tsc --noEmit",
-    "format": "prettier --write app components lib next.config.ts",
-    "format:check": "prettier --check app components lib next.config.ts"
+    "test": "node --test tests/*.test.js",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@fontsource-variable/dm-sans": "5.3.0",
-    "@fontsource/instrument-serif": "5.3.0",
     "@phosphor-icons/react": "^2.1.10",
     "clsx": "2.1.1",
-    "lucide-react": "1.52.0",
     "motion": "14.0.0",
-    "next": "16.4.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "tailwind-merge": "3.7.0"
@@ -33,5 +28,6 @@
     "prettier": "3.9.9",
     "tailwindcss": "4.3.3",
     "typescript": "7.0.2"
-  }
+  },
+  "type": "module"
 }

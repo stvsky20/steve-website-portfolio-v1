@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 import urllib.request
 
-root = Path(__file__).resolve().parents[1] / 'designs/signal-station/assets/tech'
+root = Path(__file__).resolve().parents[1] / 'assets/tech'
 root.mkdir(parents=True, exist_ok=True)
 devicons = ['java', 'python', 'javascript', 'typescript', 'php', 'html5', 'css3',
             'react', 'tailwindcss', 'mysql', 'supabase', 'wordpress', 'vercel',
