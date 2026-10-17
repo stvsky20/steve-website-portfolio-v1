@@ -1,6 +1,7 @@
 import * as THREE from "../vendor/three.module.js";
 import { ayosPhotos } from "./project-documentation.js";
 import { malAyGallery } from "./mal-ay-gallery.js";
+import { tradeJournalGallery } from "./trade-journal-gallery.js";
 
 export const projects = [
   {
@@ -401,7 +402,58 @@ export const projects = [
       scopeTitle: "A store workflow, documented.",
     },
   },
-  ...[5, 6].map((number) => ({
+  {
+    title: "Trade Journal Pro",
+    label: "Full-stack trading journal & analytics",
+    headerFacts: [
+      { label: "My role", value: "Full-Stack Developer", icon: "role" },
+      {
+        label: "Project context",
+        value: "Futures & CFD trade journaling",
+        icon: "prototype",
+      },
+    ],
+    description:
+      "A full-stack web application for recording, reviewing, and analyzing futures and CFD trades. Structured reviews connect risk, trading psychology, and execution history to analytics calculated from persisted records.",
+    recognition: "React & TypeScript frontend · PHP REST API · MySQL database",
+    note: "Runs on Apache/WAMP. Account-based PIN authentication uses server-side sessions. Verification scripts cover timezone handling, trade CRUD, and CSV imports; those application checks were not rerun for this portfolio update.",
+    contributions: [
+      "Built trade management, structured reviews, authentication, import workflows, and performance analytics across the frontend and backend.",
+    ],
+    technologies: [
+      "React",
+      "TypeScript",
+      "TanStack Router",
+      "Tailwind CSS",
+      "Recharts",
+      "PHP",
+      "MySQL",
+      "REST APIs",
+      "Vite",
+      "Apache",
+      "WAMP",
+      "Git",
+    ],
+    placeholder: false,
+    bento: {
+      eyebrow: "FULL-STACK JOURNAL & ANALYTICS",
+      headline: "Record the trade. Understand the decisions.",
+      tags: [
+        "Futures & CFDs",
+        "Structured trade reviews",
+        "TradingView CSV imports",
+      ],
+      imageBase: "assets/projects/trade-journal-pro/screenshots/",
+      features: tradeJournalGallery,
+      approachTitle: "Consistent records. Consistent calculations.",
+      approach:
+        "Frontend service modules separate UI components from API communication. PHP centralizes financial calculations. A staged CSV import reconstructs executions with FIFO matching, handles partial closes and reversals, and detects duplicates with trade fingerprints. UTC storage and IANA timezone conversion keep filters and session analysis aligned.",
+      foundation:
+        "Verification tooling · Timezone handling · Trade CRUD · CSV import behavior",
+      scopeTitle: "From execution to review.",
+    },
+  },
+  ...[6].map((number) => ({
     title: `Project ${String(number).padStart(3, "0")}`,
     headerFacts: [
       { label: "Project status", value: "Details coming soon", icon: "status" },

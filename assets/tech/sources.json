@@ -130,5 +130,13 @@
   "prettier": {
     "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.0.0/icons/prettier.svg",
     "library": "Simple Icons (CC0-1.0)"
+  },
+  "tanstack": {
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.0.0/icons/tanstack.svg",
+    "library": "Simple Icons (CC0-1.0)"
+  },
+  "apache": {
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.0.0/icons/apache.svg",
+    "library": "Simple Icons (CC0-1.0)"
   }
 }
