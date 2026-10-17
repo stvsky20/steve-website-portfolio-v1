@@ -38,7 +38,7 @@
   height: 26px;
 }
 #station-story .harbor-header .brand-lockup strong {
-  font-size: 14px;
+  font-size: var(--text-body);
   font-weight: 600;
   letter-spacing: 0;
   white-space: nowrap;
@@ -57,7 +57,7 @@
   min-height: 44px;
   padding: 0 15px;
   border-radius: 999px;
-  font-size: 13px;
+  font-size: var(--text-base);
   transition: transform 160ms ease-out;
 }
 #station-story .harbor-header nav a:hover {
@@ -146,8 +146,8 @@
     gap: 0;
   }
   #station-story .harbor-header nav a {
-    padding: 0 9px;
-    font-size: 12px;
+    padding: 0 7px;
+    font-size: var(--text-sm);
   }
   #station-story .harbor-header nav :is(#night-toggle, #sound-settings) {
     min-width: 36px;
@@ -162,11 +162,18 @@
 }
 @media (max-width: 360px) {
   #station-story .harbor-header nav a {
-    padding: 0 7px;
-    font-size: 11px;
+    padding: 0 5px;
+    font-size: 0.8125rem;
+  }
+  #station-story .harbor-header .brand-mark {
+    width: 28px;
+    height: 28px;
+  }
+  #station-story .header.harbor-header {
+    gap: 2px;
   }
   #station-story .harbor-header nav :is(#night-toggle, #sound-settings) {
-    min-width: 32px;
+    min-width: 30px;
     padding: 0 5px;
   }
 }

@@ -12,7 +12,7 @@
 .signal-route-title {
   padding: 0 10px 12px;
   color: #eac582;
-  font: 400 9px/1.4 var(--font-mono);
+  font: 400 var(--text-xs)/1.4 var(--font-mono);
   letter-spacing: 0.1em;
 }
 .signal-route-list {
@@ -63,7 +63,7 @@
   border-radius: 8px;
   background: transparent;
   color: #aec2c1;
-  font: 400 11px/1.4 var(--font-mono);
+  font: 400 var(--text-sm)/1.4 var(--font-mono);
   text-decoration: none;
   transition:
     background-color 150ms ease,
@@ -78,7 +78,7 @@
   border: 1px solid #8ca8a86b;
   border-radius: 50%;
   color: #afc3c0;
-  font-size: 9px;
+  font-size: var(--text-xs);
   line-height: 1;
 }
 .chapter-progress.signal-route .signal-route-label {
@@ -111,7 +111,7 @@
   padding: 8px;
   background: #061c2733;
   color: #c4d1ce;
-  font: 400 10px/1.4 var(--font-mono);
+  font: 400 var(--text-sm)/1.4 var(--font-mono);
   border: 1px solid #c4d1ce24;
   border-radius: 8px;
 }

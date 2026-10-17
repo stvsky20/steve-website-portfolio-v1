@@ -41,6 +41,20 @@ export function renderProjectBento(project, mount) {
   mount.replaceChildren();
   mount.hidden = false;
   const bento = project.bento || {};
+  if (bento.story?.length) {
+    const story = node("section", "project-story");
+    story.setAttribute("aria-label", "The story behind the project");
+    for (const chapter of bento.story) {
+      const card = node("article", "bento-card project-story-card");
+      card.append(
+        node("span", "bento-eyebrow", chapter.label),
+        node("h3", "", chapter.title),
+        node("p", "", chapter.copy),
+      );
+      story.append(card);
+    }
+    mount.append(story);
+  }
   const grid = node("div", "project-bento-grid");
   if (!bento.features?.length) grid.classList.add("bento-without-images");
   const overview = node("article", "bento-card bento-overview");
@@ -58,12 +72,8 @@ export function renderProjectBento(project, mount) {
     node("h3", "", "The tools behind the work."),
   );
   const chips = node("div", "technology-list");
-  project.technologies
-    .filter((label) => !["Emotion", "ApexCharts"].includes(label))
-    .forEach((label) => chips.append(technologyChip(label)));
+  project.technologies.forEach((label) => chips.append(technologyChip(label)));
   stack.append(chips);
-  if (bento.stackExtra)
-    stack.append(node("p", "bento-stack-extra", bento.stackExtra));
   if (project.technologies.length) grid.append(overview, stack);
   else grid.append(overview);
   for (const [index, feature] of (bento.features || []).entries()) {
@@ -71,6 +81,9 @@ export function renderProjectBento(project, mount) {
       "button",
       `bento-card bento-shot bento-shot-${index + 1} tone-${feature.tone}`,
     );
+    // Continue the same alternating 60/40 composition for any gallery length.
+    button.style.setProperty("--bento-span", [3, 2, 2, 3, 3, 2][index % 6]);
+    button.style.setProperty("--bento-order", index === 0 ? 1 : index + 2);
     button.setAttribute("aria-label", `Enlarge ${feature.title}`);
     const src = feature.src || `${bento.imageBase || ""}${feature.image}`;
     const image = node("img");

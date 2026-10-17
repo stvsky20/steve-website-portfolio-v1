@@ -48,7 +48,10 @@ No environment variables or API keys are required. Only the `dist/` output is pu
 
 The selected Harbor Pill navigation is styled in `src/harbor-header.css`: a compact centered capsule with a gold signal emblem, current-section highlighting, and accessible night/audio controls. Mobile collapses the name lockup while preserving all destinations and controls. The old Work badge and temporary navbar prototype picker have been removed.
 
+Shared typography tokens live in `src/type-scale.css`. The reading scale uses an 18px body, 14–18px supporting text and controls, and 12px small labels at default browser settings; rem values respect browser font preferences. Project cards use 34px headings on desktop and 30px when stacked on mobile. Retain this scale when adding new content instead of shrinking copy to fit.
+
 - `src/projects.js`: six project records and Laundrify gallery content.
+- `src/project-overview.js`: shared Laundrify-style container for every project. Set `deployment: { url, label }` on a record for its top-right live-demo CTA; omit it when no public link is available. Add photos to `bento.features` for the shared uneven-width gallery and dark fade captions. Project content, tools, contributions, and scope use the same layout even before screenshots are supplied.
 - `assets/projects/`: project logos, screenshots, and photographs.
 - `assets/leadership/`: leadership assets when supplied.
 - `src/education-study.js`: education, recognition, and leadership records.

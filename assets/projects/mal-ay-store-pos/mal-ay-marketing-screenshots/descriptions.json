@@ -1,0 +1,52 @@
+[
+  {
+    "file": "screenshots/01-everyday-checkout.png",
+    "headline": "Everyday selling, made simple",
+    "description": "Find products by name or barcode, browse familiar categories, and start a sale from one clear checkout screen."
+  },
+  {
+    "file": "screenshots/02-clear-shopping-cart.png",
+    "headline": "See every item. Know every total.",
+    "description": "Review quantities, prices, and the running total in a clear cart before taking payment."
+  },
+  {
+    "file": "screenshots/03-payment-options.png",
+    "headline": "Give customers a choice",
+    "description": "Choose Cash or GCash from a straightforward payment screen that keeps the sale total in view."
+  },
+  {
+    "file": "screenshots/04-cash-and-change.png",
+    "headline": "Clear totals. Confident change.",
+    "description": "Enter the amount received and see the change immediately, with a large keypad and Filipino helper labels."
+  },
+  {
+    "file": "screenshots/05-product-inventory.png",
+    "headline": "Your products, organized",
+    "description": "Review product prices and stock levels, edit product details, and adjust inventory from one practical workspace."
+  },
+  {
+    "file": "screenshots/06-low-stock-alerts.png",
+    "headline": "Know what needs restocking",
+    "description": "Bring low-stock and out-of-stock products into focus so your next replenishment starts with a clear list."
+  },
+  {
+    "file": "screenshots/07-stock-movement-log.png",
+    "headline": "Keep stock changes in view",
+    "description": "Review a permanent movement history with product, employee, date, and movement-type filters."
+  },
+  {
+    "file": "screenshots/08-sales-overview.png",
+    "headline": "Understand the day\u2019s sales",
+    "description": "Review completed sales, payment totals, voids, and stock indicators with date and employee filters."
+  },
+  {
+    "file": "screenshots/09-employee-management.png",
+    "headline": "Manage your store team",
+    "description": "Keep employee access organized with manager and cashier roles and employee PIN controls."
+  },
+  {
+    "file": "screenshots/10-end-of-shift.png",
+    "headline": "Finish the shift with clarity",
+    "description": "Confirm shift closure with clear reminders about signing out and keeping audit records saved."
+  }
+]

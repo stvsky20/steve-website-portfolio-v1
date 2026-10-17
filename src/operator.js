@@ -292,11 +292,13 @@ export function createOperator() {
       upper,
     );
 
-  // Left hand rests on the terminal frame; right hand sits at the pocket.
+  // A relaxed left arm, with the elbow close to the ribs and a gently bent
+  // forearm. Avoid reaching beyond a natural arm length toward the console.
+  // The right hand stays near the pocket.
   for (const side of [-1, 1]) {
     const shoulder = [side * 0.39, 1.9, 0];
-    const elbow = side < 0 ? [-0.6, 1.52, -0.53] : [0.59, 1.49, 0.05];
-    const wrist = side < 0 ? [-0.9, 1.42, -0.94] : [0.34, 1.23, 0.24];
+    const elbow = side < 0 ? [-0.52, 1.47, -0.15] : [0.59, 1.49, 0.05];
+    const wrist = side < 0 ? [-0.76, 1.2, -0.36] : [0.34, 1.23, 0.24];
     oval(shoulder, [0.135, 0.085, 0.13], shirt, upper);
     const sleeveEnd = shoulder.map((v, i) => v + (elbow[i] - v) * 0.6);
     limb(shoulder, sleeveEnd, 0.135, 0.12, shirt, upper);
@@ -311,6 +313,22 @@ export function createOperator() {
     );
     oval(elbow, [0.088, 0.095, 0.088], skin, upper);
     limb(elbow, wrist, 0.088, 0.057, skin, upper);
+    if (side < 0) {
+      // Align the palm with the forearm instead of leaving it dangling at a
+      // fixed world angle. The thumb shares that orientation with the palm.
+      const palm = new THREE.Group();
+      palm.position.set(...wrist);
+      palm.quaternion.setFromUnitVectors(
+        new THREE.Vector3(0, -1, 0),
+        new THREE.Vector3(...wrist)
+          .sub(new THREE.Vector3(...elbow))
+          .normalize(),
+      );
+      upper.add(palm);
+      oval([0, -0.07, 0.012], [0.065, 0.105, 0.04], skin, palm);
+      oval([0.052, -0.04, 0.035], [0.03, 0.06, 0.033], skin, palm);
+      continue;
+    }
     const hand = oval(
       [wrist[0], wrist[1] - 0.065, wrist[2] + 0.022],
       [0.065, 0.105, 0.04],

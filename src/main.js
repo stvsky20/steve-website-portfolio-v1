@@ -21,15 +21,9 @@ import { createCoreInterface } from "./core-interface.js";
 import { createEducationInterface } from "./education-interface.js";
 import { createStory } from "./story.js";
 import { projects } from "./projects.js";
-import { renderProjectBento } from "./project-bento.js";
-import {
-  initializeProjectDocumentation,
-  renderProjectDocumentation,
-} from "./project-documentation.js";
-import {
-  initializeInstitutionBrands,
-  renderInstitutionBrands,
-} from "./institution-brands.js";
+import { renderProjectOverview } from "./project-overview.js";
+import { initializeProjectDocumentation } from "./project-documentation.js";
+import { initializeInstitutionBrands } from "./institution-brands.js";
 import { technologyChip } from "./tech-logos.js";
 import { coreTools } from "./signal-core.js";
 import { initializeSectionMarkers } from "./section-marker.js";
@@ -131,48 +125,7 @@ let dialogOpener = null,
   previousOverflow = "";
 function openProject(opener = document.activeElement, index = 0) {
   const project = projects[index] || projects[0];
-  dialog.querySelector(".section-kicker").textContent =
-    `${project.kind || "PROJECT"} / 00${index + 1}`;
-  $("#project-title").textContent = project.title;
-  const deployment = $("#project-deployment");
-  deployment.hidden = !project.deployment;
-  if (project.deployment) {
-    deployment.href = project.deployment.url;
-    $("#project-deployment-label").textContent = project.deployment.label;
-    deployment.querySelector("small").textContent = "Explore the live demo";
-  } else {
-    deployment.removeAttribute("href");
-  }
-  $(".dialog-subtitle").textContent = project.label;
-  $("#project-description").textContent = project.description;
-  $("#project-recognition-text").textContent = project.recognition;
-  renderInstitutionBrands(
-    $("#project-affiliations"),
-    project.institutions || [],
-  );
-  $("#project-detail-note").textContent = project.note;
-  renderProjectDocumentation($("#project-documentation"), false);
-  dialog.querySelectorAll("h3")[1].textContent = project.placeholder
-    ? "Status"
-    : index === 0
-      ? "Recognition"
-      : "Academic context";
-  dialog.querySelectorAll("h3")[2].hidden = !project.contributions.length;
-  const contributions = $("#project-contributions");
-  contributions.replaceChildren(
-    ...project.contributions.map((text) => {
-      const item = document.createElement("li");
-      item.textContent = text;
-      return item;
-    }),
-  );
-  $("#project-technologies").replaceChildren(
-    ...project.technologies.map(technologyChip),
-  );
-  dialog.classList.toggle(
-    "has-bento",
-    renderProjectBento(project, $("#project-bento")),
-  );
+  renderProjectOverview(project, dialog, index);
   dialog.scrollTop = 0;
   dialogOpener = opener;
   dialogScroll = window.scrollY;

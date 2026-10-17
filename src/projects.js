@@ -1,9 +1,29 @@
 import * as THREE from "../vendor/three.module.js";
 import { ayosPhotos } from "./project-documentation.js";
+import { malAyGallery } from "./mal-ay-gallery.js";
 
 export const projects = [
   {
     title: "Ayos!",
+    headerFacts: [
+      {
+        label: "Proponent / client",
+        value: "Baguio LGU",
+        icon: "client",
+        logo: "assets/projects/ayos/lgu-baguio.png",
+        logoAlt: "Baguio City government logo",
+      },
+      {
+        label: "My role",
+        value: "Project Manager & Full-Stack Developer",
+        icon: "role",
+      },
+      {
+        label: "Project context",
+        value: "Philippine Startup Challenge X",
+        icon: "recognition",
+      },
+    ],
     bento: {
       eyebrow: "CITIZEN-REPORTING STARTUP",
       headline: "A stronger link to the community.",
@@ -41,8 +61,142 @@ export const projects = [
   },
   {
     title: "ESQUAKE",
+    headerFacts: [
+      {
+        label: "Client",
+        value: "CDRRMO Baguio City",
+        icon: "client",
+        logo: "assets/projects/esquake/cdrmmo-logo.jfif",
+        logoAlt:
+          "City Disaster Risk Reduction and Management Office, Baguio City logo",
+      },
+      {
+        label: "My role",
+        value: "Project Manager & Game Developer",
+        icon: "role",
+      },
+      {
+        label: "Project context",
+        value: "University capstone requirement",
+        icon: "capstone",
+      },
+    ],
     bento: {
       eyebrow: "EARTHQUAKE PREPAREDNESS GAME",
+      imageBase:
+        "assets/projects/esquake/QuakeScape-Marketing-Screenshots/screenshots/",
+      features: [
+        {
+          image: "01_emergency_go_bag.png",
+          title: "Pack for the Unexpected",
+          caption: "Collect emergency essentials.",
+          detail:
+            "Search a detailed pixel-art home for emergency essentials. Build your go-bag, track your checklist, and discover which everyday items matter when disaster strikes.",
+          alt: "Emergency go-bag gameplay in QuakeScape",
+          width: 1280,
+          height: 720,
+          tone: "cream",
+        },
+        {
+          image: "02_home_hazard_inspection.png",
+          title: "Spot the Hidden Hazards",
+          caption: "Identify hazards before moving.",
+          detail:
+            "See a familiar home through new eyes after an earthquake. Identify broken objects, fallen furniture, and household hazards before choosing your next move.",
+          alt: "Home hazard inspection gameplay in QuakeScape",
+          width: 1280,
+          height: 720,
+          tone: "cream",
+        },
+        {
+          image: "03_neighborhood_evacuation.png",
+          title: "Navigate a Changed Neighborhood",
+          caption: "Find a safer route through the streets.",
+          detail:
+            "Make your way through streets transformed by the quake. Watch for falling debris and environmental dangers as you work toward a safer route.",
+          alt: "Neighborhood evacuation gameplay in QuakeScape",
+          width: 1280,
+          height: 720,
+          tone: "cream",
+        },
+        {
+          image: "04_first_aid.png",
+          title: "Put Your Emergency Kit to Work",
+          caption: "Turn preparation into practical action.",
+          detail:
+            "Emergency supplies become interactive tools. Use the first-aid sequence to clean and dress an injury, connecting preparation with practical action.",
+          alt: "First aid gameplay in QuakeScape",
+          width: 1280,
+          height: 720,
+          tone: "cream",
+        },
+        {
+          image: "05_duck_cover_hold.png",
+          title: "Duck, Cover, and Hold",
+          caption: "Find sturdy cover and hold on.",
+          detail:
+            "When the classroom starts shaking, every decision counts. Find sturdy cover, protect your head, and hold on through an interactive earthquake response challenge.",
+          alt: "Classroom cover gameplay in QuakeScape",
+          width: 1280,
+          height: 720,
+          tone: "cream",
+        },
+        {
+          image: "06_flashlight.png",
+          title: "Bring Light to the Blackout",
+          caption: "Assemble a flashlight during a blackout.",
+          detail:
+            "A sudden blackout turns a familiar classroom into a new challenge. Prepare your flashlight by placing its batteries in an interactive drag-and-drop activity.",
+          alt: "Flashlight preparation gameplay in QuakeScape",
+          width: 1280,
+          height: 720,
+          tone: "cream",
+        },
+        {
+          image: "07_head_protection.png",
+          title: "Protect Yourself on the Way Out",
+          caption: "Protect your head while evacuating.",
+          detail:
+            "Getting to the exit takes more than moving quickly. Practice protecting your head as Tantan leaves the damaged classroom, with prompts that reinforce safer evacuation habits.",
+          alt: "Head protection gameplay in QuakeScape",
+          width: 1280,
+          height: 720,
+          tone: "cream",
+        },
+        {
+          image: "08_landslide_awareness.png",
+          title: "Recognize Landslide Danger",
+          caption: "Learn about danger beyond the classroom.",
+          detail:
+            "Earthquake risks continue beyond the classroom. Follow the class through the school grounds and learn to recognize unstable slopes and landslide danger along the evacuation route.",
+          alt: "Landslide awareness gameplay in QuakeScape",
+          width: 1280,
+          height: 720,
+          tone: "cream",
+        },
+        {
+          image: "09_stay_with_group.png",
+          title: "Stay Together, Stay Focused",
+          caption: "Keep pace with your classmates.",
+          detail:
+            "Evacuation is a team effort. Keep pace with your classmates, maintain your place in the group, and respond to warnings when you drift away from the formation.",
+          alt: "Group evacuation gameplay in QuakeScape",
+          width: 1280,
+          height: 720,
+          tone: "cream",
+        },
+        {
+          image: "10_safe_crossing.png",
+          title: "Wait for the Signal",
+          caption: "Listen, wait, then cross safely.",
+          detail:
+            "Reaching the road brings one more decision. Stay with the class, listen to the teacher, and wait for the signal before crossing toward safety.",
+          alt: "Safe crossing gameplay in QuakeScape",
+          width: 1280,
+          height: 720,
+          tone: "cream",
+        },
+      ],
       headline: "Preparedness, through play.",
       tags: ["16-member team", "Capstone in progress"],
       approachTitle: "One team. A shared direction.",
@@ -60,11 +214,31 @@ export const projects = [
       "Track delivery in ClickUp and coordinate collaborative development through GitHub.",
       "Translate Figma gameplay prototypes into playable features in Godot.",
     ],
-    technologies: ["Godot", "Figma", "ClickUp", "GitHub"],
+    technologies: [
+      "Godot",
+      "GDScript",
+      "Figma",
+      "ClickUp",
+      "GitHub",
+      "Agile methodology",
+    ],
     placeholder: false,
   },
   {
     title: "Laundrify",
+    headerFacts: [
+      {
+        label: "Demo workspace",
+        value: "Gabriel’s · Fictional branch",
+        icon: "client",
+      },
+      { label: "My role", value: "Frontend Developer", icon: "role" },
+      {
+        label: "Project context",
+        value: "Functional frontend prototype",
+        icon: "prototype",
+      },
+    ],
     deployment: {
       url: "https://laundry-management-system-rose.vercel.app/",
       label: "Try Laundrify",
@@ -87,12 +261,15 @@ export const projects = [
       "React Router 7",
       "Emotion",
       "ApexCharts",
+      "React Context & hooks",
+      "localStorage",
+      "ESLint",
+      "Prettier",
     ],
     placeholder: false,
     bento: {
       eyebrow: "FRONTEND PROTOTYPE",
       tags: ["Local-first", "Fictional demo data"],
-      stackExtra: "Emotion · ApexCharts · React Context & hooks · localStorage",
       approachTitle: "Built to stay understandable.",
       scopeTitle: "A working frontend prototype.",
       imageBase: "assets/projects/laundrify/",
@@ -159,8 +336,76 @@ export const projects = [
       ],
     },
   },
-  ...[4, 5, 6].map((number) => ({
+  {
+    title: "Mal-Ay Store Assistant",
+    label: "Lightweight Android POS & inventory",
+    headerFacts: [
+      {
+        label: "Proponent / client",
+        value: "Mal-Ay Store · Baguio City",
+        icon: "client",
+      },
+      {
+        label: "Project context",
+        value: "Lightweight Android APK",
+        icon: "prototype",
+      },
+    ],
+    description:
+      "Built around the client’s aging 2015 Samsung Galaxy tablet. When the browser-based app wasn’t working well for her, we made the application lightweight and packaged it as an Android APK—adapting the software to the device she already owned.",
+    recognition: "Proponent · Mal-Ay Store, Baguio City",
+    note: "Screenshots use an isolated demo store with sample records. GCash is a recorded payment workflow: its QR screen uses a placeholder and payments are not automatically verified.",
+    contributions: [],
+    technologies: [
+      "React 19",
+      "TypeScript",
+      "Vite 8",
+      "Tailwind CSS 4",
+      "Lucide React",
+      "Capacitor 8",
+      "SQLite",
+      "IndexedDB",
+      "ESLint",
+      "Bun",
+    ],
+    placeholder: false,
+    bento: {
+      eyebrow: "DESIGNED AROUND A REAL CONSTRAINT",
+      headline: "Built for the tablet she already owns.",
+      tags: ["2015 Samsung Galaxy tablet", "Lightweight Android app"],
+      story: [
+        {
+          label: "The constraint",
+          title: "An old tablet. A working store.",
+          copy: "Mal-Ay Store’s owner uses a 2015 Samsung Galaxy tablet. The device is slow, and the web app wasn’t working well enough for her daily store operations.",
+        },
+        {
+          label: "The response",
+          title: "Make the essentials lighter.",
+          copy: "We made the application lightweight around the work she needed to do: checkout, inventory, and store reporting. The existing hardware shaped the engineering decisions.",
+        },
+        {
+          label: "The delivery",
+          title: "A familiar device. An installed app.",
+          copy: "We packaged the web application as an Android APK through Capacitor, giving her an installable app for the tablet she already had.",
+        },
+      ],
+      imageBase:
+        "assets/projects/mal-ay-store-pos/mal-ay-marketing-screenshots/screenshots/",
+      features: malAyGallery,
+      approachTitle: "One interface. Platform-aware storage.",
+      approach:
+        "Typed domain operations sit behind shared React state and repository adapters. Integer-centavo arithmetic keeps currency calculations precise. Storage selects IndexedDB in browsers or SQLite on native platforms, with an in-memory fallback. Transactional stock records, role checks, and local PIN authentication support store operations.",
+      foundation:
+        "Repository tooling · TypeScript checking · ESLint · Bun tests covering domain operations, authentication, reporting, media lifecycle, and backups. App checks were not rerun for this portfolio update.",
+      scopeTitle: "A store workflow, documented.",
+    },
+  },
+  ...[5, 6].map((number) => ({
     title: `Project ${String(number).padStart(3, "0")}`,
+    headerFacts: [
+      { label: "Project status", value: "Details coming soon", icon: "status" },
+    ],
     label: "Details coming soon",
     description:
       "A reserved slot for another project. The title, summary, screenshots, and contribution will be added when the project details are supplied.",

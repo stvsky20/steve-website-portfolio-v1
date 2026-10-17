@@ -16,6 +16,7 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23182f38'/%3E%3Cpath d='M15 20Q18 51 49 49L15 20M32 35l12-15' fill='none' stroke='%23ecc98d' stroke-width='4'/%3E%3C/svg%3E"
     />
+    <link rel="stylesheet" href="src/type-scale.css" />
     <link rel="stylesheet" href="src/style.css" />
     <link rel="stylesheet" href="src/journeys.css" />
     <link rel="stylesheet" href="src/brand.css" />
@@ -26,6 +27,7 @@
     <link rel="stylesheet" href="src/scroll-invitation.css" />
     <link rel="stylesheet" href="src/command-center.css" />
     <link rel="stylesheet" href="src/project-bento.css" />
+    <link rel="stylesheet" href="src/project-facts.css" />
     <link rel="stylesheet" href="src/institution-brands.css" />
     <link rel="stylesheet" href="src/section-marker.css" />
     <link rel="stylesheet" href="src/harbor-header.css" />
@@ -779,7 +781,7 @@
       >
         <span class="project-deployment-copy"
           ><small>Explore the live demo</small
-          ><strong id="project-deployment-label">Try Laundrify</strong></span
+          ><strong id="project-deployment-label">Open live demo</strong></span
         >
         <span class="project-deployment-arrow" aria-hidden="true"
           ><svg viewBox="0 0 24 24" fill="currentColor">
@@ -790,28 +792,12 @@
       <div class="section-kicker">TRANSMISSION 001</div>
       <h2 id="project-title">Ayos!</h2>
       <p class="dialog-subtitle">A connection to your community.</p>
-      <div class="dialog-rule"></div>
-      <h3>The idea</h3>
-      <p id="project-description">
-        A reporting system connecting users and local government units (LGUs).
-      </p>
-      <div id="project-affiliations" hidden></div>
-      <h3>Recognition</h3>
-      <p id="project-recognition-text">
-        Regional finalist in the Philippine Startup Challenge.
-      </p>
-      <p class="project-note" id="project-detail-note">
-        The full case study is coming soon. Personal contribution,
-        implementation details, and project outcomes are still to be documented.
-      </p>
-      <h3>My contribution</h3>
-      <ul id="project-contributions"></ul>
-      <div
-        id="project-technologies"
-        class="technology-list"
-        aria-label="Tools used"
-      ></div>
-      <div id="project-documentation" hidden></div>
+      <dl
+        id="project-header-facts"
+        class="project-header-facts"
+        aria-label="Project at a glance"
+        hidden
+      ></dl>
       <section
         id="project-bento"
         aria-label="Project overview and feature gallery"

@@ -71,7 +71,7 @@
   --shadow-panel: 0 12px 40px #071b2b26;
 }
 body {
-  font: 400 16px/1.6 var(--font-sans);
+  font: 400 var(--text-body)/1.6 var(--font-sans);
   background: var(--paper);
   color: var(--on-paper);
   -webkit-font-smoothing: antialiased;
@@ -87,7 +87,7 @@ button:disabled {
   opacity: 0.6;
 }
 input {
-  font-size: 16px;
+  font-size: var(--text-body);
 }
 .icon {
   width: 20px;
@@ -142,7 +142,7 @@ h2 {
 .wordmark {
   gap: var(--space-3);
   letter-spacing: normal;
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .brand-mark {
   width: 42px;
@@ -163,17 +163,17 @@ h2 {
   line-height: 1.35;
 }
 .brand-lockup strong {
-  font-size: 16px;
+  font-size: var(--text-body);
   font-weight: 500;
   letter-spacing: 0.01em;
 }
 .brand-role {
-  font: 400 11px/1.4 var(--font-mono);
+  font: 400 var(--text-sm)/1.4 var(--font-mono);
   color: #e0e4da;
 }
 .header nav {
   gap: var(--space-8);
-  font-size: 14px;
+  font-size: var(--text-body);
 }
 .header nav a,
 .header nav button {
@@ -181,11 +181,11 @@ h2 {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  font-size: 14px;
+  font-size: var(--text-body);
   padding: var(--space-2) 0;
 }
 .header nav a span {
-  font: 400 10px/1 var(--font-mono);
+  font: 400 var(--text-sm)/1 var(--font-mono);
   padding: 4px 6px;
   border: 1px solid var(--line-dark);
   border-radius: 4px;
@@ -202,7 +202,7 @@ h2 {
   max-width: 490px;
 }
 .eyebrow {
-  font: 400 11px/1.6 var(--font-mono);
+  font: 400 var(--text-sm)/1.6 var(--font-mono);
   letter-spacing: 0.04em;
   gap: var(--space-3);
   margin-bottom: var(--space-6);
@@ -213,7 +213,7 @@ h2 {
   height: 6px;
 }
 .introduction > p {
-  font-size: 17px;
+  font-size: var(--text-lead);
   line-height: 1.75;
   font-weight: 400;
   color: #e3e9e2;
@@ -233,7 +233,7 @@ h2 {
   border: 1px solid transparent;
   background: var(--paper);
   color: var(--on-paper);
-  font: 500 14px/1.4 var(--font-sans);
+  font: 500 var(--text-body)/1.4 var(--font-sans);
   box-shadow: 0 2px 4px #071b2b14;
   transition:
     background 150ms ease,
@@ -248,7 +248,7 @@ h2 {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  font-size: 14px;
+  font-size: var(--text-body);
   min-height: 48px;
   padding: var(--space-3) 0;
 }
@@ -257,7 +257,7 @@ h2 {
   display: inline-flex;
 }
 .intro-footnote {
-  font-size: 12px;
+  font-size: var(--text-md);
   color: #ccd8d5;
   gap: var(--space-3);
   max-width: 400px;
@@ -282,14 +282,14 @@ h2 {
 .hotspot > span:last-child {
   border-radius: var(--radius-sm);
   padding: var(--space-3) var(--space-4);
-  font-size: 14px;
+  font-size: var(--text-body);
   line-height: 1.4;
   background: var(--surface-dark);
   border: 1px solid var(--line-dark);
   box-shadow: 0 4px 16px #051d2826;
 }
 .hotspot small {
-  font: 400 10px/1.5 var(--font-mono);
+  font: 400 var(--text-sm)/1.5 var(--font-mono);
   letter-spacing: 0.03em;
   color: var(--text-on-dark);
   margin-bottom: var(--space-1);
@@ -316,7 +316,7 @@ h2 {
   padding: var(--space-4);
   gap: var(--space-3);
   min-height: 56px;
-  font-size: 14px;
+  font-size: var(--text-body);
   font-weight: 500;
 }
 .control-icon {
@@ -335,20 +335,20 @@ h2 {
   padding: var(--space-2) var(--space-6) var(--space-6);
 }
 .control-heading {
-  font: 400 10px/1.5 var(--font-mono);
+  font: 400 var(--text-sm)/1.5 var(--font-mono);
   letter-spacing: 0.04em;
   color: var(--text-on-dark);
   margin-bottom: var(--space-6);
 }
 .control-heading span {
-  font-size: 10px;
+  font-size: var(--text-sm);
 }
 .control-content > label {
-  font-size: 14px;
+  font-size: var(--text-body);
   line-height: 1.5;
 }
 .control-content output {
-  font: 400 13px/1.5 var(--font-mono);
+  font: 400 var(--text-base)/1.5 var(--font-mono);
   color: var(--amber);
 }
 input[type="range"] {
@@ -361,12 +361,12 @@ input[type="checkbox"] {
   height: 16px;
 }
 .check-label {
-  font-size: 12px;
+  font-size: var(--text-md);
   gap: var(--space-2);
   min-height: 40px;
 }
 .small-button {
-  font-size: 12px;
+  font-size: var(--text-md);
   min-height: 40px;
   padding: var(--space-2) var(--space-3);
   border: 1px solid #a6bebc4d;
@@ -391,7 +391,7 @@ input[type="checkbox"] {
   min-height: 44px;
 }
 .control-note {
-  font-size: 12px;
+  font-size: var(--text-md);
   line-height: 1.6;
   color: var(--text-on-dark);
   margin-top: var(--space-4);
@@ -401,12 +401,12 @@ input[type="checkbox"] {
   gap: var(--space-6);
 }
 .station-status {
-  font: 400 10px/1.5 var(--font-mono);
+  font: 400 var(--text-sm)/1.5 var(--font-mono);
   letter-spacing: 0.015em;
   gap: var(--space-2);
 }
 #status-copy {
-  font: 400 11px/1.5 var(--font-sans);
+  font: 400 var(--text-sm)/1.5 var(--font-sans);
   color: #bccdce;
 }
 .scene-actions {
@@ -416,7 +416,7 @@ input[type="checkbox"] {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  font-size: 12px;
+  font-size: var(--text-md);
   min-height: 44px;
 }
 .scene-actions .icon {
@@ -427,7 +427,7 @@ input[type="checkbox"] {
   display: inline-flex;
 }
 .scroll-note {
-  font: 400 10px/1.5 var(--font-mono);
+  font: 400 var(--text-sm)/1.5 var(--font-mono);
   gap: var(--space-4);
   bottom: 36px;
 }
@@ -438,14 +438,14 @@ input[type="checkbox"] {
 .explore-message {
   top: 112px;
   border-radius: var(--radius-md);
-  font-size: 13px;
+  font-size: var(--text-base);
   padding: var(--space-3) var(--space-4);
   background: var(--surface-dark);
   border-color: var(--line-dark);
   gap: var(--space-4);
 }
 .explore-message button {
-  font-size: 12px;
+  font-size: var(--text-md);
   min-height: 40px;
   display: inline-flex;
   align-items: center;
@@ -462,7 +462,7 @@ input[type="checkbox"] {
   backdrop-filter: none;
 }
 .journey-nav > button {
-  font-size: 13px;
+  font-size: var(--text-base);
   min-height: 44px;
   display: inline-flex;
   align-items: center;
@@ -474,7 +474,7 @@ input[type="checkbox"] {
   height: 18px;
 }
 .journey-nav > span:not(.journey-progress) {
-  font: 400 11px/1.5 var(--font-mono);
+  font: 400 var(--text-sm)/1.5 var(--font-mono);
   letter-spacing: 0;
   color: var(--text-on-dark);
 }
@@ -497,7 +497,7 @@ input[type="checkbox"] {
 }
 .component-panel .section-kicker,
 .space-panel .section-kicker {
-  font: 500 10px/1.5 var(--font-mono);
+  font: 500 var(--text-sm)/1.5 var(--font-mono);
   letter-spacing: 0.06em;
   color: #755339;
 }
@@ -515,18 +515,18 @@ input[type="checkbox"] {
   letter-spacing: -0.03em;
 }
 .component-panel p {
-  font-size: 16px;
+  font-size: var(--text-body);
   line-height: 1.6;
   color: var(--text-secondary);
   margin: var(--space-4) 0;
 }
 .transmission-tag {
-  font: 400 10px/1.5 var(--font-mono);
+  font: 400 var(--text-sm)/1.5 var(--font-mono);
   letter-spacing: 0.025em;
   color: #6f6250;
 }
 .component-panel .component-recognition {
-  font-size: 13px;
+  font-size: var(--text-base);
   color: #77533c;
   border-color: #b9845a80;
   padding-left: var(--space-3);
@@ -540,7 +540,7 @@ dialog .primary {
   margin-top: var(--space-2);
 }
 .component-secondary {
-  font-size: 13px;
+  font-size: var(--text-base);
   line-height: 1.5;
   display: flex;
   align-items: center;
@@ -557,7 +557,7 @@ dialog .primary {
   display: flex;
 }
 .component-footnote {
-  font-size: 14px !important;
+  font-size: var(--text-body) !important;
   color: var(--text-secondary) !important;
   line-height: 1.6;
 }
@@ -582,20 +582,20 @@ dialog .primary {
   margin: var(--space-4) 0;
 }
 .space-panel h3 {
-  font-size: 17px;
+  font-size: var(--text-lead);
   line-height: 1.5;
   font-weight: 400;
   color: #e4d3b7;
   margin: 0 0 var(--space-4);
 }
 .space-panel p {
-  font-size: 15px;
+  font-size: var(--text-body);
   line-height: 1.65;
   color: #c1d0d1;
   margin: 0;
 }
 .space-tags {
-  font: 400 10px/1.7 var(--font-mono);
+  font: 400 var(--text-sm)/1.7 var(--font-mono);
   letter-spacing: 0.025em;
   color: #e3bf88;
   margin: var(--space-4) 0;
@@ -606,7 +606,7 @@ dialog .primary {
   border-color: var(--line-dark);
 }
 .planet-button {
-  font-size: 14px;
+  font-size: var(--text-body);
   min-height: 48px;
   gap: var(--space-3);
   padding: var(--space-3) var(--space-1);
@@ -630,14 +630,14 @@ dialog .primary {
   height: 17px;
 }
 .imagined-note {
-  font-size: 11px;
+  font-size: var(--text-sm);
   line-height: 1.6;
   letter-spacing: 0;
   color: #b5c6ca;
   margin-top: var(--space-6);
 }
 .space-planet-labels button {
-  font: 400 11px/1.5 var(--font-mono);
+  font: 400 var(--text-sm)/1.5 var(--font-mono);
   padding: var(--space-2) var(--space-3);
   min-height: 36px;
   border-radius: var(--radius-sm);
@@ -653,7 +653,7 @@ dialog .primary {
   color: var(--on-paper);
 }
 .section-kicker {
-  font: 500 12px/1.6 var(--font-mono);
+  font: 500 var(--text-md)/1.6 var(--font-mono);
   letter-spacing: 0.04em;
   color: #7a5036;
 }
@@ -669,7 +669,7 @@ dialog .primary {
   line-height: 1.1;
 }
 .section-heading > p {
-  font-size: 16px;
+  font-size: var(--text-body);
   line-height: 1.7;
   color: var(--text-secondary);
   max-width: 340px;
@@ -693,7 +693,7 @@ dialog .primary {
   letter-spacing: -0.06em;
 }
 .project-visual > small {
-  font: 400 10px/1.6 var(--font-mono);
+  font: 400 var(--text-sm)/1.6 var(--font-mono);
   letter-spacing: 0.02em;
   bottom: var(--space-6);
   left: var(--space-6);
@@ -701,7 +701,7 @@ dialog .primary {
   right: var(--space-6);
 }
 .diagram-node {
-  font: 400 12px/1.5 var(--font-mono);
+  font: 400 var(--text-md)/1.5 var(--font-mono);
   background: #2d5660;
   border-color: #c5bc9a5c;
   color: var(--paper);
@@ -719,12 +719,12 @@ dialog .primary {
   color: var(--on-paper);
 }
 .project-index {
-  font: 400 11px/1.6 var(--font-mono);
+  font: 400 var(--text-sm)/1.6 var(--font-mono);
   letter-spacing: 0.03em;
   color: #7f563d;
 }
 .project-index span {
-  font: 400 13px/1.5 var(--font-sans);
+  font: 400 var(--text-base)/1.5 var(--font-sans);
   color: var(--text-secondary);
   letter-spacing: 0;
   margin-top: var(--space-2);
@@ -736,13 +736,13 @@ dialog .primary {
   margin: var(--space-6) 0 var(--space-4);
 }
 .project-body > p {
-  font-size: 16px;
+  font-size: var(--text-body);
   color: var(--text-secondary);
   max-width: 380px;
   line-height: 1.7;
 }
 .project-recognition {
-  font-size: 14px;
+  font-size: var(--text-body);
   line-height: 1.6;
   color: #77533c;
   margin: var(--space-6) 0;
@@ -752,7 +752,7 @@ dialog .primary {
   color: var(--copper);
 }
 .project-link {
-  font-size: 15px;
+  font-size: var(--text-body);
   font-weight: 500;
   gap: var(--space-8);
   padding: var(--space-3) 0;
@@ -765,7 +765,7 @@ dialog .primary {
   height: 20px;
 }
 .project-note {
-  font-size: 13px !important;
+  font-size: var(--text-base) !important;
   color: var(--text-secondary) !important;
   line-height: 1.65;
 }
@@ -780,12 +780,12 @@ dialog .primary {
   max-width: 460px;
 }
 .about-layout p {
-  font-size: 16px;
+  font-size: var(--text-body);
   line-height: 1.75;
   color: var(--text-secondary);
 }
 .about-layout .about-lead {
-  font-size: 22px;
+  font-size: var(--text-2xl);
   line-height: 1.55;
   color: var(--on-paper);
   margin-top: 0;
@@ -793,7 +793,7 @@ dialog .primary {
 .site-footer {
   border-color: var(--line-light);
   color: var(--text-secondary);
-  font: 400 11px/1.6 var(--font-mono);
+  font: 400 var(--text-sm)/1.6 var(--font-mono);
   letter-spacing: 0;
   padding: var(--space-8) 4.5%;
   gap: var(--space-6);
@@ -822,18 +822,18 @@ dialog h2 {
   margin: var(--space-6) 0 var(--space-3);
 }
 dialog h3 {
-  font: 500 12px/1.6 var(--font-mono);
+  font: 500 var(--text-md)/1.6 var(--font-mono);
   letter-spacing: 0.025em;
   margin: var(--space-6) 0 var(--space-2);
   color: #77533c;
 }
 dialog p {
-  font-size: 16px;
+  font-size: var(--text-body);
   line-height: 1.7;
   color: var(--text-secondary);
 }
 .dialog-subtitle {
-  font-size: 19px !important;
+  font-size: var(--text-lg) !important;
   color: var(--on-paper) !important;
 }
 .dialog-rule {
@@ -855,7 +855,7 @@ dialog p {
   height: 22px;
 }
 .loading {
-  font-size: 13px;
+  font-size: var(--text-base);
   letter-spacing: 0;
   background: var(--surface-dark);
   border-color: var(--line-dark);
@@ -909,7 +909,7 @@ dialog p {
     font-size: 72px;
   }
   .introduction > p {
-    font-size: 16px;
+    font-size: var(--text-body);
   }
   .component-panel,
   .space-panel {
@@ -928,10 +928,10 @@ dialog p {
   }
   .component-panel p,
   .space-panel p {
-    font-size: 14px;
+    font-size: var(--text-body);
   }
   .component-panel .primary {
-    font-size: 13px;
+    font-size: var(--text-base);
   }
   .project-body {
     padding: var(--space-8);
@@ -946,7 +946,7 @@ dialog p {
     display: none;
   }
   .site-footer {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
 }
 @media (max-width: 650px) {
@@ -974,18 +974,18 @@ dialog p {
     height: 22px;
   }
   .brand-lockup strong {
-    font-size: 14px;
+    font-size: var(--text-body);
   }
   .brand-role {
-    font-size: 9px;
+    font-size: var(--text-xs);
     line-height: 1.5;
   }
   .header nav {
     gap: var(--space-4);
-    font-size: 13px;
+    font-size: var(--text-base);
   }
   .header nav a {
-    font-size: 13px;
+    font-size: var(--text-base);
   }
   .header nav button {
     display: none;
@@ -1000,7 +1000,7 @@ dialog p {
     max-width: none;
   }
   .eyebrow {
-    font-size: 10px;
+    font-size: var(--text-sm);
     letter-spacing: 0;
     line-height: 1.6;
     margin-bottom: var(--space-4);
@@ -1017,7 +1017,7 @@ dialog p {
     display: initial;
   }
   .introduction > p {
-    font-size: 15px;
+    font-size: var(--text-body);
     line-height: 1.65;
     margin-bottom: var(--space-6);
     max-width: 340px;
@@ -1027,24 +1027,24 @@ dialog p {
     flex-wrap: wrap;
   }
   .primary {
-    font-size: 13px;
+    font-size: var(--text-base);
     min-height: 48px;
     padding: var(--space-3) var(--space-4);
     gap: var(--space-4);
   }
   .quiet {
-    font-size: 13px;
+    font-size: var(--text-base);
     min-height: 48px;
   }
   .intro-footnote {
     display: none;
   }
   .hotspot > span:last-child {
-    font-size: 12px;
+    font-size: var(--text-md);
     padding: var(--space-2) var(--space-3);
   }
   .hotspot small {
-    font-size: 9px;
+    font-size: var(--text-xs);
   }
   .hotspot-ring {
     width: 30px;
@@ -1066,7 +1066,7 @@ dialog p {
     left: 6%;
   }
   .controls summary {
-    font-size: 13px;
+    font-size: var(--text-base);
     min-height: 52px;
   }
   .controls[open] {
@@ -1079,13 +1079,13 @@ dialog p {
     padding: var(--space-2) var(--space-4) var(--space-4);
   }
   .control-content > label {
-    font-size: 14px;
+    font-size: var(--text-body);
   }
   .control-heading {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .control-note {
-    font-size: 12px;
+    font-size: var(--text-md);
   }
   .scene-footer {
     left: 6%;
@@ -1099,21 +1099,21 @@ dialog p {
     max-width: none;
     flex-wrap: wrap;
     gap: var(--space-2);
-    font-size: 9px;
+    font-size: var(--text-xs);
     line-height: 1.5;
   }
   #status-copy {
     display: inline;
     width: auto;
     padding: 0;
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .scene-actions {
     justify-content: space-between;
     gap: var(--space-4);
   }
   .scene-actions button {
-    font-size: 12px;
+    font-size: var(--text-md);
     min-height: 40px;
   }
   .scene-actions .icon {
@@ -1130,7 +1130,7 @@ dialog p {
     justify-content: space-between;
   }
   .journey-nav > button {
-    font-size: 12px;
+    font-size: var(--text-md);
     min-height: 36px;
     gap: var(--space-1);
   }
@@ -1142,7 +1142,7 @@ dialog p {
     padding-left: var(--space-2);
   }
   .journey-nav > span:not(.journey-progress) {
-    font-size: 10px;
+    font-size: var(--text-sm);
     line-height: 1.5;
     order: 3;
     white-space: normal;
@@ -1176,34 +1176,34 @@ dialog p {
     margin: var(--space-2) 0 var(--space-3);
   }
   .component-panel p {
-    font-size: 15px;
+    font-size: var(--text-body);
     line-height: 1.6;
     margin: var(--space-3) 0;
   }
   .component-panel .section-kicker,
   .space-panel .section-kicker {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .transmission-tag {
-    font-size: 9px;
+    font-size: var(--text-xs);
     line-height: 1.6;
   }
   .component-panel .component-recognition {
-    font-size: 12px;
+    font-size: var(--text-md);
     margin: var(--space-4) 0;
   }
   .component-panel .primary {
-    font-size: 13px;
+    font-size: var(--text-base);
     min-height: 48px;
     margin-top: var(--space-2);
   }
   .component-secondary {
-    font-size: 12px;
+    font-size: var(--text-md);
     min-height: 44px;
     padding: var(--space-3) 0;
   }
   .component-footnote {
-    font-size: 13px !important;
+    font-size: var(--text-base) !important;
   }
   .space-panel {
     background: #102b3af5;
@@ -1216,16 +1216,16 @@ dialog p {
     margin: var(--space-3) 0;
   }
   .space-panel h3 {
-    font-size: 15px;
+    font-size: var(--text-body);
     line-height: 1.5;
     margin: 0 0 var(--space-3);
   }
   .space-panel p {
-    font-size: 14px;
+    font-size: var(--text-body);
     line-height: 1.65;
   }
   .space-tags {
-    font-size: 10px;
+    font-size: var(--text-sm);
     line-height: 1.7;
     margin: var(--space-3) 0;
   }
@@ -1237,7 +1237,7 @@ dialog p {
     border: 0;
   }
   .planet-button {
-    font-size: 11px;
+    font-size: var(--text-sm);
     line-height: 1.4;
     white-space: normal;
     min-height: 52px;
@@ -1258,7 +1258,7 @@ dialog p {
     display: none;
   }
   .imagined-note {
-    font-size: 10px;
+    font-size: var(--text-sm);
     line-height: 1.6;
     margin-top: var(--space-4);
   }
@@ -1270,7 +1270,7 @@ dialog p {
     width: auto;
     transform: none;
     gap: var(--space-3);
-    font-size: 12px;
+    font-size: var(--text-md);
     line-height: 1.5;
     padding: var(--space-3);
   }
@@ -1278,7 +1278,7 @@ dialog p {
     max-width: none;
   }
   .explore-message button {
-    font-size: 11px;
+    font-size: var(--text-sm);
     min-width: 86px;
     max-width: 100px;
     padding-left: var(--space-3);
@@ -1288,7 +1288,7 @@ dialog p {
     padding: var(--space-16) 7%;
   }
   .section-kicker {
-    font-size: 11px;
+    font-size: var(--text-sm);
   }
   .section-heading {
     margin: var(--space-4) 0 var(--space-8);
@@ -1299,7 +1299,7 @@ dialog p {
     line-height: 1.12;
   }
   .section-heading > p {
-    font-size: 15px;
+    font-size: var(--text-body);
     margin: var(--space-6) 0 0;
   }
   .project {
@@ -1309,7 +1309,7 @@ dialog p {
     min-height: 300px;
   }
   .project-visual > small {
-    font-size: 9px;
+    font-size: var(--text-xs);
     line-height: 1.7;
   }
   .project-body {
@@ -1320,19 +1320,19 @@ dialog p {
     margin: var(--space-4) 0;
   }
   .project-body > p {
-    font-size: 16px;
+    font-size: var(--text-body);
   }
   .project-recognition {
-    font-size: 13px;
+    font-size: var(--text-base);
   }
   .project-index {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .project-index span {
-    font-size: 12px;
+    font-size: var(--text-md);
   }
   .project-note {
-    font-size: 13px !important;
+    font-size: var(--text-base) !important;
   }
   .about-layout {
     gap: var(--space-6);
@@ -1342,13 +1342,13 @@ dialog p {
     max-width: none;
   }
   .about-layout p {
-    font-size: 16px;
+    font-size: var(--text-body);
   }
   .about-layout .about-lead {
-    font-size: 20px;
+    font-size: var(--text-xl);
   }
   .site-footer {
-    font-size: 10px;
+    font-size: var(--text-sm);
     line-height: 1.6;
     padding: var(--space-6) 7%;
     gap: var(--space-4);
@@ -1362,33 +1362,33 @@ dialog p {
     margin-top: var(--space-6);
   }
   dialog p {
-    font-size: 16px;
+    font-size: var(--text-body);
   }
   dialog h3 {
-    font-size: 11px;
+    font-size: var(--text-sm);
   }
   .dialog-subtitle {
-    font-size: 18px !important;
+    font-size: var(--text-lg) !important;
   }
   .dialog-close {
     top: var(--space-2);
     right: var(--space-2);
   }
   .loading {
-    font-size: 12px;
+    font-size: var(--text-md);
     white-space: normal;
     min-width: 220px;
   }
 }
 .introduction .intro-role {
-  font-size: clamp(21px, 1.9vw, 28px);
+  font-size: clamp(var(--text-xl), 1.9vw, 28px);
   line-height: 1.35;
   letter-spacing: -0.015em;
   color: var(--paper);
   margin-bottom: var(--space-4);
 }
 .introduction .intro-credentials {
-  font-size: 16px;
+  font-size: var(--text-body);
   line-height: 1.65;
   color: #e3e9e2;
   margin-bottom: var(--space-6);
@@ -1401,11 +1401,11 @@ dialog p {
     display: none;
   }
   .introduction .intro-role {
-    font-size: 21px;
+    font-size: var(--text-xl);
     margin-bottom: var(--space-3);
   }
   .introduction .intro-credentials {
-    font-size: 14px;
+    font-size: var(--text-body);
     line-height: 1.6;
     margin-bottom: var(--space-4);
   }
@@ -1413,7 +1413,7 @@ dialog p {
     gap: var(--space-3);
   }
   .introduction .quiet {
-    font-size: 12px;
+    font-size: var(--text-md);
   }
 }
 [data-view="dish"] .controls:not([open]) {

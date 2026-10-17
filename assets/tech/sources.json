@@ -106,5 +106,29 @@
   "openai": {
     "source": "https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/openai.svg",
     "library": "Simple Icons (CC0-1.0)"
+  },
+  "capacitor": {
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.0.0/icons/capacitor.svg",
+    "library": "Simple Icons (CC0-1.0)"
+  },
+  "sqlite": {
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.0.0/icons/sqlite.svg",
+    "library": "Simple Icons (CC0-1.0)"
+  },
+  "lucide": {
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.0.0/icons/lucide.svg",
+    "library": "Simple Icons (CC0-1.0)"
+  },
+  "bun": {
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.0.0/icons/bun.svg",
+    "library": "Simple Icons (CC0-1.0)"
+  },
+  "eslint": {
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.0.0/icons/eslint.svg",
+    "library": "Simple Icons (CC0-1.0)"
+  },
+  "prettier": {
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.0.0/icons/prettier.svg",
+    "library": "Simple Icons (CC0-1.0)"
   }
 }

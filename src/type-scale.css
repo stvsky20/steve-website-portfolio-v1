@@ -1,0 +1,13 @@
+/* Shared readable type scale. Rem units follow the reader's browser settings. */
+:root {
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 0.9375rem;
+  --text-base: 1rem;
+  --text-body: 1.125rem;
+  --text-lead: 1.1875rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.625rem;
+}

@@ -63,17 +63,17 @@
 }
 .scroll-invitation-kicker {
   color: #efc783;
-  font: 500 9px/1.4 var(--font-mono);
+  font: 500 var(--text-xs)/1.4 var(--font-mono);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 .scroll-invitation-title {
-  font: 500 23px/1.2 var(--font-sans);
+  font: 500 var(--text-2xl)/1.2 var(--font-sans);
   letter-spacing: -0.025em;
 }
 .scroll-invitation-caption {
   color: #c2d1cf;
-  font: 400 11px/1.5 var(--font-sans);
+  font: 400 var(--text-sm)/1.5 var(--font-sans);
 }
 .scroll-invitation-track {
   position: absolute;
@@ -180,15 +180,15 @@ body:has(#audio-welcome[open]) .scroll-invitation *,
     height: 25px;
   }
   .scroll-invitation-title {
-    font-size: 20px;
+    font-size: var(--text-xl);
   }
   .scroll-invitation-copy {
     gap: 5px;
   }
   .scroll-invitation-kicker {
-    font-size: 8px;
+    font-size: var(--text-xs);
   }
   .scroll-invitation-caption {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
 }

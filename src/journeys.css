@@ -19,13 +19,13 @@
 .journey-nav > button {
   border: 0;
   background: none;
-  font-size: 10px;
+  font-size: var(--text-sm);
   padding: 6px 0;
   color: #efd5a6;
   min-height: 32px;
 }
 .journey-nav > span:not(.journey-progress) {
-  font-size: 9px;
+  font-size: var(--text-xs);
   letter-spacing: 0.04em;
   color: #c5cfcf;
 }
@@ -57,7 +57,7 @@
   letter-spacing: -0.04em;
 }
 .component-panel p {
-  font-size: 13px;
+  font-size: var(--text-base);
   color: #c5d0cc;
   line-height: 1.8;
 }
@@ -69,12 +69,12 @@
   letter-spacing: -0.04em;
 }
 .transmission-tag {
-  font-size: 8px;
+  font-size: var(--text-xs);
   letter-spacing: 0.12em;
   color: #c1b594;
 }
 .component-panel .component-recognition {
-  font-size: 11px;
+  font-size: var(--text-sm);
   color: #dfc79f;
   border-left: 1px solid #b6a07b80;
   padding-left: 13px;
@@ -88,12 +88,12 @@
   background: none;
   border: 0;
   padding: 13px 0;
-  font-size: 11px;
+  font-size: var(--text-sm);
   color: #d4c6aa;
   text-underline-offset: 4px;
 }
 .component-footnote {
-  font-size: 11px !important;
+  font-size: var(--text-sm) !important;
   color: #a4b7bb !important;
   max-width: 300px;
 }
@@ -136,17 +136,17 @@
 }
 .space-panel h3 {
   font-weight: 400;
-  font-size: 15px;
+  font-size: var(--text-body);
   color: #e0d3ba;
   margin: 0 0 15px;
 }
 .space-panel p {
-  font-size: 12px;
+  font-size: var(--text-md);
   line-height: 1.85;
   color: #b5c1c8;
 }
 .space-tags {
-  font-size: 8px;
+  font-size: var(--text-xs);
   text-transform: uppercase;
   letter-spacing: 0.11em;
   color: #c6a26e;
@@ -168,7 +168,7 @@
   border-bottom: 1px solid #bfaf8c30;
   padding: 12px 3px;
   text-align: left;
-  font-size: 12px;
+  font-size: var(--text-md);
   color: #d3dbda;
   min-height: 44px;
 }
@@ -188,7 +188,7 @@
 }
 .imagined-note {
   display: block;
-  font-size: 8px;
+  font-size: var(--text-xs);
   line-height: 1.7;
   letter-spacing: 0.035em;
   color: #879ba9;
@@ -209,7 +209,7 @@
   background: #081321b8;
   padding: 7px 12px;
   color: #e7d6b4;
-  font-size: 9px;
+  font-size: var(--text-xs);
   pointer-events: auto;
   white-space: nowrap;
 }
@@ -239,7 +239,7 @@
     font-size: 39px;
   }
   .component-panel p {
-    font-size: 12px;
+    font-size: var(--text-md);
   }
   .space-panel {
     left: 5%;
@@ -262,11 +262,11 @@
     justify-content: space-between;
   }
   .journey-nav > button {
-    font-size: 9px;
+    font-size: var(--text-xs);
     min-height: 30px;
   }
   .journey-nav > span:not(.journey-progress) {
-    font-size: 8px;
+    font-size: var(--text-xs);
     order: 3;
     white-space: normal;
     width: 100%;
@@ -300,24 +300,24 @@
     margin: 10px 0 12px;
   }
   .component-panel p {
-    font-size: 11px;
+    font-size: var(--text-sm);
     margin: 10px 0;
   }
   .component-panel .component-recognition {
-    font-size: 9px;
+    font-size: var(--text-xs);
     margin: 15px 0;
   }
   .component-panel .primary {
     margin-top: 8px;
     min-height: 42px;
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .component-secondary {
-    font-size: 10px;
+    font-size: var(--text-sm);
     padding: 10px 0;
   }
   .component-footnote {
-    font-size: 9px !important;
+    font-size: var(--text-xs) !important;
   }
   .transmission-tag {
     font-size: 7px;
@@ -332,11 +332,11 @@
     margin: 12px 0;
   }
   .space-panel h3 {
-    font-size: 11px;
+    font-size: var(--text-sm);
     margin: 0 0 10px;
   }
   .space-panel p {
-    font-size: 10px;
+    font-size: var(--text-sm);
     line-height: 1.7;
     margin: 0;
   }
@@ -356,7 +356,7 @@
     border: 0;
   }
   .planet-button {
-    font-size: 9px;
+    font-size: var(--text-xs);
     padding: 7px 5px;
     gap: 7px;
     min-height: 36px;
@@ -364,7 +364,7 @@
     flex-grow: 1;
   }
   .planet-button i {
-    font-size: 8px;
+    font-size: var(--text-xs);
     margin-left: 3px;
   }
   .planet-button > span {
@@ -405,17 +405,17 @@
 .contact-address > span {
   color: #f0bd70;
   font:
-    10px "IBM Plex Mono",
+    var(--text-sm) "IBM Plex Mono",
     monospace;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 .contact-address code {
-  font-size: 12px;
+  font-size: var(--text-md);
   overflow-wrap: anywhere;
   color: #f5efdf;
 }
 .contact-address small {
-  font-size: 11px;
+  font-size: var(--text-sm);
   opacity: 0.7;
 }

@@ -28,11 +28,11 @@
   gap: 2px;
 }
 .project-deployment-copy small {
-  font: 500 11px/1.4 var(--font-sans);
+  font: 500 var(--text-sm)/1.4 var(--font-sans);
   color: #e0efff;
 }
 .project-deployment-copy strong {
-  font: 600 17px/1.4 var(--font-sans);
+  font: 600 var(--text-lead)/1.4 var(--font-sans);
 }
 .project-deployment-arrow {
   display: grid;
@@ -74,7 +74,7 @@
     padding: 10px 12px;
   }
   .project-deployment-copy strong {
-    font-size: 14px;
+    font-size: var(--text-body);
   }
   .project-deployment-arrow {
     width: 32px;
@@ -95,19 +95,6 @@
   overflow: auto;
   overscroll-behavior: contain;
   scrollbar-gutter: stable;
-}
-#project-dialog.has-bento > .dialog-rule,
-#project-dialog.has-bento > h3,
-#project-dialog.has-bento > #project-description,
-#project-dialog.has-bento > #project-recognition-text,
-#project-dialog.has-bento > #project-detail-note,
-#project-dialog.has-bento > #project-contributions,
-#project-dialog.has-bento > #project-technologies {
-  display: none;
-}
-#project-dialog.has-bento > #project-affiliations,
-#project-dialog.has-bento > #project-documentation {
-  display: none;
 }
 .project-bento-grid.bento-without-images > .bento-overview {
   grid-column: span 3;
@@ -139,6 +126,35 @@
   border-radius: 50%;
   box-shadow: 0 4px 18px #142c3710;
 }
+.project-story {
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.project-story-card {
+  padding: 26px;
+}
+.project-story-card:nth-child(2) {
+  background: #eaf0ee;
+}
+#project-dialog .project-story .project-story-card h3 {
+  font-size: 26px;
+  line-height: 1.2;
+  margin: 12px 0;
+}
+#project-dialog .project-story p {
+  line-height: 1.6;
+}
+@media (max-width: 800px) {
+  .project-story {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .project-story-card {
+    padding: 24px;
+  }
+}
 .project-bento-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -147,7 +163,14 @@
   margin-bottom: 28px;
 }
 .project-bento-grid > .bento-card {
-  order: 10;
+  order: 1000;
+}
+.project-bento-grid > .bento-scope {
+  order: 1001;
+}
+.project-bento-grid > .bento-shot {
+  grid-column: span var(--bento-span, 3);
+  order: var(--bento-order, 10);
 }
 .project-bento-grid > .bento-overview {
   order: 0;
@@ -203,7 +226,7 @@
 #project-dialog .bento-card h3 {
   color: #183741;
   font:
-    500 30px/1.12 "Station DM Sans",
+    500 34px/1.18 "Station DM Sans",
     var(--font-sans);
   letter-spacing: -0.035em;
   text-transform: none;
@@ -211,12 +234,12 @@
 }
 #project-dialog .bento-card p {
   color: #52676c;
-  font: 400 14px/1.7 var(--font-sans);
+  font: 400 var(--text-body)/1.7 var(--font-sans);
   margin: 0;
   max-width: 60ch;
 }
 .bento-eyebrow {
-  font: 500 9px/1.5 var(--font-mono);
+  font: 500 var(--text-xs)/1.5 var(--font-mono);
   letter-spacing: 0.1em;
   color: #836044;
 }
@@ -231,30 +254,34 @@
   padding: 7px 11px;
   color: #42606a;
   background: #eaf0ee;
-  font: 500 11px/1.3 var(--font-sans);
+  font: 500 var(--text-sm)/1.3 var(--font-sans);
 }
 .bento-stack .technology-list {
-  gap: 6px;
+  gap: 10px;
 }
 .bento-stack .technology-chip {
-  font-size: 10px;
-  padding: 5px 8px 5px 5px;
-  min-height: 36px;
-  gap: 6px;
+  font-size: var(--text-base);
+  padding: 10px 16px 10px 12px;
+  min-height: 54px;
+  gap: 10px;
+  border-radius: 999px;
+  background: #fff;
+  border-color: #19374324;
+  box-shadow: 0 2px 5px #19374306;
 }
 .bento-stack .technology-mark {
-  width: 24px;
-  height: 24px;
-  flex-basis: 24px;
+  width: 30px;
+  height: 30px;
+  flex-basis: 30px;
   background: transparent;
 }
-.bento-stack .technology-mark img {
-  width: 20px;
-  height: 20px;
+.bento-stack .technology-mark :is(img, svg) {
+  width: 27px;
+  height: 27px;
 }
 #project-dialog .bento-stack p.bento-stack-extra {
   margin-top: 14px;
-  font-size: 11px;
+  font-size: var(--text-sm);
 }
 .bento-shot {
   position: relative;
@@ -325,7 +352,7 @@
 .bento-shot-caption strong {
   display: block;
   font:
-    500 15px/1.3 "Station DM Sans",
+    500 var(--text-body)/1.3 "Station DM Sans",
     var(--font-sans);
   letter-spacing: -0.015em;
 }
@@ -333,7 +360,7 @@
   display: block;
   margin-top: 3px;
   color: #f0f4f3;
-  font: 400 10px/1.4 var(--font-sans);
+  font: 400 var(--text-sm)/1.4 var(--font-sans);
 }
 .bento-expand {
   display: grid;
@@ -351,7 +378,7 @@
 .bento-approach small {
   display: block;
   margin-top: 18px;
-  font: 400 10px/1.7 var(--font-mono);
+  font: 400 var(--text-sm)/1.7 var(--font-mono);
   color: #6a7b7b;
 }
 .bento-scope {
@@ -386,7 +413,7 @@
   margin: 20px 0 8px;
 }
 .project-image-dialog > p {
-  font-size: 14px;
+  font-size: var(--text-body);
   line-height: 1.65;
   margin: 0;
   max-width: 95ch;
@@ -439,10 +466,10 @@
     margin: -12px -4px 0 10px;
   }
   #project-dialog.has-bento > .section-kicker {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   #project-dialog.has-bento > .dialog-subtitle {
-    font-size: 16px !important;
+    font-size: var(--text-body) !important;
     margin-bottom: 22px;
   }
   .project-bento-grid {
@@ -464,7 +491,7 @@
     height: auto;
   }
   #project-dialog .bento-card h3 {
-    font-size: 27px;
+    font-size: 30px;
   }
   .project-image-dialog {
     width: calc(100% - 16px);

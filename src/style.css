@@ -24,7 +24,7 @@ body {
   background: var(--ink);
   color: var(--paper);
   font:
-    15px/1.65 Station,
+    var(--text-body)/1.65 Station,
     system-ui,
     sans-serif;
 }
@@ -147,7 +147,7 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 10px;
+  font-size: var(--text-sm);
   font-weight: 500;
   letter-spacing: 0.14em;
 }
@@ -158,7 +158,7 @@ button {
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  font-size: 21px;
+  font-size: var(--text-xl);
   font-weight: 300;
   letter-spacing: 0;
 }
@@ -171,17 +171,17 @@ button {
   display: flex;
   align-items: center;
   gap: 34px;
-  font-size: 12px;
+  font-size: var(--text-md);
 }
 .header nav a span {
-  font-size: 9px;
+  font-size: var(--text-xs);
   opacity: 0.55;
   margin-left: 5px;
 }
 .header nav button {
   border: 0;
   background: transparent;
-  font-size: 12px;
+  font-size: var(--text-md);
   padding: 9px 0;
 }
 .header nav button span {
@@ -199,7 +199,7 @@ button {
 }
 .eyebrow {
   text-transform: uppercase;
-  font-size: 9px;
+  font-size: var(--text-xs);
   letter-spacing: 0.18em;
   display: flex;
   align-items: center;
@@ -224,7 +224,7 @@ h1 > span {
   color: var(--amber);
 }
 .introduction > p {
-  font-size: 14px;
+  font-size: var(--text-body);
   color: #f2eddfd9;
   line-height: 1.9;
   font-weight: 350;
@@ -244,19 +244,19 @@ h1 > span {
   border: 1px solid var(--paper);
   color: var(--ink);
   padding: 13px 19px;
-  font-size: 12px;
+  font-size: var(--text-md);
   min-height: 48px;
   border-radius: 2px;
   font-weight: 500;
 }
 .primary span {
-  font-size: 18px;
+  font-size: var(--text-lg);
 }
 .quiet {
   background: transparent;
   border: 0;
   padding: 12px 0;
-  font-size: 12px;
+  font-size: var(--text-md);
   color: #f2eddfdb;
 }
 .quiet span {
@@ -266,7 +266,7 @@ h1 > span {
   display: flex;
   gap: 12px;
   align-items: center;
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #c5ccca;
   margin-top: 36px;
 }
@@ -302,12 +302,12 @@ h1 > span {
   padding: 12px 20px;
   background: #152c36e8;
   border: 1px solid #c9bba93a;
-  font-size: 11px;
+  font-size: var(--text-sm);
   letter-spacing: 0.05em;
   border-radius: 2px;
 }
 .loading-cross {
-  font-size: 22px;
+  font-size: var(--text-2xl);
   color: var(--amber);
   animation: loading 4s linear infinite;
 }
@@ -349,7 +349,7 @@ h1 > span {
   place-items: center;
   border-radius: 50%;
   color: var(--amber);
-  font-size: 16px;
+  font-size: var(--text-body);
   background: #17343d99;
   box-shadow: 0 0 0 5px #d4b58915;
 }
@@ -358,12 +358,12 @@ h1 > span {
   padding: 7px 11px;
   border: 1px solid #d5b88a30;
   border-radius: 2px;
-  font-size: 11px;
+  font-size: var(--text-sm);
   line-height: 1.5;
 }
 .hotspot small {
   display: block;
-  font-size: 8px;
+  font-size: var(--text-xs);
   letter-spacing: 0.11em;
   text-transform: uppercase;
   color: #bfc7bf;
@@ -387,7 +387,7 @@ h1 > span {
   border: 1px solid #ded1bc40;
   backdrop-filter: blur(14px);
   border-radius: 3px;
-  font-size: 12px;
+  font-size: var(--text-md);
 }
 .controls summary {
   display: flex;
@@ -404,11 +404,11 @@ h1 > span {
 .controls summary > span:last-child {
   margin-left: auto;
   color: var(--amber);
-  font-size: 18px;
+  font-size: var(--text-lg);
   line-height: 1;
 }
 .control-icon {
-  font-size: 20px;
+  font-size: var(--text-xl);
   color: #d1c2a6;
 }
 .control-content {
@@ -418,18 +418,18 @@ h1 > span {
   display: flex;
   justify-content: space-between;
   letter-spacing: 0.1em;
-  font-size: 8px;
+  font-size: var(--text-xs);
   margin-bottom: 18px;
   color: #d3d7cf;
 }
 .control-heading span {
   color: var(--amber);
-  font-size: 8px;
+  font-size: var(--text-xs);
 }
 .control-content > label {
   display: flex;
   justify-content: space-between;
-  font-size: 11px;
+  font-size: var(--text-sm);
 }
 .control-content output {
   color: var(--amber);
@@ -458,7 +458,7 @@ input[type="checkbox"] {
   display: flex;
   gap: 8px;
   align-items: center;
-  font-size: 10px;
+  font-size: var(--text-sm);
   cursor: pointer;
 }
 .small-button {
@@ -466,7 +466,7 @@ input[type="checkbox"] {
   border: 1px solid #e0d6c33d;
   border-radius: 2px;
   padding: 7px 9px;
-  font-size: 10px;
+  font-size: var(--text-sm);
   min-height: 32px;
 }
 .lighting-row {
@@ -475,7 +475,7 @@ input[type="checkbox"] {
   border-top: 1px solid #d8cdb61f;
 }
 .control-note {
-  font-size: 10px;
+  font-size: var(--text-sm);
   color: #bdc7c6;
   line-height: 1.6;
   margin: 13px 0 0;
@@ -495,7 +495,7 @@ input[type="checkbox"] {
   display: flex;
   gap: 10px;
   align-items: center;
-  font-size: 8px;
+  font-size: var(--text-xs);
   letter-spacing: 0.1em;
   color: #d5dad2;
 }
@@ -512,7 +512,7 @@ input[type="checkbox"] {
 }
 #status-copy {
   color: #abbabc;
-  font-size: 9px;
+  font-size: var(--text-xs);
   letter-spacing: 0.015em;
 }
 .scene-actions {
@@ -523,7 +523,7 @@ input[type="checkbox"] {
   border: 0;
   background: transparent;
   color: #e3e5da;
-  font-size: 10px;
+  font-size: var(--text-sm);
   min-height: 44px;
   padding: 5px 0;
 }
@@ -534,7 +534,7 @@ input[type="checkbox"] {
 }
 #pause-icon {
   color: var(--amber);
-  font-size: 12px;
+  font-size: var(--text-md);
 }
 .scroll-note {
   position: absolute;
@@ -545,12 +545,12 @@ input[type="checkbox"] {
   display: flex;
   gap: 20px;
   align-items: center;
-  font-size: 8px;
+  font-size: var(--text-xs);
   letter-spacing: 0.13em;
   color: #dce0d6;
 }
 .scroll-note > span:last-child {
-  font-size: 15px;
+  font-size: var(--text-body);
 }
 .explore-message {
   position: absolute;
@@ -566,14 +566,14 @@ input[type="checkbox"] {
   border: 1px solid #ddccaa3d;
   padding: 10px 15px;
   border-radius: 2px;
-  font-size: 10px;
+  font-size: var(--text-sm);
   backdrop-filter: blur(10px);
 }
 .explore-message button {
   border: 0;
   border-left: 1px solid #d9ccb63d;
   background: transparent;
-  font-size: 10px;
+  font-size: var(--text-sm);
   padding: 4px 0 4px 16px;
   color: var(--amber);
 }
@@ -583,7 +583,7 @@ input[type="checkbox"] {
   margin: auto;
 }
 .section-kicker {
-  font-size: 9px;
+  font-size: var(--text-xs);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #c6b695;
@@ -603,7 +603,7 @@ h2 {
   margin: 0;
 }
 .section-heading > p {
-  font-size: 12px;
+  font-size: var(--text-md);
   color: #a9babd;
   margin: 0 0 6px;
   line-height: 1.9;
@@ -634,12 +634,12 @@ h2 {
   position: absolute;
   bottom: 22px;
   left: 24px;
-  font-size: 8px;
+  font-size: var(--text-xs);
   letter-spacing: 0.1em;
 }
 .diagram-node {
   position: absolute;
-  font-size: 10px;
+  font-size: var(--text-sm);
   border: 1px solid #24443e66;
   background: #d9d6c5;
   padding: 8px 18px;
@@ -676,13 +676,13 @@ h2 {
   align-self: center;
 }
 .project-index {
-  font-size: 8px;
+  font-size: var(--text-xs);
   letter-spacing: 0.12em;
   color: #c2b698;
 }
 .project-index span {
   display: block;
-  font-size: 9px;
+  font-size: var(--text-xs);
   color: #a7b9bc;
   letter-spacing: 0.02em;
   margin-top: 6px;
@@ -695,12 +695,12 @@ h2 {
   margin: 22px 0 15px;
 }
 .project-body > p {
-  font-size: 13px;
+  font-size: var(--text-base);
   color: #b5c3c4;
   max-width: 280px;
 }
 .project-recognition {
-  font-size: 10px;
+  font-size: var(--text-sm);
   line-height: 1.7;
   color: #d8c8a5;
   margin: 22px 0;
@@ -711,7 +711,7 @@ h2 {
   position: absolute;
   left: 0;
   top: 0;
-  font-size: 17px;
+  font-size: var(--text-lead);
   color: var(--amber);
 }
 .project-link {
@@ -721,17 +721,17 @@ h2 {
   background: transparent;
   border: 0;
   border-bottom: 1px solid #c9b48e6b;
-  font-size: 12px;
+  font-size: var(--text-md);
   padding: 10px 0;
   color: var(--paper);
 }
 .project-link > span {
   color: var(--amber);
-  font-size: 18px;
+  font-size: var(--text-lg);
 }
 .project-note {
   color: #a7b9bc !important;
-  font-size: 11px !important;
+  font-size: var(--text-sm) !important;
 }
 .about {
   border-top: 1px solid #ded1b41f;
@@ -747,11 +747,11 @@ h2 {
   max-width: 380px;
 }
 .about-layout p {
-  font-size: 13px;
+  font-size: var(--text-base);
   color: #a7b9bc;
 }
 .about-layout .about-lead {
-  font-size: 18px;
+  font-size: var(--text-lg);
   color: #e0e2d7;
   line-height: 1.6;
 }
@@ -764,7 +764,7 @@ h2 {
   gap: 24px;
   padding: 28px 4.5%;
   border-top: 1px solid #d8cdb61f;
-  font-size: 8px;
+  font-size: var(--text-xs);
   letter-spacing: 0.08em;
   color: #aab9b8;
 }
@@ -791,18 +791,18 @@ dialog h2 {
   margin: 20px 0 8px;
 }
 dialog h3 {
-  font-size: 11px;
+  font-size: var(--text-sm);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 500;
   margin: 24px 0 8px;
 }
 dialog p {
-  font-size: 13px;
+  font-size: var(--text-base);
   color: #bdcac8;
 }
 .dialog-subtitle {
-  font-size: 16px !important;
+  font-size: var(--text-body) !important;
 }
 .dialog-rule {
   height: 1px;
@@ -876,27 +876,27 @@ dialog p {
     font-size: 65px;
   }
   .introduction > p {
-    font-size: 12px;
+    font-size: var(--text-md);
   }
   .intro-actions {
     gap: 15px;
   }
   .intro-footnote {
     max-width: 240px;
-    font-size: 9px;
+    font-size: var(--text-xs);
   }
   .header nav {
     gap: 22px;
   }
   .wordmark {
-    font-size: 9px;
+    font-size: var(--text-xs);
     letter-spacing: 0.08em;
   }
   .scroll-note {
     display: none;
   }
   .hotspot > span:last-child {
-    font-size: 10px;
+    font-size: var(--text-sm);
   }
   .hotspot small {
     font-size: 7px;
@@ -924,7 +924,7 @@ dialog p {
   }
   .wordmark {
     gap: 8px;
-    font-size: 8px;
+    font-size: var(--text-xs);
     max-width: 175px;
     letter-spacing: 0.06em;
   }
@@ -941,7 +941,7 @@ dialog p {
   }
   .header nav {
     gap: 18px;
-    font-size: 11px;
+    font-size: var(--text-sm);
     align-items: center;
   }
   .header nav button {
@@ -974,7 +974,7 @@ dialog p {
     max-width: 310px;
   }
   .introduction > p {
-    font-size: 11px;
+    font-size: var(--text-sm);
     line-height: 1.7;
     margin-bottom: 18px;
   }
@@ -983,12 +983,12 @@ dialog p {
   }
   .primary {
     padding: 10px 14px;
-    font-size: 11px;
+    font-size: var(--text-sm);
     min-height: 44px;
     gap: 22px;
   }
   .quiet {
-    font-size: 11px;
+    font-size: var(--text-sm);
   }
   .intro-footnote {
     display: none;
@@ -1002,7 +1002,7 @@ dialog p {
     width: 220px;
   }
   .controls summary {
-    font-size: 10px;
+    font-size: var(--text-sm);
     padding: 10px 13px;
   }
   .controls[open] {
@@ -1024,7 +1024,7 @@ dialog p {
   #status-copy {
     display: block;
     width: 100%;
-    font-size: 8px;
+    font-size: var(--text-xs);
     padding-left: 11px;
   }
   .status-divider {
@@ -1032,23 +1032,23 @@ dialog p {
   }
   .scene-actions {
     gap: 14px;
-    font-size: 9px;
+    font-size: var(--text-xs);
   }
   .scene-actions button {
-    font-size: 9px;
+    font-size: var(--text-xs);
     min-height: 44px;
   }
   .hotspot-ring {
     width: 24px;
     height: 24px;
-    font-size: 13px;
+    font-size: var(--text-base);
   }
   .hotspot {
     gap: 7px;
   }
   .hotspot > span:last-child {
     padding: 5px 7px;
-    font-size: 9px;
+    font-size: var(--text-xs);
   }
   .hotspot small {
     font-size: 6px;
@@ -1061,14 +1061,14 @@ dialog p {
     max-width: 90%;
     white-space: normal;
     width: 88%;
-    font-size: 9px;
+    font-size: var(--text-xs);
     gap: 10px;
   }
   .explore-message > span:nth-child(2) {
     max-width: 170px;
   }
   .explore-message button {
-    font-size: 9px;
+    font-size: var(--text-xs);
     max-width: 90px;
     padding-left: 10px;
   }
@@ -1078,7 +1078,7 @@ dialog p {
   .loading {
     top: 63%;
     white-space: nowrap;
-    font-size: 9px;
+    font-size: var(--text-xs);
   }
   .content-section {
     padding: 65px 7%;
@@ -1145,5 +1145,5 @@ dialog p {
 .view-buttons button {
   flex: 1;
   min-height: 36px;
-  font-size: 16px;
+  font-size: var(--text-body);
 }

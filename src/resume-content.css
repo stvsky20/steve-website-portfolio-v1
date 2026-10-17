@@ -16,7 +16,7 @@
   border-radius: 8px;
   background: #ffffff50;
   color: var(--ink);
-  font: 500 12px/1.4 var(--font-sans);
+  font: 500 var(--text-md)/1.4 var(--font-sans);
   overflow-wrap: anywhere;
 }
 .technology-mark {
@@ -40,7 +40,7 @@
   padding-left: 20px;
   margin: 12px 0 24px;
   color: var(--on-paper-secondary);
-  font: 400 15px/1.7 var(--font-sans);
+  font: 400 var(--text-body)/1.7 var(--font-sans);
 }
 #project-contributions li + li {
   margin-top: 10px;
@@ -52,7 +52,7 @@
   margin-top: 14px;
   min-height: 44px;
   text-decoration: none;
-  font-size: 13px;
+  font-size: var(--text-base);
 }
 .contact-address #contact-link[hidden] {
   display: none;
@@ -64,7 +64,7 @@
   display: block;
   margin-top: 12px;
   color: inherit;
-  font-size: 13px;
+  font-size: var(--text-base);
 }
 #contact-phone[hidden] {
   display: none;
@@ -155,7 +155,7 @@
     height: 24px;
   }
   .technology-chip {
-    font-size: 11px;
+    font-size: var(--text-sm);
     padding: 6px 9px 6px 6px;
     gap: 7px;
   }
