@@ -1,0 +1,177 @@
+/* Harbor Pill: one compact navigation capsule, no glass render cost. */
+#station-story .header.harbor-header {
+  left: 50%;
+  right: auto;
+  top: max(28px, env(safe-area-inset-top));
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100% - 28px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 7px 10px 7px 8px;
+  border: 1px solid #ffffff24;
+  border-radius: 999px;
+  background: #12313df5;
+  color: #f4efdf;
+  box-shadow: 0 10px 35px #00182230;
+  backdrop-filter: none;
+}
+#station-story .harbor-header .wordmark {
+  gap: 10px;
+  padding: 0 15px 0 0;
+  flex-shrink: 0;
+  border-right: 1px solid #ffffff22;
+}
+#station-story .harbor-header .brand-mark {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: #efbe7a;
+  color: #14343f;
+  box-shadow: inset 0 0 0 4px #14343f0c;
+}
+.harbor-header .brand-mark svg {
+  width: 26px;
+  height: 26px;
+}
+#station-story .harbor-header .brand-lockup strong {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+#station-story .harbor-header .brand-role {
+  display: none;
+}
+#station-story .harbor-header nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: auto;
+}
+#station-story .harbor-header nav a {
+  min-height: 44px;
+  padding: 0 15px;
+  border-radius: 999px;
+  font-size: 13px;
+  transition: transform 160ms ease-out;
+}
+#station-story .harbor-header nav a:hover {
+  background: #ffffff14;
+  transform: translateY(-1px);
+}
+#station-story .harbor-header nav :is(#night-toggle, #sound-settings) {
+  position: relative;
+  top: auto;
+  right: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 11px;
+  margin: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #f4efdf;
+  transition: transform 160ms ease-out;
+}
+#station-story .harbor-header nav #night-toggle {
+  margin-left: 15px;
+}
+#station-story .harbor-header #night-toggle::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  height: 22px;
+  width: 1px;
+  background: #ffffff22;
+}
+#station-story .harbor-header nav button:hover {
+  background: #ffffff1c;
+}
+#station-story .harbor-header nav button:active {
+  transform: scale(0.94);
+}
+#station-story .harbor-header :is(#night-mode-label, #sound-button-label) {
+  display: none;
+}
+#station-story .harbor-header :is(.night-mode-icon, .sound-icon) {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+#station-story .harbor-header #night-toggle[aria-pressed="true"] {
+  color: #efbe7a;
+}
+#station-story[data-chapter="projects"] .harbor-header a[href="#work"],
+#station-story[data-chapter="stack"] .harbor-header a[href="#stack"],
+#station-story[data-chapter="education"] .harbor-header a[href="#education"],
+#station-story[data-chapter="beyond"] .harbor-header a[href="#beyond"] {
+  color: #15313c;
+  background: #efbe7a;
+}
+@media (max-width: 700px) {
+  #station-story .header.harbor-header {
+    gap: 8px;
+  }
+  #station-story .harbor-header nav a {
+    padding: 0 11px;
+  }
+}
+@media (max-width: 550px) {
+  #station-story .header.harbor-header {
+    top: max(16px, env(safe-area-inset-top));
+    padding: 5px;
+    gap: 4px;
+    max-width: calc(100% - 16px);
+  }
+  #station-story .harbor-header .wordmark {
+    padding: 0;
+    border: 0;
+  }
+  #station-story .harbor-header .brand-lockup {
+    display: none;
+  }
+  #station-story .harbor-header .brand-mark {
+    width: 34px;
+    height: 34px;
+  }
+  #station-story .harbor-header nav {
+    gap: 0;
+  }
+  #station-story .harbor-header nav a {
+    padding: 0 9px;
+    font-size: 12px;
+  }
+  #station-story .harbor-header nav :is(#night-toggle, #sound-settings) {
+    min-width: 36px;
+    padding: 0 7px;
+  }
+  #station-story .harbor-header nav #night-toggle {
+    margin-left: 5px;
+  }
+  #station-story .harbor-header #night-toggle::before {
+    left: -2px;
+  }
+}
+@media (max-width: 360px) {
+  #station-story .harbor-header nav a {
+    padding: 0 7px;
+    font-size: 11px;
+  }
+  #station-story .harbor-header nav :is(#night-toggle, #sound-settings) {
+    min-width: 32px;
+    padding: 0 5px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #station-story .harbor-header nav :is(a, button) {
+    transition: none;
+  }
+}

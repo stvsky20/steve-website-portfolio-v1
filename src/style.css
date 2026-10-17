@@ -90,7 +90,7 @@ button {
   height: 100svh;
   min-height: 760px;
   overflow: hidden;
-  background: #667985 url("../assets/concept.png") center/cover;
+  background: #667985 url("../assets/concept.webp") center/cover;
 }
 .station.ready {
   background: #667985;

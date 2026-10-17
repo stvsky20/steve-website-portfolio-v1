@@ -1,0 +1,62 @@
+{
+  "sequence": [
+    {
+      "fps": 60,
+      "p95FrameMs": 16.8,
+      "frames": 600,
+      "averageDrawCalls": 378,
+      "width": 1265,
+      "height": 720,
+      "pixelRatio": 1,
+      "hiddenDuringSample": false,
+      "chapter": "introduction",
+      "modal": false,
+      "variant": "full",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce GT 730 (0x00001287) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "cpuRenderMs": 3.97,
+      "gpuRenderMs": 10.3,
+      "gpuSamples": 150,
+      "gpuTimingEnabled": true,
+      "cpuFrameMs": 4.37
+    },
+    {
+      "fps": 60,
+      "p95FrameMs": 16.8,
+      "frames": 600,
+      "averageDrawCalls": 375,
+      "width": 1265,
+      "height": 720,
+      "pixelRatio": 1,
+      "hiddenDuringSample": false,
+      "chapter": "introduction",
+      "modal": false,
+      "variant": "procedural",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce GT 730 (0x00001287) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "cpuRenderMs": 4.05,
+      "gpuRenderMs": 11.16,
+      "gpuSamples": 150,
+      "gpuTimingEnabled": true,
+      "cpuFrameMs": 4.49
+    },
+    {
+      "fps": 60,
+      "p95FrameMs": 16.8,
+      "frames": 600,
+      "averageDrawCalls": 375,
+      "width": 1265,
+      "height": 720,
+      "pixelRatio": 1,
+      "hiddenDuringSample": false,
+      "chapter": "introduction",
+      "modal": false,
+      "variant": "full",
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce GT 730 (0x00001287) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "cpuRenderMs": 3.9,
+      "gpuRenderMs": 10.37,
+      "gpuSamples": 149,
+      "gpuTimingEnabled": true,
+      "cpuFrameMs": 4.37
+    }
+  ],
+  "note": "Same tab, hero, viewport and DPR; shader mode switched without reload. Moving dish can slightly vary draw calls. Results are one A-B-A sequence, not a cross-device guarantee."
+}

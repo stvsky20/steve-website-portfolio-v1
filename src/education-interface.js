@@ -1,6 +1,8 @@
 import { emitSound } from "./audio.js";
 import * as THREE from "../vendor/three.module.js";
 import { educationRecords } from "./education-study.js";
+import { renderInstitutionBrands } from "./institution-brands.js";
+import { renderProjectDocumentation } from "./project-documentation.js";
 
 export function createEducationInterface({
   study,
@@ -35,7 +37,15 @@ export function createEducationInterface({
     if (!active) return;
     emitSound("open");
     const record = educationRecords[index];
+    renderInstitutionBrands(
+      document.querySelector("#education-affiliations"),
+      record.institutions || [],
+    );
     opener = buttons[index];
+    renderProjectDocumentation(
+      document.querySelector("#education-documentation"),
+      record.institutions?.includes("psc"),
+    );
     scroll = window.scrollY;
     overflow = document.body.style.overflow;
     document.querySelector("#education-dialog-kind").textContent = record.kind;

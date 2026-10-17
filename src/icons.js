@@ -1,7 +1,11 @@
 // Phosphor symbols with custom solid station arrows. No remote requests.
 const stationArrows = new Set([
-  "arrow-up-right", "arrow-down-left", "arrow-left",
-  "arrow-right", "arrow-down", "arrow-up",
+  "arrow-up-right",
+  "arrow-down-left",
+  "arrow-left",
+  "arrow-right",
+  "arrow-down",
+  "arrow-up",
 ]);
 const symbols = new Map([
   ["↗", "arrow-up-right"],
@@ -32,7 +36,8 @@ export function icon(name) {
   return svg;
 }
 function hydrate(root) {
-  const explicit = root.querySelectorAll?.("[data-icon]") || [];
+  const explicit = [...(root.querySelectorAll?.("[data-icon]") || [])];
+  if (root.matches?.("[data-icon]")) explicit.push(root);
   for (const target of explicit)
     if (!target.querySelector("svg"))
       target.replaceChildren(icon(target.dataset.icon));
@@ -72,12 +77,21 @@ function hydrate(root) {
   }
 }
 hydrate(document.body);
-let queued = false;
-new MutationObserver(() => {
-  if (queued) return;
-  queued = true;
-  queueMicrotask(() => {
-    queued = false;
-    hydrate(document.body);
-  });
+new MutationObserver((records) => {
+  const roots = new Set();
+  for (const record of records)
+    for (const node of record.addedNodes) {
+      const root = node.nodeType === Node.TEXT_NODE ? node.parentElement : node;
+      if (
+        !(root instanceof HTMLElement) ||
+        !root.isConnected ||
+        root.closest("#hero-role,svg,script,style")
+      )
+        continue;
+      roots.add(root);
+    }
+  for (const root of roots) {
+    if (![...roots].some((other) => other !== root && other.contains(root)))
+      hydrate(root);
+  }
 }).observe(document.body, { childList: true, subtree: true });

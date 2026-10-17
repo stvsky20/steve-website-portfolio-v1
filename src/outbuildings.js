@@ -4,7 +4,7 @@ import { createSignalCore } from "./signal-core.js";
 import { createEducationStudy } from "./education-study.js";
 
 // Open-front annexes share the station's materials and primitive geometry.
-export function createOutbuildings(model) {
+export function createOutbuildings(model, requestFrame) {
   const m = model.materials;
   const boxGeometry = beveledBox();
   const cylinderGeometry = new THREE.CylinderGeometry(1, 1, 1, 12);
@@ -130,7 +130,7 @@ export function createOutbuildings(model) {
       i % 2 ? m.label : m.glass,
     );
   const studyLight = detailAnnex(study, m, "study");
-  const education = createEducationStudy(study, m, page, bulb);
+  const education = createEducationStudy(study, m, page, bulb, requestFrame);
   box(study, [-1.65, 1.1, 1.55], [1, 0.17, 0.85], m.dark);
   box(study, [-1.65, 1.75, 1.95], [1, 1.15, 0.13], m.glass);
   return {

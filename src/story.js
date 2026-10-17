@@ -155,8 +155,8 @@ export function createStory({
     current = "introduction";
     for (const chapter of chapterStarts)
       if (scroll >= chapter.at) current = chapter.id;
-    station.dataset.chapter = current;
-    story.dataset.chapter = current;
+    if (station.dataset.chapter !== current) station.dataset.chapter = current;
+    if (story.dataset.chapter !== current) story.dataset.chapter = current;
     const finished = storyHeight - scroll < station.clientHeight * 0.5;
     header.hidden = finished;
     progress.hidden = finished;

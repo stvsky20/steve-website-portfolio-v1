@@ -1,0 +1,33 @@
+/* The station's section signature: a tuning trace and a quiet, readable label.
+   No animated filters, canvas work, or extra render-loop updates. */
+.section-kicker.section-marker {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  max-width: 100%;
+  font: 500 13px/1.45 var(--font-sans);
+  letter-spacing: 0.015em;
+  text-transform: none;
+}
+.section-marker::before {
+  content: "";
+  display: block;
+  flex: 0 0 30px;
+  width: 30px;
+  height: 22px;
+  color: inherit;
+  background:
+    linear-gradient(currentColor, currentColor) 0 10px / 5px 2px,
+    linear-gradient(currentColor, currentColor) 7px 6px / 2px 10px,
+    linear-gradient(currentColor, currentColor) 12px 2px / 2px 18px,
+    linear-gradient(currentColor, currentColor) 17px 6px / 2px 10px,
+    linear-gradient(currentColor, currentColor) 21px 10px / 9px 2px;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+}
+@media (max-width: 650px) {
+  .section-kicker.section-marker {
+    font-size: 12px;
+    gap: 9px;
+  }
+}

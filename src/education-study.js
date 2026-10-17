@@ -1,9 +1,11 @@
 import * as THREE from "../vendor/three.module.js";
 import { beveledBox } from "./cinematic.js";
+import { institutionBrands } from "./institution-brands.js";
 
 export const educationRecords = [
   {
     title: "BS Information Technology",
+    institutions: ["slu"],
     kind: "Academic record",
     summary: "Saint Louis University · Baguio City, Benguet · 2023–2027",
     details: [
@@ -17,6 +19,7 @@ export const educationRecords = [
   },
   {
     title: "Philippine Startup Challenge X",
+    institutions: ["psc"],
     kind: "Recognition",
     summary: "Regional finalist.",
     details: [
@@ -41,6 +44,7 @@ export const educationRecords = [
   },
   {
     title: "Leadership & campus experience",
+    institutions: ["slu"],
     kind: "Leadership experience",
     summary: "Saint Louis University · January–July 2024",
     details: [
@@ -54,7 +58,7 @@ export const educationRecords = [
   },
 ];
 
-function paperTexture(type) {
+function paperTexture(type, requestFrame) {
   const canvas = document.createElement("canvas");
   canvas.width = type === 1 ? 1152 : 768;
   canvas.height = type === 0 ? 960 : 768;
@@ -79,9 +83,12 @@ function paperTexture(type) {
   );
   ctx.fillStyle = "#092028";
   if (type === 0) {
-    ctx.font = "600 76px sans-serif";
-    ctx.fillText("BS Information", 64, 285);
-    ctx.fillText("Technology", 64, 375);
+    // Keep the degree beside the larger crest, with a clear shared baseline.
+    ctx.font = "600 44px sans-serif";
+    ctx.fillText("BS", 64, 245);
+    ctx.font = "600 64px sans-serif";
+    ctx.fillText("Information", 64, 325);
+    ctx.fillText("Technology", 64, 405);
     ctx.font = "600 46px sans-serif";
     ctx.fillText("Saint Louis University", 64, 530);
     ctx.fillText("Baguio City, Benguet", 64, 584);
@@ -109,12 +116,12 @@ function paperTexture(type) {
     ctx.stroke();
     ctx.font = "600 64px monospace";
     ctx.fillStyle = "#58351f";
-    ctx.fillText("REGIONAL FINALIST", 64, 560);
+    ctx.fillText("REGIONAL FINALIST", 64, 625);
     ctx.font = "600 48px sans-serif";
     ctx.fillStyle = "#183039";
-    ctx.fillText("AYOS!", 64, 640);
+    ctx.fillText("AYOS!", 64, 680);
     ctx.font = "500 40px sans-serif";
-    ctx.fillText("Project Manager & Full-Stack Developer", 64, 705);
+    ctx.fillText("Project Manager & Full-Stack Developer", 64, 730);
   } else {
     ctx.font = "600 64px sans-serif";
     ctx.fillText("University of", 64, 265);
@@ -129,10 +136,39 @@ function paperTexture(type) {
   const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.SRGBColorSpace;
   texture.anisotropy = 4;
+  if (type < 2) {
+    const image = new Image();
+    image.onload = () => {
+      if (type === 0) {
+        const logoWidth = 200;
+        ctx.drawImage(
+          image,
+          500,
+          145,
+          logoWidth,
+          (logoWidth * image.height) / image.width,
+        );
+      } else {
+        // Replace the temporary text heading with the full competition banner.
+        ctx.fillStyle = "#f4eedc";
+        ctx.fillRect(60, 128, w - 120, 430);
+        ctx.drawImage(
+          image,
+          64,
+          150,
+          w - 128,
+          ((w - 128) * image.height) / image.width,
+        );
+      }
+      texture.needsUpdate = true;
+      requestFrame?.();
+    };
+    image.src = institutionBrands[type === 0 ? "slu" : "psc"].image;
+  }
   return texture;
 }
 
-export function createEducationStudy(study, m, page, bulb) {
+export function createEducationStudy(study, m, page, bulb, requestFrame) {
   const boxGeometry = beveledBox();
   function box(x, y, z, w, h, d, mat) {
     const mesh = new THREE.Mesh(boxGeometry, mat);
@@ -143,7 +179,7 @@ export function createEducationStudy(study, m, page, bulb) {
     return mesh;
   }
   function paper(index) {
-    const map = paperTexture(index);
+    const map = paperTexture(index, requestFrame);
     return new THREE.MeshStandardMaterial({
       map,
       color: 0xb8b8b8,
@@ -186,6 +222,7 @@ export function createEducationStudy(study, m, page, bulb) {
   fill.position.set(1.8, 2.7, 1.3);
   study.add(fill);
   const fixture = box(0, 4.48, 1.2, 0.7, 0.06, 0.12, m.metal);
+  fixture.userData.dynamic = true;
   return {
     records,
     night: 0,

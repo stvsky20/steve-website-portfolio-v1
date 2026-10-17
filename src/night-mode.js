@@ -15,6 +15,7 @@ export function createNightMode({
     enabled = localStorage.getItem("signal-station-night") === "true";
   } catch {}
   let amount = enabled ? 1 : 0;
+  let previousLighting = "";
   const dayFog = new THREE.Color(0x79868a),
     nightFog = new THREE.Color(0x102538);
   const daySun = new THREE.Color(0xffd29a),
@@ -75,6 +76,9 @@ export function createNightMode({
         ? target
         : amount + (target - amount) * (1 - Math.exp(-dt * 8));
       if (Math.abs(amount - target) < 0.001) amount = target;
+      const lightingKey = `${amount}/${study}/${lightsOn}/${environment.skyUniforms.spaceFade.value}`;
+      if (lightingKey === previousLighting) return amount !== target;
+      previousLighting = lightingKey;
       const p = nightLighting(amount, study);
       lighting.ambient.intensity = p.ambient;
       lighting.sun.intensity = p.sun;

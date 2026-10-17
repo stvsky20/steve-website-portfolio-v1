@@ -1,6 +1,8 @@
 import "./icons.js";
 import { createStationAudio, emitSound } from "./audio.js";
 import { createOperator } from "./operator.js";
+import { batchStaticMeshes } from "./mesh-batching.js";
+import { createFpsMeter } from "./fps-meter.js";
 import {
   applyScriptedView,
   updateInteractiveView,
@@ -20,8 +22,17 @@ import { createEducationInterface } from "./education-interface.js";
 import { createStory } from "./story.js";
 import { projects } from "./projects.js";
 import { renderProjectBento } from "./project-bento.js";
+import {
+  initializeProjectDocumentation,
+  renderProjectDocumentation,
+} from "./project-documentation.js";
+import {
+  initializeInstitutionBrands,
+  renderInstitutionBrands,
+} from "./institution-brands.js";
 import { technologyChip } from "./tech-logos.js";
 import { coreTools } from "./signal-core.js";
+import { initializeSectionMarkers } from "./section-marker.js";
 
 // Share the same real content between the 3D experience and reading fallback.
 const stackGroups = document.querySelector("#stack .stack-groups");
@@ -69,6 +80,9 @@ projects.slice(1).forEach((project, offset) => {
 });
 
 const $ = (selector) => document.querySelector(selector);
+initializeInstitutionBrands();
+initializeSectionMarkers();
+initializeProjectDocumentation();
 const host = $("#world"),
   stationElement = $("#station");
 const reduce = matchMedia("(prefers-reduced-motion: reduce)");
@@ -102,6 +116,8 @@ let controls,
   visible = true,
   contextLost = false;
 let lastTime = 0,
+  fpsMeter = null,
+  profileVariant = "full",
   cameraTransition = null,
   hovered = null,
   dragStart = null;
@@ -118,10 +134,24 @@ function openProject(opener = document.activeElement, index = 0) {
   dialog.querySelector(".section-kicker").textContent =
     `${project.kind || "PROJECT"} / 00${index + 1}`;
   $("#project-title").textContent = project.title;
+  const deployment = $("#project-deployment");
+  deployment.hidden = !project.deployment;
+  if (project.deployment) {
+    deployment.href = project.deployment.url;
+    $("#project-deployment-label").textContent = project.deployment.label;
+    deployment.querySelector("small").textContent = "Explore the live demo";
+  } else {
+    deployment.removeAttribute("href");
+  }
   $(".dialog-subtitle").textContent = project.label;
   $("#project-description").textContent = project.description;
   $("#project-recognition-text").textContent = project.recognition;
+  renderInstitutionBrands(
+    $("#project-affiliations"),
+    project.institutions || [],
+  );
   $("#project-detail-note").textContent = project.note;
+  renderProjectDocumentation($("#project-documentation"), false);
   dialog.querySelectorAll("h3")[1].textContent = project.placeholder
     ? "Status"
     : index === 0
@@ -408,11 +438,11 @@ function initialize() {
   rim.position.set(20, 13, -20);
   studyLighting = { ambient, sun, rim };
   scene.add(rim);
-  environment = createEnvironment(scene);
+  environment = createEnvironment(scene, requestFrame);
   model = createStation();
   operator = createOperator();
   model.root.add(operator.root);
-  outbuildings = createOutbuildings(model);
+  outbuildings = createOutbuildings(model, requestFrame);
   scene.add(model.root);
   model.root.traverse((object) => {
     if (object.isMesh && object.material.isMeshStandardMaterial)
@@ -427,6 +457,41 @@ function initialize() {
     requestFrame,
   });
   nightMode.update(0, 0, state.lights);
+  batchStaticMeshes(
+    model.root,
+    new Set([
+      operator.root,
+      model.flag,
+      ...[model.fan, model.cups, model.beacon, model.lid].filter(
+        (o) => o.isMesh,
+      ),
+    ]),
+  );
+  const localLights = [];
+  if (new URLSearchParams(location.search).has("fps")) {
+    scene.traverse((object) => {
+      if (object.isPointLight || object.isSpotLight) localLights.push(object);
+    });
+    fpsMeter = createFpsMeter(renderer, async (variant) => {
+      await environment.setShaderMode(
+        variant === "procedural" ? "procedural" : "textured",
+      );
+      profileVariant = variant;
+      renderer.shadowMap.autoUpdate = variant !== "freeze-shadows";
+      renderer.shadowMap.needsUpdate = true;
+      environment.sky.visible = variant !== "no-sky";
+      for (const light of localLights) light.visible = true;
+      requestFrame();
+    });
+    fpsMeter.applyIsolation = () => {
+      if (profileVariant === "no-ocean") environment.sea.visible = false;
+      else
+        environment.sea.visible =
+          environment.skyUniforms.spaceFade.value < 0.999;
+      if (profileVariant === "no-local-lights")
+        for (const light of localLights) light.visible = false;
+    };
+  }
   controls = new OrbitControls(camera, renderer.domElement);
   controls.enabled = false;
   controls.enableDamping = !reduce.matches;
@@ -523,6 +588,26 @@ function initialize() {
       requestFrame();
     }
   });
+  // Detail dialogs cover and blur the world. Hold its last rendered pose while
+  // reading; the tool-inspection dialog still needs its live 3D second pass.
+  const modalObserver = new MutationObserver(() => {
+    lastTime = performance.now();
+    requestFrame();
+  });
+  document.querySelectorAll("dialog").forEach((element) =>
+    modalObserver.observe(element, {
+      attributes: true,
+      attributeFilter: ["open"],
+    }),
+  );
+  document.addEventListener(
+    "close",
+    () => {
+      lastTime = performance.now();
+      requestFrame();
+    },
+    true,
+  );
   requestFrame();
 }
 function resize(initial = false) {
@@ -545,6 +630,8 @@ function requestFrame() {
 function tick(now) {
   frame = 0;
   if (contextLost || !visible || document.hidden) return;
+  if (document.querySelector("dialog[open]:not(#core-detail)")) return;
+  const frameStart = fpsMeter ? performance.now() : 0;
   const dt = Math.min((now - (lastTime || now)) / 1000, 0.05);
   lastTime = now;
   const animate = !state.paused && !reduce.matches;
@@ -568,7 +655,6 @@ function tick(now) {
     : model.lid.rotation.x +
       (lidTarget - model.lid.rotation.x) * (1 - Math.exp(-dt * 12));
   for (const light of model.lamps) light.visible = state.lights;
-  model.materials.lamp.emissiveIntensity = state.lights ? 2 : 0;
   model.materials.lamp.color.set(state.lights ? 0xffcb79 : 0x4a4435);
   model.materials.screen.emissiveIntensity = state.lights ? 1.3 : 0;
   for (const screen of model.screenMeshes)
@@ -630,8 +716,16 @@ function tick(now) {
     controls,
     Boolean(cameraTransition) || journeys?.moving,
   );
+  fpsMeter?.applyIsolation();
+  const renderStart = fpsMeter ? performance.now() : 0;
+  fpsMeter?.begin(now);
   renderer.render(scene, camera);
   coreInterface?.render(renderer);
+  fpsMeter?.record(
+    now,
+    performance.now() - renderStart,
+    performance.now() - frameStart,
+  );
   positionProjectScreens();
   if (
     animate ||
@@ -644,15 +738,39 @@ function tick(now) {
   )
     requestFrame();
 }
+const projectScreenView = new THREE.Matrix4();
+const projectScreenProjection = new THREE.Matrix4();
+let screenProjectionValid = false,
+  previousLid = NaN,
+  previousScreenWidth = 0,
+  previousScreenHeight = 0;
 function positionProjectScreens() {
   const panel = $("#project-screens");
   panel.hidden =
     story?.chapter !== "projects" ||
     Boolean(journeys?.active) ||
     state.exploring;
-  if (panel.hidden) return;
+  if (panel.hidden) {
+    screenProjectionValid = false;
+    return;
+  }
   const width = host.clientWidth,
     height = host.clientHeight;
+  if (
+    screenProjectionValid &&
+    previousScreenWidth === width &&
+    previousScreenHeight === height &&
+    previousLid === model.lid.rotation.x &&
+    projectScreenView.equals(camera.matrixWorld) &&
+    projectScreenProjection.equals(camera.projectionMatrix)
+  )
+    return;
+  screenProjectionValid = true;
+  previousScreenWidth = width;
+  previousScreenHeight = height;
+  previousLid = model.lid.rotation.x;
+  projectScreenView.copy(camera.matrixWorld);
+  projectScreenProjection.copy(camera.projectionMatrix);
   for (const [index, screen] of model.screenMeshes.entries()) {
     const points = [
       [-0.5, -0.5, 0.5],

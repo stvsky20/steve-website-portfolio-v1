@@ -1,0 +1,122 @@
+/* Institution artwork stays in full color and uncropped. */
+.institution-brands {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 18px 0;
+}
+.institution-brands[hidden] {
+  display: none;
+}
+.institution-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #1937431a;
+  border-radius: 10px;
+  background: #fff;
+  color: #193743;
+  box-shadow: 0 2px 10px #142c3705;
+}
+.institution-brand img {
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.institution-brand-slu img {
+  width: 58px;
+  height: auto;
+}
+.institution-brand-slu {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+.institution-brand-slu > span {
+  font: 500 13px/1.5 var(--font-sans);
+  max-width: 130px;
+}
+.institution-brand-psc img {
+  width: 200px;
+  height: auto;
+  max-width: 100%;
+}
+.project-recognition .institution-brands,
+.component-recognition .institution-brands {
+  width: auto;
+  height: auto;
+  color: inherit;
+  margin-bottom: 12px;
+}
+.about .institution-brands {
+  margin-bottom: 24px;
+}
+.project-documentation {
+  display: grid;
+  align-items: start;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 12px;
+  margin: 24px 0;
+}
+.project-documentation[hidden] {
+  display: none;
+}
+.documentation-photo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+  color: #f4efdf;
+  text-align: left;
+  cursor: zoom-in;
+}
+.documentation-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.documentation-photo > span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 0;
+  background: linear-gradient(to bottom, transparent, #04141c80 45%, #04141ce6);
+  display: block;
+  padding: 44px 14px 14px;
+  text-shadow: 0 1px 5px #0009;
+  font: 500 13px/1.5 var(--font-sans);
+}
+.documentation-photo:focus-visible {
+  outline: 3px solid #efbf72;
+  outline-offset: 4px;
+}
+.documentation-photo:hover {
+  border-color: #efbf72;
+}
+@media (max-width: 650px) {
+  .project-documentation {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 650px) {
+  .institution-brand {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+  .institution-brand-slu img {
+    width: 48px;
+    height: auto;
+  }
+  .institution-brand-psc img {
+    width: 180px;
+  }
+}

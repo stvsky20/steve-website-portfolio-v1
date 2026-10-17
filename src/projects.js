@@ -1,8 +1,25 @@
 import * as THREE from "../vendor/three.module.js";
+import { ayosPhotos } from "./project-documentation.js";
 
 export const projects = [
   {
     title: "Ayos!",
+    bento: {
+      eyebrow: "CITIZEN-REPORTING STARTUP",
+      headline: "A stronger link to the community.",
+      tags: ["Project Manager", "Full-Stack Developer"],
+      features: ayosPhotos.map((photo, index) => ({
+        ...photo,
+        caption:
+          index === 0
+            ? "Philippine Startup Challenge X"
+            : "People behind the project.",
+        tone: index === 0 ? "mint" : "cream",
+      })),
+      approachTitle: "From coordination to code.",
+      scopeTitle: "The project, in context.",
+    },
+    institutions: ["psc"],
     label: "Citizen-reporting startup",
     description:
       "A citizen-reporting startup connecting people and local government units. As Project Manager & Full-Stack Developer, I led development and built the government-official web interface with React, TypeScript, and Tailwind CSS.",
@@ -24,6 +41,14 @@ export const projects = [
   },
   {
     title: "ESQUAKE",
+    bento: {
+      eyebrow: "EARTHQUAKE PREPAREDNESS GAME",
+      headline: "Preparedness, through play.",
+      tags: ["16-member team", "Capstone in progress"],
+      approachTitle: "One team. A shared direction.",
+      scopeTitle: "An ongoing capstone.",
+    },
+    institutions: ["slu"],
     label: "Earthquake preparedness game",
     description:
       "A story-based serious game designed to enhance earthquake preparedness among elementary students. As Project Manager & Game Developer, I lead a 16-member multidisciplinary capstone team across development, design, and quality assurance.",
@@ -40,6 +65,10 @@ export const projects = [
   },
   {
     title: "Laundrify",
+    deployment: {
+      url: "https://laundry-management-system-rose.vercel.app/",
+      label: "Try Laundrify",
+    },
     label: "Laundry operations, simplified",
     description:
       "A responsive laundry-management frontend bringing the counter, orders, customers, machines, and reporting into one workspace. Built on the Berry React Admin Template, with Gabriel’s as a fictional demo branch.",
@@ -61,6 +90,12 @@ export const projects = [
     ],
     placeholder: false,
     bento: {
+      eyebrow: "FRONTEND PROTOTYPE",
+      tags: ["Local-first", "Fictional demo data"],
+      stackExtra: "Emotion · ApexCharts · React Context & hooks · localStorage",
+      approachTitle: "Built to stay understandable.",
+      scopeTitle: "A working frontend prototype.",
+      imageBase: "assets/projects/laundrify/",
       headline: "Less busywork. More flow.",
       approach:
         "Reusable components. Shared client state. Pricing logic kept separate from the interface. Responsive layouts, derived metrics, and immutable updates throughout.",

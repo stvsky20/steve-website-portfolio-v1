@@ -1,4 +1,5 @@
 import { emitSound } from "./audio.js";
+import { setSectionMarker } from "./section-marker.js";
 import { contactMark } from "./contact-icons.js";
 import { UPLINK_FIRE, UPLINK_DEPARTURE } from "./uplink-timing.js";
 import * as THREE from "../vendor/three.module.js";
@@ -277,9 +278,10 @@ export function createJourneys({
   function showComponent(which) {
     const dish = which === "dish";
     $("#component-panel").hidden = false;
-    $("#component-kicker").textContent = dish
-      ? "05 / Contact uplink"
-      : "02 / Control deck";
+    setSectionMarker(
+      $("#component-kicker"),
+      dish ? "Contact uplink" : "Control deck",
+    );
     $("#component-title").textContent = dish
       ? "Let’s connect."
       : "A connection to your community.";

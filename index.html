@@ -26,6 +26,9 @@
     <link rel="stylesheet" href="src/scroll-invitation.css" />
     <link rel="stylesheet" href="src/command-center.css" />
     <link rel="stylesheet" href="src/project-bento.css" />
+    <link rel="stylesheet" href="src/institution-brands.css" />
+    <link rel="stylesheet" href="src/section-marker.css" />
+    <link rel="stylesheet" href="src/harbor-header.css" />
     <link
       rel="preload"
       href="assets/brand/ibm-plex-sans-latin-400-normal.woff2"
@@ -59,25 +62,28 @@
             aria-label="A three-dimensional coastal communications station with Steven standing beside the control deck, an adjustable satellite dish, moving machinery, and ocean."
           ></div>
           <div class="scene-shade" aria-hidden="true"></div>
-          <header class="header">
+          <header class="header harbor-header">
             <a
               class="wordmark"
               href="#station"
               aria-label="Steven Valdez — home"
-              ><span
-                class="brand-mark"
-                aria-hidden="true"
-                data-icon="broadcast"
-              ></span
+              ><span class="brand-mark" aria-hidden="true"
+                ><svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                  <circle cx="16" cy="16" r="3" fill="currentColor" />
+                  <path
+                    d="M10 10a8.5 8.5 0 0 0 0 12m12-12a8.5 8.5 0 0 1 0 12M6 6a14 14 0 0 0 0 20M26 6a14 14 0 0 1 0 20"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                  /></svg></span
               ><span class="brand-lockup"
                 ><strong>Steven Valdez</strong
                 ><span class="brand-role">The Signal Station</span></span
               ></a
             >
             <nav aria-label="Main navigation">
-              <a href="#work">Work <span>01</span></a
-              ><a href="#stack">Stack</a><a href="#education">Education</a
-              ><a href="#beyond">Contact</a
+              <a href="#work">Work</a><a href="#stack">Stack</a
+              ><a href="#education">Education</a><a href="#beyond">Contact</a
               ><button
                 id="night-toggle"
                 type="button"
@@ -343,7 +349,8 @@
                 A reporting system connecting people and local government units.
               </p>
               <p class="component-recognition">
-                Regional finalist<br />Philippine Startup Challenge
+                <span data-institution-brands="psc"></span>
+                Regional finalist<br />Philippine Startup Challenge X
               </p>
               <button class="primary" id="component-project">
                 Read project overview <span aria-hidden="true">↗</span></button
@@ -587,6 +594,7 @@
                   units.
                 </p>
                 <div class="project-recognition">
+                  <span data-institution-brands="psc"></span>
                   <span aria-hidden="true">↗</span> Regional finalist<br />Philippine
                   Startup Challenge
                 </div>
@@ -647,6 +655,7 @@
             <p class="chapter-lead">The foundation behind my work.</p>
             <div class="education-record">
               <span class="record-status">2023–2027 · Dean’s Lister</span>
+              <span data-institution-brands="slu"></span>
               <h3>BS Information Technology</h3>
               <p>Saint Louis University · Baguio City, Benguet</p>
               <p>Expected graduation · 2027</p>
@@ -657,6 +666,7 @@
             </div>
             <div class="achievement-record">
               <span>Recognition</span>
+              <span data-institution-brands="psc"></span>
               <h3>Philippine Startup Challenge X</h3>
               <p>Regional finalist</p>
             </div>
@@ -667,6 +677,7 @@
             </div>
             <div class="education-record">
               <span class="record-status">January–July 2024</span>
+              <span data-institution-brands="slu"></span>
               <h3>Leadership &amp; campus experience</h3>
               <p>
                 Deputy Secretary General, SLU SAMCIS KASAMA/SSC Assembly;
@@ -734,6 +745,10 @@
               discussions into clear decisions, organized records, and
               coordinated delivery.
             </p>
+            <div
+              data-institution-brands="slu psc"
+              aria-label="Education and recognition"
+            ></div>
             <p>
               Outside the work: pickleball, matcha, competitive gaming, film,
               and futures trading. I speak Filipino (native), English
@@ -755,6 +770,23 @@
       <button class="dialog-close" aria-label="Close project overview">
         ×
       </button>
+      <a
+        id="project-deployment"
+        class="project-deployment"
+        target="_blank"
+        rel="noopener noreferrer"
+        hidden
+      >
+        <span class="project-deployment-copy"
+          ><small>Explore the live demo</small
+          ><strong id="project-deployment-label">Try Laundrify</strong></span
+        >
+        <span class="project-deployment-arrow" aria-hidden="true"
+          ><svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M5 5h14v14h-4v-7.2L6.4 20.4l-2.8-2.8L12.2 9H5z" /></svg
+        ></span>
+        <span class="sr-only"> (opens in a new tab)</span>
+      </a>
       <div class="section-kicker">TRANSMISSION 001</div>
       <h2 id="project-title">Ayos!</h2>
       <p class="dialog-subtitle">A connection to your community.</p>
@@ -763,6 +795,7 @@
       <p id="project-description">
         A reporting system connecting users and local government units (LGUs).
       </p>
+      <div id="project-affiliations" hidden></div>
       <h3>Recognition</h3>
       <p id="project-recognition-text">
         Regional finalist in the Philippine Startup Challenge.
@@ -778,6 +811,7 @@
         class="technology-list"
         aria-label="Tools used"
       ></div>
+      <div id="project-documentation" hidden></div>
       <section
         id="project-bento"
         aria-label="Project overview and feature gallery"
@@ -792,10 +826,12 @@
         <span data-icon="x" aria-hidden="true"></span>
       </button>
       <div class="section-kicker" id="education-dialog-kind"></div>
+      <div id="education-affiliations" hidden></div>
       <h2 id="education-dialog-title"></h2>
       <p id="education-dialog-summary"></p>
       <div id="education-dialog-details"></div>
       <p id="education-dialog-note"></p>
+      <div id="education-documentation" hidden></div>
       <button class="primary education-done">
         Back to the study <span aria-hidden="true">↗</span>
       </button>

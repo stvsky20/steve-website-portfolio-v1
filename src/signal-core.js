@@ -254,10 +254,14 @@ export function createSignalCore(parent, materials) {
     root.add(line);
     return line;
   });
+  let previousPose = "";
   return {
     parts,
     root,
     update(progress, selected, reduced) {
+      const pose = `${progress}/${selected}/${reduced}`;
+      if (pose === previousPose) return;
+      previousPose = pose;
       const motion = coreMotion(progress, reduced);
       cover.position.set(0, 0.8 + motion.cover * 1.6, -motion.cover * 0.55);
       cover.rotation.x = motion.cover * -0.1;
