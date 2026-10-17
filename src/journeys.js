@@ -212,7 +212,7 @@ export function createJourneys({
     applyScriptedView(camera, controls, position, target);
   }
   function makeTransition(position, target, onComplete, duration = 1250) {
-    $("#journey-skip").textContent =
+    $("#journey-skip").ariaLabel =
       mode === "return" ? "Skip return ↙" : "Skip approach ↗";
     cancelCamera();
     controls.enabled = false;
@@ -257,7 +257,7 @@ export function createJourneys({
     cloudPass.visible = false;
     setFade(0);
     setMode(which);
-    $("#journey-back").textContent = "← Return to station";
+    $("#journey-back").setAttribute("aria-label", "Return to station");
     status(
       which === "console"
         ? "Approaching the control deck"
@@ -312,7 +312,7 @@ export function createJourneys({
     setMode("flight");
     status("Aligning the uplink");
     $("#journey-skip").hidden = false;
-    $("#journey-skip").textContent = "Skip flight ↗";
+    $("#journey-skip").ariaLabel = "Skip flight ↗";
     if (reduce.matches) {
       state.bearing = 1;
       state.elevation = 49;
@@ -348,7 +348,7 @@ export function createJourneys({
     setMode("space");
     controls.enableDamping = !reduce.matches;
     status("Uplink established / Contact info");
-    $("#journey-back").textContent = "← Return to station";
+    $("#journey-back").setAttribute("aria-label", "Return to station");
     $("#journey-skip").hidden = true;
     showSpace();
     requestFrame();
@@ -467,7 +467,7 @@ export function createJourneys({
       saved = null;
     }
     syncControls();
-    $("#journey-skip").textContent = "Skip approach ↗";
+    $("#journey-skip").ariaLabel = "Skip approach ↗";
     announce("Station overview restored.");
     const focusTarget =
       opener && opener.isConnected && !opener.closest("[hidden]")
@@ -491,7 +491,7 @@ export function createJourneys({
     setMode("return");
     status("Returning to the station");
     $("#journey-skip").hidden = false;
-    $("#journey-skip").textContent = "Skip return ↙";
+    $("#journey-skip").ariaLabel = "Skip return ↙";
     beam.visible = false;
     if (instant || reduce.matches) {
       applyCamera(view.position, view.target);
@@ -639,7 +639,7 @@ export function createJourneys({
       $("#space-panel").hidden = true;
     }
     $("#journey-skip").hidden = true;
-    $("#journey-back").textContent = "← Back to the dish";
+    $("#journey-back").setAttribute("aria-label", "Back to the dish");
     $("#journey-progress").hidden = false;
     $("#journey-progress").style.transform = `scaleX(${p})`;
     space.update(state.time, starReveal, planetReveal);

@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="src/contact-choices.css" />
     <link rel="stylesheet" href="src/education-details.css" />
     <link rel="stylesheet" href="src/orbit-return.css" />
+    <link rel="stylesheet" href="src/signal-progress.css" />
     <link
       rel="preload"
       href="assets/brand/ibm-plex-sans-latin-400-normal.woff2"
@@ -323,15 +324,31 @@
             ><span aria-hidden="true">↓</span></a
           >
           <div class="journey-nav" id="journey-nav" hidden>
-            <button id="journey-back">← Return to station</button
-            ><span id="journey-status" role="status"
-              >Approaching the station</span
-            ><button id="journey-skip">Skip approach ↗</button
-            ><span
-              class="journey-progress"
-              id="journey-progress"
-              aria-hidden="true"
+            <button
+              id="journey-back"
+              aria-label="Return to station"
+              title="Return to station"
+            >
+              <span data-icon="broadcast" aria-hidden="true"></span>
+            </button>
+            <span class="journey-track" aria-hidden="true"
+              ><span class="journey-progress" id="journey-progress"></span
             ></span>
+            <span
+              class="journey-destination"
+              aria-hidden="true"
+              data-icon="planet"
+            ></span>
+            <span id="journey-status" class="sr-only" role="status"
+              >Approaching the station</span
+            >
+            <button
+              id="journey-skip"
+              aria-label="Skip approach"
+              title="Skip approach"
+            >
+              <span data-icon="arrow-right" aria-hidden="true"></span>
+            </button>
           </div>
           <aside
             class="component-panel"
