@@ -468,7 +468,7 @@ export function projectTexture(index) {
   ctx.strokeRect(20, 20, 728, 472);
   ctx.fillStyle = "#f0c68b";
   ctx.font = "600 34px monospace";
-  ctx.fillText(`${project.kind || "PROJECT"} / 00${index + 1}`, 48, 78);
+  ctx.fillText(`Project ${String(index + 1).padStart(3, "0")}`, 48, 78);
   ctx.fillStyle = "#f4efdf";
   // Wrap long names instead of shrinking the most important text on the panel.
   ctx.font = "600 94px sans-serif";
