@@ -1,119 +1,86 @@
-# Signal Station portfolio
+# Signal Station — Steven Valdez
 
-This is Steven Valdez's standalone Three.js portfolio. The repository contains only Signal Station. Earlier concepts are kept locally in ignored folders and are not part of the current branch's files.
+### [Explore the live portfolio → stevenvaldez.me](https://stevenvaldez.me)
+
+[![Steven Valdez’s coastal Signal Station portfolio, with the satellite dish and scroll-to-explore introduction](scripts/readme-previews/hero.png)](https://stevenvaldez.me)
+
+An interactive portfolio set on a coastal communications station. Explore my work on the control deck, unpack the tools behind it in the workshop, and follow a satellite signal into space to connect.
+
+I’m **Steven Valdez**, a software engineer and project manager based in Baguio City, Philippines. This portfolio brings together my web applications, game development, education, and leadership experience through one continuous journey.
+
+## Explore the station
+
+- **Projects:** Five interactive displays open case studies with project context, my contribution, technology logos, screenshots, and live demos where available.
+- **Tech stack:** A disassembling workshop reveals the tools behind my work.
+- **Education:** Select records on the study desk to explore my academic background, recognition, and campus leadership.
+- **Contact:** Scroll—or launch the sequence with a click—to follow the uplink into a constellation of GitHub, LinkedIn, email, and Instagram destinations. Instagram is currently a placeholder.
+
+The experience includes day and night modes, optional background audio and sound effects, keyboard-accessible controls, reduced-motion support, and motion pause controls. Space is the final stop; the return button takes you back to the station.
+
+## A glimpse of the journey
+
+| The control deck                                                                             | Inside a case study                                                                                |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| ![Five project displays on the station’s control deck](scripts/readme-previews/projects.png) | ![Mal-Ay Store Assistant overview and technology capsules](scripts/readme-previews/case-study.png) |
+
+[![The space contact constellation, with GitHub, LinkedIn, email, and Instagram planets](scripts/readme-previews/space.png)](https://stevenvaldez.me)
+
+**From the coast to the constellation.** [Take the journey at stevenvaldez.me](https://stevenvaldez.me).
+
+## Featured work
+
+| Project                    | What it explores                                                                                                                   |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **AYOS!**                  | Citizen reporting for Baguio LGU; Philippine Startup Challenge X regional finalist.                                                |
+| **ESQUAKE**                | An earthquake-preparedness serious game for CDRRMO Baguio City, developed as a university capstone.                                |
+| **Laundrify**              | A laundry-management frontend for Gabriel’s Laundry Shop, covering counter operations, orders, customers, machines, and reporting. |
+| **Mal-Ay Store Assistant** | A lightweight POS and inventory application packaged as an Android APK for a client’s aging Samsung Galaxy tablet.                 |
+| **Trade Journal Pro**      | A full-stack trading journal with trade reviews, CSV imports, and performance analytics.                                           |
+
+Each case study explains its scope, including prototype data, simulated behavior, and integrations that are not connected.
+
+## Built with
+
+The 3D world uses **Three.js and native JavaScript**, with HTML and CSS for the interface. A small **React, TypeScript, Motion, and Tailwind CSS** component powers the rotating hero roles. The production site is a static build hosted on Vercel.
+
+Assets and third-party licenses are kept locally. Rendering work includes static mesh instancing, texture-based environment effects, and pausing background 3D rendering while reading project and education dialogs.
 
 ## Run locally
 
-Node.js 22 or newer is recommended. No dependency installation is needed to serve the checked-in runtime assets.
-
-```sh
-npm run dev
-```
-
-Open http://127.0.0.1:4175/. Use `PORT=4176` (or `$env:PORT=4176` in PowerShell) if that port is already in use.
-
-## Build and verify
-
-```sh
-npm run build
-npm test
-npm start
-```
-
-`build` creates `dist/` with a minified, tree-shaken, content-hashed station JavaScript bundle, minified styles, runtime artwork, and licenses. `start` serves that production output. Tests run with Node's built-in test runner. Run `npm ci` before building.
-
-## React title source
-
-The rest of the site is native JavaScript and Three.js. The rotating hero title is built from React, Motion, and Tailwind utilities. Its compiled assets are checked into `assets/ui/`.
+Use Node.js 22 or newer.
 
 ```sh
 npm ci
-npm run typecheck
-npm run build:station-role
+npm run dev
 ```
 
-Rebuild the title assets after editing `src/hero-role.tsx`, `src/hero-role.css`, `components/ui/layout-text-flip.tsx`, or `lib/utils.ts`.
+Open [localhost:4175](http://127.0.0.1:4175/). The site does not require environment variables or API keys.
 
-## Deploy to Vercel
+To build and preview the production version:
 
-Import this repository's `main` branch with **Root Directory `./`** and **Application Preset Other**. The root `vercel.json` sets:
+```sh
+npm run build
+npm start
+```
 
-- Build Command: `node scripts/build-static.mjs`
-- Output Directory: `dist`
-- Install Command: `npm ci` (esbuild creates the production station bundle)
+For verification:
 
-No environment variables or API keys are required. Only the `dist/` output is published.
+```sh
+npm test
+npm run typecheck
+```
 
-## Content and assets
+If you edit the React hero-title component, regenerate its checked-in assets with `npm run build:station-role`.
 
-The selected Harbor Pill navigation is styled in `src/harbor-header.css`: a compact centered capsule with a gold signal emblem, current-section highlighting, and accessible night/audio controls. Mobile collapses the name lockup while preserving all destinations and controls. The old Work badge and temporary navbar prototype picker have been removed.
+## Inside the repository
 
-Shared typography tokens live in `src/type-scale.css`. The reading scale uses an 18px body, 14–18px supporting text and controls, and 12px small labels at default browser settings; rem values respect browser font preferences. Project cards use 34px headings on desktop and 30px when stacked on mobile. Retain this scale when adding new content instead of shrinking copy to fit.
+- `src/` — scene models, interactions, project content, and shared interface components.
+- `assets/` — local artwork, logos, screenshots, fonts, and audio resources.
+- `vendor/` and `licenses/` — vendored dependencies and license notices.
+- `scripts/` and `tests/` — build tooling and automated checks.
 
-- `src/projects.js`: six project records and Laundrify gallery content.
-- `src/project-overview.js`: shared Laundrify-style container for every project. Set `deployment: { url, label }` on a record for its top-right live-demo CTA; omit it when no public link is available. Add photos to `bento.features` for the shared uneven-width gallery and dark fade captions. Project content, tools, contributions, and scope use the same layout even before screenshots are supplied.
-- `assets/projects/`: project logos, screenshots, and photographs.
-- `assets/leadership/`: leadership assets when supplied.
-- `src/education-study.js`: education, recognition, and leadership records.
-- `src/space.js`: contact destinations.
-- `CONTENT.md`: editing notes; `BRAND.md`: design and asset provenance.
-- `assets/brand/`, `assets/tech/`, `assets/contact/`, `vendor/`, and `licenses/` retain upstream licenses.
+For editing guidance, see [Content notes](CONTENT.md). For design and asset provenance, see [Brand notes](BRAND.md). Detailed measurements and their limitations are recorded in the [performance audit](scripts/performance-audit.md).
 
-The original project repository history is preserved; earlier commits can still be recovered.
+## Credits and reuse
 
-## Performance audit — October 17, 2026
-
-- `node scripts/audit-scene.mjs` measures structural scene complexity, not FPS. Static sibling instancing reduces station mesh submissions from 911 to 334 while retaining all 105,543 triangles. Animated parents, picking actions, materials, shadow settings, and independently controlled objects are preserved.
-- Rendering pauses behind the audio welcome, project/education records, and image viewer. Closing a dialog resumes it. Live 3D tool inspection remains animated.
-- Icon hydration processes changed subtrees instead of rescanning the whole document. Unchanged workshop poses no longer rewrite geometry buffers every frame.
-- The loading backdrop uses a 302 KB WebP instead of its 2.52 MB PNG. Full-resolution project authoring PNGs and source art remain local, but duplicate Laundrify PNGs and the old backdrop PNG are excluded from deployment. These unused project sources were not part of the initial page transfer; excluding them primarily reduces deployment size.
-- Production bundles only used Three.js exports and station code, avoiding the native-module request chain. Only content-hashed runtime bundles receive immutable caching; other assets remain updateable.
-- Rendering resolution, shadow quality, model geometry, and lighting remain intact. The later texture-based environment pass below replaces the cloud/water detail calculations. Actual FPS and mobile thermal behavior still need checking on the target device.
-
-### FPS sampling
-
-Open `/?fps=1` to enable an opt-in frame-rate panel. Navigate to a scene and click **Measure FPS (12 seconds)**: a two-second warm-up is followed by a ten-second sample of actual rendered animation frames. It reports average FPS, the 95th-percentile frame interval, renderer draw-call counts, viewport, and canvas pixel ratio. A sample is flagged invalid if the tab becomes hidden. The panel and its timer are absent on ordinary visits.
-
-Local in-app browser measurements on October 17, 2026, with a visible 423 × 672 CSS-pixel viewport at DPR 1, audio muted, and no device emulation:
-
-| Scene | Average FPS | p95 frame interval |
-| --- | ---: | ---: |
-| Hero, first sample | 31.2 | 50.0 ms |
-| Hero, warm repeat | 25.0 | 66.7 ms |
-| Hero, final repeat | 29.5 | 50.0 ms |
-| Workshop | 27.6 | 50.1 ms |
-| Space | 39.5 | 49.9 ms |
-| Behind open project dialog | 0 background 3D frames | N/A |
-
-Each row is one ten-second sample; the hero was sampled three times. These are browser render-loop measurements, not physical-device mobile benchmarks, presented-frame telemetry, or proof of 60 FPS. Hardware/GPU acceleration was not independently characterized. Repeat on the intended device and browser before claiming a performance target. The dialog result verifies intentional idle rendering; it does not measure the dialog's own scrolling or animation FPS.
-
-### Follow-up rendering audit
-
-The diagnostics now include isolation controls, average CPU submission time, whole-tick CPU time, and asynchronous GPU timer queries where supported. Isolation settings exist only under `?fps=1`; normal visitors always receive the full scene. GPU probes are disabled by default; add `&gpu=1` to enable them. GPU timing is sampled every fourth rendered frame, queried asynchronously, and discarded on a disjoint GPU clock event. Profiling overhead may affect results, especially on older hardware.
-
-The browser identified an NVIDIA GeForce GT 730 via ANGLE/Direct3D11. At 1265 × 720 and DPR 1, initial samples were 38.4 FPS for the full scene, 52.5 with sky hidden, and 48.6 with ocean hidden. A later unchanged full-scene control fell to 24.6 FPS. This drift means these single-run isolation values cannot establish causal speedups. Smaller-viewport control samples also varied from 39 to 60 FPS in this session.
-
-Changes retained:
-
-- Daytime sky/water shaders skip unused nighttime calculations; the fully completed space fade skips the earth-sky calculations. Blended transitions retain the original calculations.
-- Unchanged lighting no longer rewrites material properties every frame. Chapter attributes update only on chapter changes. Project hit areas are projected again only when the camera, projection, lid angle or viewport changes.
-- The full-resolution sky-cache prototype was removed after same-build samples showed no consistent improvement. Shadow freezing and light removal remain diagnostic controls, not production compromises.
-- The focused-ocean prototype (32,768 triangles instead of 64,800) was also removed: the reduced vertex count did not establish a frame-rate benefit. The original ocean geometry and wave tessellation remain in production. A final lightweight-meter sequence returned 14.4 FPS for the prototype followed by 25.1 FPS for the original ocean; these sequential samples are affected by the observed drift and are not a controlled speedup claim.
-
-The final desktop-sized hero sample was 22.6 FPS, with 5.65 ms average CPU tick time (4.93 ms inside rendering) and 13.62 ms average GPU render time across 55 valid GPU timer samples. This does **not** establish an FPS improvement or explain all frame-pacing overhead. Test in a normal browser on the target device before claiming 60 FPS; only the in-app browser was available to this audit. Raw measurements, including the rejected cache prototype, are stored in `scripts/performance-audit-2026-10-17.json` and are excluded from the deployed static site.
-
-### Texture-based environment (option 2)
-
-Cloud density now uses one repeating data-map lookup instead of five layers of procedural noise. Ocean surface normals and chop use two scrolling data-map lookups instead of fragment-level noise and cosine calculations. Geometry waves, shoreline foam, Fresnel reflections, sun/moon highlights, atmospheric haze, day/night blending, and the scroll flight remain active. The maps change the exact cloud formations and surface ripple pattern while retaining the existing palette and lighting. Texture motion uses the existing scene clock, so pause and reduced-motion behavior are preserved.
-
-The two project-authored PNGs in `assets/environment/` total 825,350 bytes. They use linear non-color data, repeat wrapping, and mipmap filtering. Neutral fallback maps keep rendering valid while they load; completed loads wake even a paused renderer. Regenerate deterministically with Python, NumPy, and Pillow: `python scripts/generate-environment-textures.py`. No external texture license is required.
-
-For direct comparison, select **Previous procedural sky + ocean** in `/?fps=1&gpu=1`. This lazy-loads the old shaders only when explicitly requested; normal visits use textures. A same-tab hero A–B–A sequence at 1265 × 720 / DPR 1 on the reported GT 730 returned:
-
-| Rendering | FPS | Average GPU render time |
-| --- | ---: | ---: |
-| Textured, first | 60 | 10.30 ms |
-| Previous procedural | 60 | 11.16 ms |
-| Textured, repeat | 60 | 10.37 ms |
-
-This sequence shows about 7% lower GPU render time, with both paths at the 60 FPS ceiling. It is a modest GPU-cost improvement, not evidence of a large FPS increase or a cross-device guarantee; earlier frame-pacing drift remains relevant. Moving objects can slightly vary draw calls. Raw results: `scripts/texture-performance-audit-2026-10-17.json`. Day/night and the flight into space were checked in the production preview without shader errors.
+This is my personal portfolio. Project screenshots, client logos, institution marks, and photographs belong to their respective owners. Third-party components and assets retain their own licenses; see `licenses/` and the asset provenance notes before reusing them.
