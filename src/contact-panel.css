@@ -1,0 +1,65 @@
+/* Contact details stay inside the visible window, including browser chrome. */
+.station .space-panel,
+.story-enabled .station .space-panel {
+  box-sizing: border-box;
+  top: max(6rem, env(safe-area-inset-top));
+  bottom: auto;
+  width: min(25rem, calc(100% - 2rem));
+  max-height: calc(100dvh - 7.5rem - env(safe-area-inset-bottom));
+  padding: 1.5rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #dfc49d66 transparent;
+  overflow-wrap: anywhere;
+}
+.space-panel .planet-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 1rem;
+  border: 0;
+}
+.space-panel .planet-button {
+  min-width: 0;
+  min-height: 44px;
+  padding: 0.5rem;
+  font-size: var(--text-sm);
+  border: 1px solid #bfaf8c30;
+  border-radius: 0.5rem;
+  gap: 0.5rem;
+}
+.space-panel h2 {
+  margin: 1rem 0 0.5rem;
+}
+.space-panel h3 {
+  margin-bottom: 0.75rem;
+}
+.space-panel .contact-address {
+  margin: 0.75rem 0;
+  padding: 0.75rem 0;
+}
+.space-panel .space-tags {
+  margin: 0.75rem 0;
+}
+.space-panel .imagined-note {
+  margin-top: 0.75rem;
+}
+/* A selected contact already has its name, address and primary action. */
+.space-panel:has(.contact-address:not([hidden])) .space-tags,
+.space-panel:has(.contact-address:not([hidden])) .imagined-note,
+.space-panel .contact-address > span,
+.space-panel .contact-address > small {
+  display: none;
+}
+@media (max-width: 760px) {
+  .station .space-panel,
+  .story-enabled .station .space-panel {
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+    top: max(5.5rem, env(safe-area-inset-top));
+    max-height: calc(100dvh - 6.5rem - env(safe-area-inset-bottom));
+    padding: 1.25rem;
+  }
+}
