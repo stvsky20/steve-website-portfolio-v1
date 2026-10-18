@@ -30,6 +30,19 @@
   width: 58px;
   height: auto;
 }
+.institution-brand-ust img {
+  width: 36px;
+  height: auto;
+}
+.institution-brand-ust {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+}
+.institution-brand-ust > span {
+  font: 500 var(--text-base)/1.5 var(--font-sans);
+  max-width: 220px;
+}
 .institution-brand-slu {
   background: transparent;
   border-color: transparent;

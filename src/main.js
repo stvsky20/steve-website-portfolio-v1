@@ -24,8 +24,8 @@ import { projects } from "./projects.js";
 import { renderProjectOverview } from "./project-overview.js";
 import { initializeProjectDocumentation } from "./project-documentation.js";
 import { initializeInstitutionBrands } from "./institution-brands.js";
-import { technologyChip } from "./tech-logos.js";
 import { coreTools } from "./signal-core.js";
+import { renderCoreContent } from "./core-content.js";
 import { initializeSectionMarkers } from "./section-marker.js";
 
 // Share the same real content between the 3D experience and reading fallback.
@@ -38,8 +38,7 @@ stackGroups.replaceChildren(
     const copy = document.createElement("p");
     copy.textContent = tool.copy;
     const chips = document.createElement("div");
-    chips.className = "technology-list";
-    chips.append(...tool.slots.map(technologyChip));
+    renderCoreContent(tool, chips);
     group.append(title, copy, chips);
     return group;
   }),
@@ -338,7 +337,7 @@ try {
 } catch (error) {
   console.error("Signal Station renderer:", error);
   showFailure(
-    "The 3D scene could not start on this device. You can still explore the work and About sections below.",
+    "The 3D scene could not start on this device. You can still read the projects, skills, education, and contact details below.",
   );
 }
 function showFailure(message) {
@@ -392,7 +391,7 @@ function initialize() {
   studyLighting = { ambient, sun, rim };
   scene.add(rim);
   environment = createEnvironment(scene, requestFrame);
-  model = createStation();
+  model = createStation(requestFrame);
   operator = createOperator();
   model.root.add(operator.root);
   outbuildings = createOutbuildings(model, requestFrame);
@@ -487,7 +486,7 @@ function initialize() {
     cancelAnimationFrame(frame);
     frame = 0;
     showFailure(
-      "The graphics context was interrupted. Reload to restart the station. Work and About remain available below.",
+      "The graphics context was interrupted. Reload to restart the station.",
     );
   });
   renderer.render(scene, camera);

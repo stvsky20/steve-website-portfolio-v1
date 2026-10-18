@@ -31,8 +31,9 @@ for (const directory of ["src", "assets"]) {
         return false;
       const relative = path.relative(station, source).replaceAll("\\", "/");
       if (
-        relative === "assets/concept.png" ||
-        /^assets\/projects\/laundrify\/.*\.png$/.test(relative)
+        /^assets\/concept\.(png|webp)$/.test(relative) ||
+        (/^assets\/projects\/laundrify\/.*\.png$/.test(relative) &&
+          relative !== "assets/projects/laundrify/laundrify-logo.png")
       )
         return false;
       return true;

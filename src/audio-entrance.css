@@ -1,0 +1,343 @@
+/* An audio invitation: one visual, one sentence, one primary action. */
+#audio-welcome {
+  padding: max(24px, env(safe-area-inset-top)) 24px
+    max(24px, env(safe-area-inset-bottom));
+}
+#audio-welcome::backdrop {
+  background: #071d28e0;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+#audio-welcome .audio-welcome-content {
+  width: min(100%, 640px);
+  position: relative;
+}
+#audio-welcome .audio-welcome-kicker {
+  margin: 0 0 18px;
+  font: 500 var(--text-body)/1.4 var(--font-sans);
+  letter-spacing: 0.02em;
+  color: #c4d6d4;
+}
+#audio-welcome .audio-welcome-icon {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  margin: 0 auto 22px;
+  border: 1px solid #f4cd8655;
+  background: radial-gradient(circle, #f5d18e22, #f5d18e06 70%);
+  box-shadow:
+    0 0 100px #f5c87515,
+    inset 0 0 32px #ffd99a08;
+}
+#audio-welcome .audio-welcome-icon::before,
+#audio-welcome .audio-welcome-icon::after {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border: 1px solid #f4cd8670;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+#audio-welcome[open] .audio-welcome-icon::before {
+  animation: welcome-signal 2.2s ease-out 2;
+}
+#audio-welcome[open] .audio-welcome-icon::after {
+  animation: welcome-signal 2.2s ease-out 0.25s 2;
+}
+#audio-welcome .audio-welcome-icon svg {
+  width: 72px;
+  height: 72px;
+  stroke-width: 1.7;
+  filter: drop-shadow(0 2px 10px #eec27135);
+}
+#audio-welcome[open] .audio-welcome-icon svg {
+  animation: welcome-headphones 2.2s ease-in-out 2;
+}
+#audio-welcome h2 {
+  margin: 0;
+  font-family: "Station DM Sans", var(--font-sans);
+  font-size: clamp(3.5rem, 7vw, 5.25rem);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+}
+#audio-welcome h2 em {
+  font-style: normal;
+  color: #f3cd89;
+}
+#audio-welcome #audio-welcome-description {
+  margin: 20px auto 28px;
+  max-width: 450px;
+  font-size: var(--text-xl);
+  line-height: 1.45;
+  color: #d0dedb;
+}
+#audio-welcome button {
+  width: min(100%, 360px);
+  min-height: 68px;
+  font-size: var(--text-xl);
+  font-weight: 600;
+  border-radius: 18px;
+  gap: 20px;
+}
+#audio-welcome #audio-welcome-enable {
+  position: relative;
+  isolation: isolate;
+  justify-content: space-between;
+  padding: 12px 18px 12px 26px;
+  color: #12323c;
+  border: 1px solid #ffdfaa;
+  background: linear-gradient(120deg, #ffe3ad, #efbf78);
+  box-shadow:
+    0 6px 0 #8b653c,
+    0 14px 40px #efbf781c;
+  transition:
+    transform 140ms ease-out,
+    box-shadow 140ms ease-out;
+}
+.audio-enter-door {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #173b4312;
+}
+.audio-enter-door svg {
+  width: 30px;
+  height: 30px;
+}
+#audio-welcome #audio-welcome-muted {
+  margin-top: 18px;
+  min-height: 48px;
+  font-size: var(--text-body);
+  font-weight: 500;
+  color: #d3dedc;
+  border-radius: 12px;
+}
+#audio-welcome .audio-welcome-footnote {
+  margin: 18px auto 0;
+  max-width: 450px;
+  font: 400 var(--text-base)/1.5 var(--font-sans);
+  color: #f3cd89;
+}
+#audio-welcome .audio-welcome-footnote:empty {
+  display: none;
+}
+#audio-welcome #audio-welcome-enable:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 2px 0 #8b653c,
+    0 8px 24px #efbf781c;
+}
+@media (hover: hover) and (pointer: fine) {
+  #audio-welcome #audio-welcome-enable:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 8px 0 #8b653c,
+      0 18px 44px #efbf7830;
+  }
+  #audio-welcome #audio-welcome-muted:hover {
+    background: #e8f5ef0a;
+    border-color: #d3dedc30;
+  }
+}
+@keyframes welcome-signal {
+  0% {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+  22% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+@keyframes welcome-headphones {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.07);
+  }
+}
+@media (max-width: 650px), (max-height: 700px) {
+  #audio-welcome .audio-welcome-kicker {
+    margin-bottom: 16px;
+    font-size: var(--text-base);
+  }
+  #audio-welcome .audio-welcome-icon {
+    width: 104px;
+    height: 104px;
+    margin-bottom: 22px;
+  }
+  #audio-welcome .audio-welcome-icon svg {
+    width: 62px;
+    height: 62px;
+  }
+  #audio-welcome h2 {
+    font-size: 3.75rem;
+  }
+  #audio-welcome #audio-welcome-description {
+    margin: 18px auto 24px;
+    font-size: var(--text-body);
+    max-width: 300px;
+  }
+  #audio-welcome button {
+    min-height: 62px;
+    font-size: var(--text-lg);
+  }
+}
+@media (max-height: 500px) and (min-width: 700px) {
+  #audio-welcome {
+    padding: 20px;
+  }
+  #audio-welcome .audio-welcome-content {
+    width: min(100%, 800px);
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    column-gap: 32px;
+    align-items: center;
+  }
+  #audio-welcome .audio-welcome-icon {
+    grid-column: 1;
+    grid-row: 1 / 6;
+    width: 144px;
+    height: 144px;
+    margin: 0 auto;
+  }
+  #audio-welcome .audio-welcome-kicker {
+    grid-column: 2;
+    margin: 0 0 10px;
+  }
+  #audio-welcome h2 {
+    grid-column: 2;
+    font-size: 3rem;
+  }
+  #audio-welcome #audio-welcome-description {
+    grid-column: 2;
+    margin: 12px auto 16px;
+    font-size: var(--text-base);
+  }
+  #audio-welcome button {
+    grid-column: 2;
+    min-height: 54px;
+  }
+  #audio-welcome #audio-welcome-muted {
+    margin-top: 12px;
+    min-height: 44px;
+  }
+  #audio-welcome .audio-welcome-footnote {
+    grid-column: 2;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #audio-welcome[open] .audio-welcome-icon::before,
+  #audio-welcome[open] .audio-welcome-icon::after,
+  #audio-welcome[open] .audio-welcome-icon svg {
+    animation: none;
+  }
+  #audio-welcome #audio-welcome-enable {
+    transition: none;
+  }
+  #audio-welcome #audio-welcome-enable:hover,
+  #audio-welcome #audio-welcome-enable:active {
+    transform: none;
+  }
+}
+/* A hinged doorway opens toward the station on hover or keyboard focus. */
+#audio-welcome #audio-welcome-enable::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: -1;
+  background: linear-gradient(115deg, #1c5059, #12323f);
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}
+#audio-welcome #audio-welcome-enable > span {
+  position: relative;
+}
+.audio-enter-door .door-leaf {
+  transform-box: fill-box;
+  transform-origin: left center;
+  transform: perspective(90px) rotateY(0deg);
+  transition: transform 240ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.audio-enter-door .door-leaf rect {
+  fill: #f1c985;
+}
+.audio-enter-door .door-light {
+  opacity: 0.15;
+  transition: opacity 200ms ease-out;
+}
+.audio-enter-door .door-sparks {
+  opacity: 0;
+  transform: translateX(-3px);
+  transition:
+    opacity 200ms ease-out,
+    transform 240ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+#audio-welcome.audio-keyboard #audio-welcome-enable:focus-visible {
+  color: #ffe6b4;
+}
+#audio-welcome.audio-keyboard #audio-welcome-enable:focus-visible::before {
+  opacity: 1;
+}
+#audio-welcome.audio-keyboard #audio-welcome-enable:focus-visible .door-leaf {
+  transform: perspective(90px) rotateY(-52deg);
+}
+#audio-welcome.audio-keyboard
+  #audio-welcome-enable:focus-visible
+  .door-leaf
+  rect {
+  fill: #153c46;
+}
+#audio-welcome.audio-keyboard #audio-welcome-enable:focus-visible .door-light {
+  opacity: 1;
+}
+#audio-welcome.audio-keyboard #audio-welcome-enable:focus-visible .door-sparks {
+  opacity: 0.85;
+  transform: translateX(0);
+}
+@media (hover: hover) and (pointer: fine) {
+  #audio-welcome #audio-welcome-enable:hover {
+    color: #ffe6b4;
+  }
+  #audio-welcome #audio-welcome-enable:hover::before {
+    opacity: 1;
+  }
+  #audio-welcome #audio-welcome-enable:hover .door-leaf {
+    transform: perspective(90px) rotateY(-52deg);
+  }
+  #audio-welcome #audio-welcome-enable:hover .door-leaf rect {
+    fill: #153c46;
+  }
+  #audio-welcome #audio-welcome-enable:hover .door-light {
+    opacity: 1;
+  }
+  #audio-welcome #audio-welcome-enable:hover .door-sparks {
+    opacity: 0.85;
+    transform: translateX(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .audio-enter-door .door-leaf,
+  .audio-enter-door .door-sparks,
+  .audio-enter-door .door-light,
+  #audio-welcome #audio-welcome-enable::before {
+    transition: none;
+  }
+  #audio-welcome #audio-welcome-enable:is(:hover, :focus-visible) .door-leaf {
+    transform: none;
+  }
+  #audio-welcome #audio-welcome-enable:is(:hover, :focus-visible) .door-sparks {
+    transform: none;
+  }
+}

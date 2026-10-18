@@ -110,6 +110,12 @@ export function createStationAudio() {
     }
   });
   welcomeMuted.addEventListener("click", () => welcome.close("muted"));
+  welcome.addEventListener("keydown", (event) => {
+    if (event.key === "Tab") welcome.classList.add("audio-keyboard");
+  });
+  welcome.addEventListener("pointerdown", () => {
+    welcome.classList.remove("audio-keyboard");
+  });
   welcome.addEventListener("close", () => {
     document.querySelector(".wordmark")?.focus({ preventScroll: true });
   });

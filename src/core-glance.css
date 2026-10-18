@@ -1,0 +1,160 @@
+/* Content-sized workshop cards: no scrolling or clipped content. */
+#core-detail[open] {
+  right: 4%;
+  width: min(600px, 48vw);
+  max-height: none;
+  padding: 24px;
+  overflow: visible;
+  border-radius: 22px;
+  box-sizing: border-box;
+}
+#core-detail[open] .section-kicker {
+  margin: 0;
+  padding-right: 36px;
+  font-size: var(--text-xs);
+}
+#core-detail[open] .core-inspect-count {
+  margin: 8px 0 0;
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+}
+#core-detail[open] h3 {
+  margin: 10px 0;
+  font-size: clamp(1.65rem, 2.5vw, 2.1rem);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+#core-detail[open] #core-tool-copy {
+  font-size: var(--text-base);
+  line-height: 1.4;
+  margin: 0 0 16px;
+}
+#core-detail[open] .technology-list {
+  gap: 7px;
+}
+#core-detail[open] .technology-chip {
+  gap: 7px;
+  min-height: 38px;
+  padding: 6px 10px;
+  font-size: var(--text-sm);
+  border-radius: 999px;
+  box-sizing: border-box;
+}
+#core-detail[open] .technology-mark {
+  flex-basis: 22px;
+  width: 22px;
+  height: 22px;
+  background: none;
+}
+#core-detail[open] .technology-mark :is(img, svg) {
+  width: 21px;
+  height: 21px;
+}
+#core-detail[open] .core-content-group {
+  margin-top: 14px;
+}
+#core-detail[open] .core-content-group h4 {
+  margin-bottom: 7px;
+  font-size: var(--text-sm);
+}
+#core-detail[open] .core-evidence {
+  margin: 16px 0 0;
+  padding: 11px 14px;
+  font-size: var(--text-sm);
+  line-height: 1.45;
+}
+#core-detail[open] .core-inspect-nav {
+  margin-top: 16px;
+  padding-top: 12px;
+  gap: 10px;
+}
+#core-detail[open] .core-inspect-nav button {
+  min-height: 44px;
+  font-size: var(--text-sm);
+}
+#core-detail[open] .core-inspect-exit {
+  display: none;
+}
+@media (max-width: 760px) {
+  #core-detail[open] {
+    left: 12px;
+    right: 12px;
+    top: auto;
+    bottom: 12px;
+    width: auto;
+    transform: none;
+    padding: 20px;
+    max-height: none;
+  }
+  #core-detail[open] h3 {
+    font-size: 1.65rem;
+  }
+}
+@media (max-height: 740px) {
+  #core-detail[open] {
+    padding: 18px;
+  }
+  #core-detail[open] #core-tool-copy {
+    margin-bottom: 12px;
+    font-size: var(--text-sm);
+  }
+  #core-detail[open] .core-content-group {
+    margin-top: 10px;
+  }
+  #core-detail[open] .core-evidence {
+    margin-top: 12px;
+    padding: 9px 12px;
+  }
+  #core-detail[open] .core-inspect-nav {
+    margin-top: 12px;
+    padding-top: 10px;
+  }
+}
+
+/* Short landscape screens use the available width instead of a tall card. */
+@media (max-height: 560px) and (min-width: 700px) {
+  #core-detail[open] {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
+    grid-template-rows: auto auto auto 1fr auto;
+    column-gap: 22px;
+    left: 16px;
+    right: 16px;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+  }
+  #core-detail[open] .section-kicker {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  #core-detail[open] .core-inspect-count {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  #core-detail[open] h3 {
+    grid-column: 1;
+    grid-row: 3;
+    font-size: 1.6rem;
+  }
+  #core-detail[open] #core-tool-copy {
+    grid-column: 1;
+    grid-row: 4;
+  }
+  #core-detail[open] #core-tool-slots {
+    grid-column: 2;
+    grid-row: 1 / 5;
+    padding: 0 28px 0 0;
+  }
+  #core-detail[open] .core-inspect-nav {
+    grid-column: 1 / -1;
+    grid-row: 5;
+  }
+}
+@media (max-height: 560px) {
+  .story-enabled .station-story > .station {
+    min-height: 0;
+  }
+}

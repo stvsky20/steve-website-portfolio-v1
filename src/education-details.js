@@ -19,7 +19,7 @@ const records = [
       [
         "team",
         "Capstone role",
-        "Project Manager & Game Developer",
+        "Project Manager / Supervisor & Game Developer",
         "16-member team",
       ],
       [

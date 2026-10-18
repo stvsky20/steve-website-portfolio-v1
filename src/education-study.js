@@ -15,7 +15,7 @@ export const educationRecords = [
       "Expected graduation · 2027",
       "Thesis · ESQUAKE: A Story-Based Serious Game for Enhancing Earthquake Preparedness Among Elementary Students",
     ],
-    note: "Project Manager & Game Developer for a 16-member capstone team.",
+    note: "Project Manager / Supervisor & Game Developer for a 16-member capstone team.",
   },
   {
     title: "Philippine Startup Challenge X",
@@ -32,6 +32,7 @@ export const educationRecords = [
   },
   {
     title: "University of Santo Tomas",
+    institutions: ["ust"],
     kind: "Senior high school",
     summary: "Senior High School · STEM strand · 2022–2023",
     details: [
@@ -123,20 +124,20 @@ function paperTexture(type, requestFrame) {
     ctx.font = "500 40px sans-serif";
     ctx.fillText("Project Manager & Full-Stack Developer", 64, 730);
   } else {
-    ctx.font = "600 64px sans-serif";
-    ctx.fillText("University of", 64, 265);
-    ctx.fillText("Santo Tomas", 64, 345);
-    ctx.font = "600 40px sans-serif";
+    ctx.font = "600 44px sans-serif";
+    ctx.fillText("University of", 64, 445);
+    ctx.fillText("Santo Tomas", 64, 500);
+    ctx.font = "600 32px sans-serif";
     ctx.fillStyle = "#183039";
-    ctx.fillText("STEM / Sampaloc, Manila", 64, 490);
-    ctx.font = "600 58px monospace";
+    ctx.fillText("STEM · Sampaloc, Manila", 64, 590);
+    ctx.font = "600 48px monospace";
     ctx.fillStyle = "#58351f";
-    ctx.fillText("2022 — 2023", 64, 585);
+    ctx.fillText("2022 — 2023", 64, 680);
   }
   const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.SRGBColorSpace;
   texture.anisotropy = 4;
-  if (type < 2) {
+  {
     const image = new Image();
     image.onload = () => {
       if (type === 0) {
@@ -148,7 +149,7 @@ function paperTexture(type, requestFrame) {
           logoWidth,
           (logoWidth * image.height) / image.width,
         );
-      } else {
+      } else if (type === 1) {
         // Replace the temporary text heading with the full competition banner.
         ctx.fillStyle = "#f4eedc";
         ctx.fillRect(60, 128, w - 120, 430);
@@ -159,11 +160,16 @@ function paperTexture(type, requestFrame) {
           w - 128,
           ((w - 128) * image.height) / image.width,
         );
+      } else {
+        // Senior high is a secondary milestone, below the university's crest.
+        const size = 200;
+        const logoHeight = (size * image.height) / image.width;
+        ctx.drawImage(image, (w - size) / 2, 155, size, logoHeight);
       }
       texture.needsUpdate = true;
       requestFrame?.();
     };
-    image.src = institutionBrands[type === 0 ? "slu" : "psc"].image;
+    image.src = institutionBrands[["slu", "psc", "ust"][type]].image;
   }
   return texture;
 }
@@ -195,18 +201,20 @@ export function createEducationStudy(study, m, page, bulb, requestFrame) {
       fog: false,
     });
   }
-  box(-1.65, 3.25, -2.4, 1.65, 2.05, 0.14, m.metal);
-  const degree = box(-1.65, 3.25, -2.31, 1.45, 1.84, 0.025, paper(0));
-  box(0.9, 3.25, -2.4, 2.75, 1.95, 0.14, m.rust);
-  const recognition = box(0.9, 3.25, -2.31, 2.52, 1.72, 0.025, paper(1));
-  for (const x of [-0.24, 2.04])
-    for (const y of [2.49, 4.01]) box(x, y, -2.27, 0.07, 0.07, 0.05, m.label);
-  const notebook = new THREE.Mesh(boxGeometry, paper(2));
+  box(-2, 3.25, -2.4, 1.55, 1.95, 0.14, m.metal);
+  const degree = box(-2, 3.25, -2.31, 1.4, 1.75, 0.025, paper(0));
+  box(-0.15, 3.25, -2.4, 2.05, 1.5, 0.14, m.rust);
+  const recognition = box(-0.15, 3.25, -2.31, 1.9, 1.267, 0.025, paper(1));
+  for (const x of [-0.98, 0.68])
+    for (const y of [2.7, 3.8]) box(x, y, -2.27, 0.07, 0.07, 0.05, m.label);
+  box(1.9, 3.1, -2.4, 1.52, 1.52, 0.14, m.metal);
+  const seniorHigh = box(1.9, 3.1, -2.31, 1.36, 1.36, 0.025, paper(2));
+  const notebook = new THREE.Mesh(boxGeometry, m.label);
   notebook.position.set(0.55, 0.025, 0);
   notebook.scale.set(1.02, 0.012, 0.76);
   page.add(notebook);
   // Each paper surface is a real selectable object with a matching native target.
-  const records = [degree, recognition, notebook];
+  const records = [degree, recognition, seniorHigh];
   records.forEach(
     (mesh, index) => (mesh.userData.action = `education:${index}`),
   );

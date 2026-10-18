@@ -90,7 +90,7 @@ button {
   height: 100svh;
   min-height: 760px;
   overflow: hidden;
-  background: #667985 url("../assets/concept.webp") center/cover;
+  background: linear-gradient(165deg, #b2c1c2 0%, #738e99 48%, #183b49 100%);
 }
 .station.ready {
   background: #667985;

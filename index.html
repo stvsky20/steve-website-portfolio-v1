@@ -35,6 +35,8 @@
     <link rel="stylesheet" href="src/education-details.css" />
     <link rel="stylesheet" href="src/orbit-return.css" />
     <link rel="stylesheet" href="src/signal-progress.css" />
+    <link rel="stylesheet" href="src/core-glance.css" />
+    <link rel="stylesheet" href="src/audio-entrance.css" />
     <link
       rel="preload"
       href="assets/brand/ibm-plex-sans-latin-400-normal.woff2"
@@ -319,10 +321,6 @@
               </button>
             </div>
           </div>
-          <a class="scroll-note" href="#work"
-            ><span>SELECTED WORK BELOW</span
-            ><span aria-hidden="true">↓</span></a
-          >
           <div class="journey-nav" id="journey-nav" hidden>
             <button
               id="journey-back"
@@ -525,9 +523,6 @@
               <h3 id="core-tool-title"></h3>
               <p id="core-tool-copy"></p>
               <div id="core-tool-slots"></div>
-              <p class="core-placeholder">
-                Tools from my project work and technical experience.
-              </p>
               <div class="core-inspect-nav">
                 <button id="core-previous" aria-label="Previous skill module">
                   <span data-icon="arrow-left" aria-hidden="true"></span>
@@ -876,7 +871,7 @@
       aria-describedby="audio-welcome-description"
     >
       <div class="audio-welcome-content">
-        <p class="audio-welcome-kicker">STEVEN VALDEZ / THE SIGNAL STATION</p>
+        <p class="audio-welcome-kicker">The Signal Station</p>
         <div class="audio-welcome-icon" aria-hidden="true">
           <svg
             viewBox="0 0 48 48"
@@ -891,21 +886,57 @@
             <rect x="33" y="24" width="9" height="16" rx="4" />
           </svg>
         </div>
-        <p class="audio-welcome-eyebrow">A LITTLE SPACE TO TUNE IN</p>
-        <h2 id="audio-welcome-title">Better with audio.</h2>
+        <h2 id="audio-welcome-title">Better with<br /><em>sound.</em></h2>
         <p id="audio-welcome-description">
-          Ocean air, quiet keys, and signals from beyond.<br />Put on your
-          headphones and settle into the station.
+          Ocean air. Soft keys. Signals from space.
         </p>
         <button id="audio-welcome-enable" type="button" autofocus>
-          Enter with sound <span aria-hidden="true">↗</span>
+          <span>Enter with sound</span
+          ><span class="audio-enter-door" aria-hidden="true"
+            ><svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <path
+                d="M7 27V5h18v22M4 27h24"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <rect
+                class="door-light"
+                x="10"
+                y="7"
+                width="12"
+                height="20"
+                rx="1"
+                fill="#ffe5a7"
+              />
+              <g class="door-leaf">
+                <rect
+                  x="10"
+                  y="7"
+                  width="12"
+                  height="20"
+                  rx="1"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <circle cx="19" cy="17" r="1" fill="currentColor" />
+              </g>
+              <g class="door-sparks" fill="#ffe5a7">
+                <circle cx="26" cy="11" r="1" />
+                <circle cx="28" cy="18" r=".7" />
+                <circle cx="25" cy="22" r=".8" />
+              </g></svg
+          ></span>
         </button>
         <button id="audio-welcome-muted" type="button">
           Continue without sound
         </button>
-        <p class="audio-welcome-footnote" id="audio-welcome-note" role="status">
-          You can adjust the sound anytime.
-        </p>
+        <p
+          class="audio-welcome-footnote"
+          id="audio-welcome-note"
+          role="status"
+        ></p>
       </div>
     </dialog>
     <script type="module" src="src/main.js"></script>

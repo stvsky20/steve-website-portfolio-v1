@@ -10,7 +10,22 @@ export function renderProjectOverview(project, dialog, index) {
     dialog.querySelector(".section-kicker"),
     `${project.kind || "PROJECT"} / ${String(index + 1).padStart(3, "0")}`,
   );
-  dialog.querySelector("#project-title").textContent = project.title;
+  const title = dialog.querySelector("#project-title");
+  const name = document.createElement("span");
+  name.textContent = project.title;
+  title.replaceChildren();
+  title.classList.toggle("project-title-branded", Boolean(project.logo));
+  if (project.logo) {
+    const logo = document.createElement("img");
+    logo.className = "project-title-logo";
+    logo.dataset.layout = project.logoLayout || "icon";
+    logo.src = project.logo;
+    logo.alt = "";
+    logo.width = logo.height = 88;
+    logo.decoding = "async";
+    title.append(logo);
+  }
+  title.append(name);
   dialog.querySelector(".dialog-subtitle").textContent = project.label;
   renderProjectFacts(
     dialog.querySelector("#project-header-facts"),

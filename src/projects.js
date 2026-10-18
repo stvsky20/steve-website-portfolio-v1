@@ -6,6 +6,7 @@ import { tradeJournalGallery } from "./trade-journal-gallery.js";
 export const projects = [
   {
     title: "Ayos!",
+    logo: "assets/projects/ayos/AyosLogo%20(1).png",
     headerFacts: [
       {
         label: "Proponent / client",
@@ -62,6 +63,8 @@ export const projects = [
   },
   {
     title: "ESQUAKE",
+    logo: "assets/projects/esquake/esquake%20logo.png",
+    logoLayout: "wordmark",
     headerFacts: [
       {
         label: "Client",
@@ -73,7 +76,7 @@ export const projects = [
       },
       {
         label: "My role",
-        value: "Project Manager & Game Developer",
+        value: "Project Manager / Supervisor & Game Developer",
         icon: "role",
       },
       {
@@ -206,10 +209,10 @@ export const projects = [
     institutions: ["slu"],
     label: "Earthquake preparedness game",
     description:
-      "A story-based serious game designed to enhance earthquake preparedness among elementary students. As Project Manager & Game Developer, I lead a 16-member multidisciplinary capstone team across development, design, and quality assurance.",
+      "A story-based serious game designed to enhance earthquake preparedness among elementary students. As Project Manager / Supervisor & Game Developer, I lead a 16-member multidisciplinary capstone team across development, design, and quality assurance.",
     recognition:
       "BS Information Technology capstone · Saint Louis University · In progress",
-    note: "August 2026–Present · Project Manager & Game Developer",
+    note: "August 2026–Present · Project Manager / Supervisor & Game Developer",
     contributions: [
       "Manage requirements, assignments, timelines, and stakeholders using a Water-Scrum-Fall methodology.",
       "Track delivery in ClickUp and coordinate collaborative development through GitHub.",
@@ -227,6 +230,7 @@ export const projects = [
   },
   {
     title: "Laundrify",
+    logo: "assets/projects/laundrify/laundrify-logo.png",
     headerFacts: [
       {
         label: "Client",
@@ -341,6 +345,7 @@ export const projects = [
   },
   {
     title: "Mal-Ay Store Assistant",
+    logo: "assets/projects/mal-ay-store-pos/mal-ay-icon.svg",
     label: "Lightweight Android POS & inventory",
     headerFacts: [
       {
@@ -406,6 +411,7 @@ export const projects = [
   },
   {
     title: "Trade Journal Pro",
+    logo: "assets/projects/trade-journal-pro/app-icon-primary-transparent.png",
     label: "Full-stack trading journal & analytics",
     headerFacts: [
       { label: "My role", value: "Full-Stack Developer", icon: "role" },
@@ -457,7 +463,7 @@ export const projects = [
   },
 ];
 
-export function projectTexture(index) {
+export function projectTexture(index, requestFrame) {
   const project = projects[index],
     canvas = document.createElement("canvas");
   canvas.width = 768;
@@ -483,7 +489,7 @@ export function projectTexture(index) {
   }
   if (lines.length === 1) ctx.font = "600 112px sans-serif";
   lines.forEach((line, row) =>
-    ctx.fillText(line, 44, lines.length === 1 ? 237 : 185 + row * 105),
+    ctx.fillText(line, 44, lines.length === 1 ? 250 : 215 + row * 90),
   );
   ctx.font = "500 38px sans-serif";
   ctx.fillStyle = "#d3e3dd";
@@ -495,21 +501,34 @@ export function projectTexture(index) {
     "Trading journal & analytics",
     "Details coming soon",
   ];
-  ctx.fillText(screenLabels[index] || project.label, 48, 350);
+  ctx.fillText(screenLabels[index] || project.label, 48, 365);
   ctx.strokeStyle = "#52706b";
   ctx.beginPath();
-  ctx.moveTo(48, 384);
-  ctx.lineTo(720, 384);
+  ctx.moveTo(48, 400);
+  ctx.lineTo(720, 400);
   ctx.stroke();
   ctx.font = "600 34px monospace";
   ctx.fillStyle = "#f0c68b";
   ctx.fillText(
     project.placeholder ? "DETAILS SOON" : "OPEN PROJECT  →",
     48,
-    442,
+    456,
   );
   const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.SRGBColorSpace;
   texture.anisotropy = 4;
+  if (project.logo) {
+    const image = new Image();
+    image.onload = () => {
+      const maxWidth = project.logoLayout === "wordmark" ? 240 : 96;
+      const scale = Math.min(maxWidth / image.width, 96 / image.height);
+      const width = image.width * scale;
+      const height = image.height * scale;
+      ctx.drawImage(image, 714 - width, 32 + (96 - height) / 2, width, height);
+      texture.needsUpdate = true;
+      requestFrame?.();
+    };
+    image.src = project.logo;
+  }
   return texture;
 }

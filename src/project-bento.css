@@ -524,3 +524,37 @@
     gap: 12px;
   }
 }
+
+/* Consistent project identity on every case-study header. */
+#project-dialog.has-bento > .project-title-branded {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.project-title-branded > span {
+  min-width: 0;
+  text-wrap: balance;
+}
+.project-title-logo {
+  display: block;
+  width: 88px;
+  height: 88px;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+.project-title-logo[data-layout="wordmark"] {
+  width: 180px;
+}
+@media (max-width: 650px) {
+  #project-dialog.has-bento > .project-title-branded {
+    gap: 12px;
+    font-size: clamp(32px, 8vw, 42px);
+  }
+  .project-title-logo {
+    width: 56px;
+    height: 56px;
+  }
+  .project-title-logo[data-layout="wordmark"] {
+    width: 96px;
+  }
+}

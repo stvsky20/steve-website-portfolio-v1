@@ -50,3 +50,18 @@ These are custom HTML/CSS components informed by the recommended shadcn/Carbon a
 Exact package sources/integrity metadata and the retained licenses live in `assets/brand/`. `vendor-brand.py` reproduces the selected asset subset from version-pinned npm packages. It is a maintenance tool and is not needed to run the site. Fonts and icons make no external runtime requests.
 
 `src/icons.js` hydrates explicit icon slots and the existing dynamic navigation symbols from the local SVG sprite, including text updated during camera journeys.
+
+### UST Senior High School cutout
+
+The user supplied `assets/education/ust shs logo.jfif`. The built-in image editor produced `assets/education/ust-shs-transparent.png` for transparent placement. The original remains available. UST retains ownership of its institution mark.
+
+Editing prompt:
+
+> Edit the provided existing University of Santo Tomas Senior High School logo ONLY to remove its plain white background. Return the same logo, same framing, proportions, typography, exact letters UNIVERSITY OF SANTO TOMAS and SENIOR HIGH SCHOOL, same 20 and 16, same yellow disk, teal UST letters and black outer text. Make the blank white exterior canvas and blank white field behind the outer curved lettering fully transparent, including gaps around those outer letters. Preserve all actual white graphic artwork INSIDE the yellow disk, including the white monument/arch and white outlines around UST. Do not redesign, redraw, stylize, recolor, change text, add shadows, or add elements. Clean transparent alpha cutout of the original existing logo.
+
+### Trade Journal Pro transparent icon
+
+The built-in image editor removed the exterior white background from the user-supplied `assets/projects/trade-journal-pro/app-icon-primary.png`. The transparent sibling `app-icon-primary-transparent.png` is shared by the project header and control-deck display. The original is retained.
+
+Prompt:
+> Remove only the white exterior background surrounding this Trade Journal Pro app icon. Make that exterior fully transparent. Preserve the dark navy rounded-square tile itself, its rounded corners, and the green trading-bar artwork inside exactly as shown. Preserve colors, proportions, crisp edges and composition. Do not remove any dark tile, redesign the mark, add text, shadows, outlines or other elements. Output a clean transparent-background logo asset.

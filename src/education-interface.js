@@ -95,16 +95,6 @@ export function createEducationInterface({
           ys = points.map(
             (point) => (-0.5 * point.y + 0.5) * host.clientHeight,
           );
-        // The notebook is horizontal; include its upper face in its hit area.
-        if (index === 2)
-          for (const x of [-0.5, 0.5])
-            for (const z of [-0.5, 0.5]) {
-              const point = mesh
-                .localToWorld(new THREE.Vector3(x, 0.5, z))
-                .project(camera);
-              xs.push((point.x * 0.5 + 0.5) * host.clientWidth);
-              ys.push((-0.5 * point.y + 0.5) * host.clientHeight);
-            }
         const button = buttons[index];
         button.style.left = `${Math.min(...xs)}px`;
         button.style.top = `${Math.min(...ys)}px`;

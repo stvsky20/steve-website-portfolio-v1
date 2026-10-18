@@ -1,5 +1,11 @@
 // User-supplied artwork: preserve original proportions and brand colors.
 export const institutionBrands = {
+  ust: {
+    name: "University of Santo Tomas — Senior High School",
+    image: "assets/education/ust-shs-transparent.png",
+    width: 1246,
+    height: 1263,
+  },
   slu: {
     name: "Saint Louis University",
     image: "assets/education/slu-transparent.png",
@@ -29,7 +35,7 @@ export function renderInstitutionBrands(mount, ids = []) {
     image.width = brand.width;
     image.height = brand.height;
     figure.append(image);
-    if (id === "slu") {
+    if (id === "slu" || id === "ust") {
       const label = document.createElement("span");
       label.textContent = brand.name;
       figure.append(label);

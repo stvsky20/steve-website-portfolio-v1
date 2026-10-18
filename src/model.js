@@ -8,7 +8,7 @@ import {
   seededRandom,
 } from "./geometry.js";
 
-export function createStation() {
+export function createStation(requestFrame) {
   const root = new THREE.Group();
   root.name = "Signal station";
   const random = seededRandom(197);
@@ -360,7 +360,7 @@ export function createStation() {
     const columns = Math.min(3, projects.length - row * 3);
     const x = ((index % 3) - (columns - 1) / 2) * 0.83;
     const y = 1.1 - Math.floor(index / 3) * 0.65;
-    const displayTexture = projectTexture(index);
+    const displayTexture = projectTexture(index, requestFrame);
     // Screens emit their own colors, independent of sunlight and night lighting.
     const displayMat = new THREE.MeshBasicMaterial({
       map: displayTexture,

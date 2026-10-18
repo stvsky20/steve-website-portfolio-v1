@@ -4,55 +4,70 @@ import { coreMotion } from "./core-motion.js";
 
 export const coreTools = [
   {
-    name: "Languages",
+    name: "Programming Languages",
     part: "Processor board",
-    copy: "The languages I use across web development, data, and application logic.",
-    slots: [
-      "Java",
-      "Python",
-      "JavaScript",
-      "TypeScript",
-      "SQL",
-      "PHP",
-      "HTML",
-      "CSS",
-    ],
+    copy: "Application logic, web development, and data queries.",
+    slots: ["Java", "Python", "JavaScript", "TypeScript", "SQL", "PHP"],
+    groups: [{ label: "Web foundations", slots: ["HTML", "CSS"] }],
+    evidence: "AYOS! & Mal-Ay: TypeScript · Trade Journal Pro: PHP & SQL.",
   },
   {
-    name: "Frontend",
+    name: "Web & UI Design",
     part: "Display module",
-    copy: "The interfaces people see and interact with.",
+    copy: "Responsive interfaces, UI design, and mobile packaging.",
     slots: ["React", "Tailwind CSS", "WordPress", "Figma"],
+    groups: [{ label: "Mobile packaging", slots: ["Capacitor 8"] }],
+    evidence:
+      "AYOS! & Laundrify: React · ESQUAKE: Figma prototypes · Mal-Ay: Android APK.",
   },
   {
-    name: "Backend & APIs",
+    name: "Backend & Data",
     part: "Communications module",
-    copy: "The services and connections behind the interface.",
-    slots: ["WAMP", "Google APIs", "OpenAI"],
-  },
-  {
-    name: "Databases",
-    part: "Storage cartridge",
-    copy: "Where information is organized and retained.",
-    slots: ["MySQL", "Supabase", "Firestore"],
-  },
-  {
-    name: "Planning & delivery",
-    part: "Routing board",
-    copy: "Requirements, timelines, and stakeholder coordination for a 16-member capstone team.",
+    copy: "APIs, cloud databases, and persistent local storage.",
     slots: [
-      "ClickUp",
-      "Slack",
-      "Google Workspace",
-      "Agile project management",
-      "Water-Scrum-Fall",
+      "MySQL",
+      "Supabase",
+      "Firestore",
+      "SQLite",
+      "IndexedDB",
+      "REST APIs",
+      "Google APIs",
+      "OpenAI",
     ],
+    groups: [{ label: "Local development environment", slots: ["WAMP"] }],
+    evidence:
+      "Trade Journal Pro: MySQL · AYOS!: Firestore & APIs · Mal-Ay: SQLite / IndexedDB.",
   },
   {
-    name: "Dev tools",
+    name: "Game Development",
+    part: "Simulation module",
+    copy: "From gameplay prototypes to playable earthquake-preparedness features.",
+    slots: ["Godot", "GDScript"],
+    evidence:
+      "ESQUAKE · Project Manager & Game Developer · Capstone for CDRRMO Baguio City.",
+  },
+  {
+    name: "Project Management",
+    part: "Routing board",
+    copy: "Requirements, task allocation, timelines, and stakeholder coordination.",
+    slots: ["Agile project management", "Water-Scrum-Fall"],
+    groups: [
+      {
+        label: "Tracking & collaboration",
+        slots: ["ClickUp", "Slack", "Google Workspace"],
+      },
+    ],
+    evidence:
+      "ESQUAKE: leading 16 members · AYOS!: led development to PSC X regional finalist.",
+  },
+  {
+    name: "Version Control & Deployment",
     part: "Service connector",
-    copy: "The tools used to build, inspect, and maintain the work.",
-    slots: ["Git", "GitHub", "GitLab", "Vercel", "Godot", "Claude AI", "Codex"],
+    copy: "Source collaboration, change tracking, and web deployment.",
+    slots: ["Git", "GitHub", "GitLab", "Vercel"],
+    groups: [{ label: "AI-assisted workflow", slots: ["Claude AI", "Codex"] }],
+    evidence:
+      "ESQUAKE: GitHub collaboration · Portfolio & Laundrify: Vercel deployment.",
   },
 ];
 

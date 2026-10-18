@@ -3,7 +3,7 @@ import * as THREE from "../vendor/three.module.js";
 import { coreTools } from "./signal-core.js";
 import { coreMotion } from "./core-motion.js";
 import { createCoreInspection } from "./core-inspection.js";
-import { technologyChip } from "./tech-logos.js";
+import { renderCoreContent } from "./core-content.js";
 
 export function createCoreInterface({
   core,
@@ -48,10 +48,7 @@ export function createCoreInterface({
     document.querySelector("#core-tool-title").textContent = tool.name;
     document.querySelector("#core-tool-copy").textContent = tool.copy;
     const slots = document.querySelector("#core-tool-slots");
-    slots.replaceChildren();
-    for (const label of tool.slots) {
-      slots.append(technologyChip(label));
-    }
+    renderCoreContent(tool, slots);
     detail.hidden = false;
     document.querySelector("#core-inspect-count").textContent =
       `MODULE 0${index + 1} / 06`;
@@ -63,6 +60,7 @@ export function createCoreInterface({
       document.body.style.overflow = "hidden";
       detail.showModal();
     }
+    detail.scrollTop = 0;
     buttons.forEach((button, i) =>
       button.setAttribute("aria-pressed", String(index === i)),
     );
