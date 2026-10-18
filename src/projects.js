@@ -229,9 +229,11 @@ export const projects = [
     title: "Laundrify",
     headerFacts: [
       {
-        label: "Demo workspace",
-        value: "Gabriel’s · Fictional branch",
+        label: "Client",
+        value: "Gabriel’s Laundry Shop",
         icon: "client",
+        logo: "assets/projects/laundrify/gabriels%20laundry%20logo.jpg",
+        logoAlt: "Gabriel’s Laundry Shop logo",
       },
       { label: "My role", value: "Frontend Developer", icon: "role" },
       {
@@ -246,9 +248,9 @@ export const projects = [
     },
     label: "Laundry operations, simplified",
     description:
-      "A responsive laundry-management frontend bringing the counter, orders, customers, machines, and reporting into one workspace. Built on the Berry React Admin Template, with Gabriel’s as a fictional demo branch.",
+      "A responsive laundry-management frontend for Gabriel’s Laundry Shop, bringing the counter, orders, customers, machines, and reporting into one workspace. Built on the Berry React Admin Template.",
     recognition:
-      "Functional frontend prototype · Local persistence · Fictional data",
+      "Functional frontend prototype · Local persistence · Sample demo data",
     note: "Authentication, payments, messaging, and physical-machine integrations are not connected. Revenue charts use sample data; machine cycles are simulated.",
     contributions: [
       "Built reusable React interfaces with shared Context state and localStorage persistence.",
@@ -270,7 +272,7 @@ export const projects = [
     placeholder: false,
     bento: {
       eyebrow: "FRONTEND PROTOTYPE",
-      tags: ["Local-first", "Fictional demo data"],
+      tags: ["Local-first", "Sample demo data"],
       approachTitle: "Built to stay understandable.",
       scopeTitle: "A working frontend prototype.",
       imageBase: "assets/projects/laundrify/",

@@ -41,6 +41,7 @@ export function renderProjectBento(project, mount) {
   mount.replaceChildren();
   mount.hidden = false;
   const bento = project.bento || {};
+  let storySection;
   if (bento.story?.length) {
     const story = node("section", "project-story");
     story.setAttribute("aria-label", "The story behind the project");
@@ -53,7 +54,7 @@ export function renderProjectBento(project, mount) {
       );
       story.append(card);
     }
-    mount.append(story);
+    storySection = story;
   }
   const grid = node("div", "project-bento-grid");
   if (!bento.features?.length) grid.classList.add("bento-without-images");
@@ -74,8 +75,13 @@ export function renderProjectBento(project, mount) {
   const chips = node("div", "technology-list");
   project.technologies.forEach((label) => chips.append(technologyChip(label)));
   stack.append(chips);
-  if (project.technologies.length) grid.append(overview, stack);
-  else grid.append(overview);
+  // Keep the overview and complete stack above stories and every gallery.
+  const opening = node("section", "project-opening");
+  opening.setAttribute("aria-label", "Project overview and technologies");
+  opening.append(overview);
+  if (project.technologies.length) opening.append(stack);
+  mount.append(opening);
+  if (storySection) mount.append(storySection);
   for (const [index, feature] of (bento.features || []).entries()) {
     const button = node(
       "button",
